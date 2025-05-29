@@ -1,4 +1,6 @@
-<footer class="mb-24 mt-170">
+<footer 
+  class="px-16 lg:px-32 mb-24 mt-170 transition-opacity duration-150"
+  :class="{ 'opacity-0 pointer-events-none': $store.menu.isOpen, 'opacity-100': !$store.menu.isOpen }">
   {{ partial:layout/outer class="border-y-6 border-y-verdique py-16 lg:pb-20" }}
     <div class="flex flex-col lg:flex-row lg:justify-between">
 
@@ -71,7 +73,6 @@
         </div>
       {{ /if }}
     </div>
-
     <div class="mt-45">
       <span class="block mb-5 lg:mb-10">{{ "Unterstützt von:" | trans }}</span>
       <a 
@@ -82,8 +83,6 @@
         {{ partial:icons/logo-city class="lg:w-180 h-auto" }}
       </a>
     </div>
-
   {{ /partial:layout/outer }}
 </footer>
 {{ vite src="resources/js/app.js" }}
-{{ livewire:scripts }}

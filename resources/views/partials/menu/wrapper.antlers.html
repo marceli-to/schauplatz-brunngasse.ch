@@ -1,14 +1,14 @@
 <div 
-  class="fixed top-60 md:top-80 h-auto flex flex-col justify-start w-full z-10"
+  class="fixed left-0 top-125 lg:top-200 w-full z-10 bg-blue-200"
   x-cloak 
-  x-show="menu"
-  x-transition:enter="transition ease-out duration-240"
+  x-show="isOpen"
+  x-transition:enter="transition ease-out duration-150"
   x-transition:enter-start="opacity-0"
   x-transition:enter-end="opacity-100"
-  x-transition:leave="transition ease-in duration-240"
+  x-transition:leave="transition ease-in duration-150"
   x-transition:leave-start="opacity-100"
   x-transition:leave-end="opacity-0">
-  <nav>
+  <nav class="px-16 lg:px-32">
     <ul>
       {{ nav:main }}
         {{ partial:menu/item }}

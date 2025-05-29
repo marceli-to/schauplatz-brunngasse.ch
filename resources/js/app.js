@@ -3,4 +3,6 @@ window.Alpine = Alpine
 Alpine.start();
 
 import './bootstrap';
+import './modules/header-scroll';
+
 

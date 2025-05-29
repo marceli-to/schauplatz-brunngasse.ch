@@ -12,6 +12,21 @@ export default {
   ],
 
   theme: {
+
+    safelist: [
+      'border-b-mystiris',
+      'border-b-verdique',
+      'border-b-flareon',
+      'border-b-sunella',
+      'border-b-blushra',
+      'border-t-mystiris',
+      'border-t-verdique',
+      'border-t-flareon',
+      'border-t-sunella',
+      'border-t-blushra',
+    ],
+
+
     extend: {
 
       screens: {
@@ -32,6 +47,7 @@ export default {
 
       borderWidth: {
         '6': '6px',
+        '10': '10px',
       },
 
       fontFamily: {

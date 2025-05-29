@@ -6,6 +6,11 @@
 
 [x-cloak] { display: none !important; }
 
+:root {
+  --header-height-sm: 4.5rem;  /* 72 px */
+  --header-height-lg: 6.5rem;  /* 104 px */
+}
+
 main {
   @apply flex-1;
 }
