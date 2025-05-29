@@ -1,6 +1,6 @@
 <header 
   x-data="headerScroll()"
-  :class="{ 'opacity-0': !headerVisible, 'opacity-100': headerVisible }"
+  :class="{ 'opacity-0 translate-y-[-100%]': !headerVisible, 'opacity-100 translate-y-0': headerVisible }"
   class="bg-white px-16 lg:px-32 pt-16 lg:pt-30 pb-7 lg:pb-12 h-[var(--header-height-sm)] lg:h-[var(--header-height-lg)] fixed z-10 top-0 w-full flex items-center transition-opacity duration-150 ease-in-out">
   {{ partial:layout/outer class="flex justify-between" }}
     <a href="{{ siteUrl }}" title="{{ "Zurück zur Startseite" | trans }}">
