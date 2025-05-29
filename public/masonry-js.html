@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Custom Masonry</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .masonry {
       position: relative;
@@ -12,7 +13,7 @@
 
     .masonry-item {
       position: absolute;
-      width: 200px;
+      width: 100%;
       margin-bottom: 10px;
       background: #ddd;
       border-radius: 8px;
@@ -22,46 +23,176 @@
   </style>
 </head>
 <body>
-  <div class="masonry" id="masonry">
-    <!-- Example items -->
-    <div class="masonry-item" style="height: 120px;">Item 1</div>
-    <div class="masonry-item" style="height: 200px;">Item 2</div>
-    <div class="masonry-item" style="height: 150px;">Item 3</div>
-    <div class="masonry-item" style="height: 180px;">Item 4</div>
-    <div class="masonry-item" style="height: 100px;">Item 5</div>
+  <div class="bg-red-200 p-8">
+    <div class="masonry max-w-4xl mx-auto " id="masonry">
+      <!-- 1 -->
+      <div class="masonry-item break-inside-avoid bg-white rounded-lg shadow p-4">
+        <h2 class="text-sm text-pink-600 uppercase font-semibold">1. Publikation</h2>
+        <h3 class="text-xl font-bold mb-2">Frau Minne und die Zürcher Juden</h3>
+        <figure>
+          <img src="https://placehold.co/600x400" alt="Frau Minne Cover" class="w-full h-auto mb-4" />
+        </figure>
+        <p class="text-sm mb-2">Die mittelalterlichen Wandmalereien an der Brunngasse und ihr Kontext. Die Publikation ist im Museum zum ermässigten Preis von 40.- Franken erhältlich.</p>
+        <a href="#" class="text-pink-600 underline text-sm">→ Diskurs/Material</a>
+      </div>
+
+      <!-- 2 -->
+      <div class="masonry-item break-inside-avoid bg-white rounded-lg shadow p-4">
+        <h2 class="text-sm text-pink-600 uppercase font-semibold">2. Beitrag</h2>
+        <h3 class="text-xl font-bold mb-2">«Schauplatz Brunngasse» – Jüdisches Leben im mittelalterlichen Zürich</h3>
+        <p class="text-sm mb-2">Beitrag von Dölf Wild, für «Theos: Theologisch bedeutsame Orte der Schweiz»</p>
+        <a href="#" class="text-pink-600 underline text-sm">→ Zur Theos Webseite</a>
+      </div>
+
+      <!-- 3 -->
+      <div class="masonry-item break-inside-avoid bg-white rounded-lg shadow p-4">
+        <h2 class="text-sm text-pink-600 uppercase font-semibold">3. Podcast</h2>
+        <h3 class="text-xl font-bold mb-2">Zwischen Duldung und Verfolgung – jüdisches Leben in der Stadt Zürich</h3>
+        <p class="text-sm mb-2">Wir werfen in dieser Folge der «Festplatte» mit Karin Huser, Historikerin und Mitarbeiterin des Staatsarchivs, einen Blick auf das jüdische Leben in Zürich, von der Zeit der Pest im 14. Jahrhundert bis zur Gegenwart.</p>
+        <a href="#" class="text-pink-600 underline text-sm">→ Zum Podcast</a>
+      </div>
+
+      <!-- 4 -->
+      <div class="masonry-item break-inside-avoid bg-white rounded-lg shadow p-4">
+        <h2 class="text-sm text-pink-600 uppercase font-semibold">4. Film</h2>
+        <h3 class="text-xl font-bold mb-2">Brunngasse 8 – Zeitreise nach Zürich</h3>
+        <figure>
+          <img src="https://placehold.co/800x400" alt="Frau Minne Cover" class="w-full h-auto mb-4" />
+        </figure>
+        <p class="text-sm mb-2">In einem Haus in Zürichs Altstadt blieben wie durch ein Wunder prächtige Wandmalereien aus dem Mittelalter erhalten. Die Malereien werfen ein neues Licht auf das Zusammenleben von Juden und Christen.</p>
+        <a href="#" class="text-pink-600 underline text-sm">→ Film Homepage</a>
+      </div>
+
+      <!-- 5 -->
+      <div class="masonry-item break-inside-avoid bg-white rounded-lg shadow p-4">
+        <h2 class="text-sm text-blue-600 uppercase font-semibold">5. Artikel</h2>
+        <h3 class="text-xl font-bold mb-2">Die jüdische Gemeinde im Wandel der Zeit</h3>
+        <p class="text-sm mb-2">Ein historischer Überblick über die jüdische Gemeinde Zürichs vom 19. Jahrhundert bis heute.</p>
+      </div>
+
+      <!-- 6 -->
+      <div class="masonry-item break-inside-avoid bg-white rounded-lg shadow p-4">
+        <h2 class="text-sm text-green-600 uppercase font-semibold">6. Fotodokument</h2>
+        <h3 class="text-xl font-bold mb-2">Synagoge im Winter</h3>
+        <figure>
+          <img src="https://placehold.co/600x500" alt="Synagoge im Winter" class="w-full h-auto mb-4" />
+        </figure>
+        <p class="text-sm mb-2">Ein stimmungsvolles Foto der Synagoge an einem verschneiten Tag.</p>
+      </div>
+
+      <!-- 7 -->
+      <div class="masonry-item break-inside-avoid bg-white rounded-lg shadow p-4">
+        <h2 class="text-sm text-purple-600 uppercase font-semibold">7. Zitat</h2>
+        <h3 class="text-xl font-bold mb-2">„Tradition ist nicht die Anbetung der Asche...”</h3>
+        <p class="text-sm mb-2">Ein Denkanstoß zur Bedeutung von Geschichte und Erneuerung.</p>
+      </div>
+
+      <!-- 8 -->
+      <div class="masonry-item break-inside-avoid bg-white rounded-lg shadow p-4">
+        <h2 class="text-sm text-yellow-600 uppercase font-semibold">8. Presse</h2>
+        <h3 class="text-xl font-bold mb-2">Zürcher Zeitung berichtet über Ausstellung</h3>
+        <p class="text-sm mb-2">Die neue Sonderausstellung über jüdisches Leben stößt auf großes Medieninteresse.</p>
+        <a href="#" class="text-yellow-600 underline text-sm">→ Zum Artikel</a>
+      </div>
+
+      <!-- 9 -->
+      <div class="masonry-item break-inside-avoid bg-white rounded-lg shadow p-4">
+        <h2 class="text-sm text-indigo-600 uppercase font-semibold">9. Portrait</h2>
+        <h3 class="text-xl font-bold mb-2">Rabbiner Mendel Baum</h3>
+        <figure>
+          <img src="https://placehold.co/400x400" alt="Rabbiner Baum" class="w-full h-auto mb-4" />
+        </figure>
+        <p class="text-sm mb-2">Ein Leben zwischen Glaube, Lehre und Gemeindearbeit.</p>
+      </div>
+
+      <!-- 10 -->
+      <div class="masonry-item break-inside-avoid bg-white rounded-lg shadow p-4">
+        <h2 class="text-sm text-red-600 uppercase font-semibold">10. Buch</h2>
+        <h3 class="text-xl font-bold mb-2">„Die Stimmen der Vergangenheit”</h3>
+        <p class="text-sm mb-2">Eine literarische Auseinandersetzung mit dem jüdischen Erbe Europas.</p>
+        <a href="#" class="text-red-600 underline text-sm">→ Mehr erfahren</a>
+      </div>
+
+      <!-- 11 -->
+      <div class="masonry-item break-inside-avoid bg-white rounded-lg shadow p-4">
+        <h2 class="text-sm text-teal-600 uppercase font-semibold">11. Erinnerung</h2>
+        <h3 class="text-xl font-bold mb-2">Gedenken an 1938</h3>
+        <p class="text-sm mb-2">Eine stille Zeremonie in Zürich erinnert an die Novemberpogrome.</p>
+      </div>
+
+      <!-- 12 -->
+      <div class="masonry-item break-inside-avoid bg-white rounded-lg shadow p-4">
+        <h2 class="text-sm text-pink-600 uppercase font-semibold">12. Kunst</h2>
+        <h3 class="text-xl font-bold mb-2">Jüdische Künstler im 20. Jahrhundert</h3>
+        <figure>
+          <img src="https://placehold.co/600x300" alt="Kunstwerk" class="w-full h-auto mb-4" />
+        </figure>
+        <p class="text-sm mb-2">Eine Galerie mit Werken jüdischer Künstler aus Zürich und Umgebung.</p>
+      </div>
+
+      <!-- 13 -->
+      <div class="masonry-item break-inside-avoid bg-white rounded-lg shadow p-4">
+        <h2 class="text-sm text-gray-700 uppercase font-semibold">13. Zitat</h2>
+        <h3 class="text-xl font-bold mb-2">„Man sieht nur mit dem Herzen gut.”</h3>
+      </div>
+
+      <!-- 14 -->
+      <div class="masonry-item break-inside-avoid bg-white rounded-lg shadow p-4">
+        <h2 class="text-sm text-blue-800 uppercase font-semibold">14. Newsletter</h2>
+        <h3 class="text-xl font-bold mb-2">Abonnieren Sie unseren Newsletter</h3>
+        <p class="text-sm mb-2">Bleiben Sie informiert über Veranstaltungen, Ausstellungen und Beiträge rund um das jüdische Leben in Zürich.</p>
+        <a href="#" class="text-blue-800 underline text-sm">→ Jetzt abonnieren</a>
+      </div>
+    </div>
   </div>
-
   <script>
-    function layoutMasonry(container, itemSelector, columnWidth, gutter = 10) {
-      const items = container.querySelectorAll(itemSelector);
+    function layoutMasonryResponsive(container, itemSelector, options = {}) {
+      const {
+        minColumnWidth = 200,
+        maxColumns = Infinity,
+        gutter = 10
+      } = options;
+  
+      const items = Array.from(container.querySelectorAll(itemSelector));
       const containerWidth = container.clientWidth;
-      const columnCount = Math.floor(containerWidth / (columnWidth + gutter));
+  
+      // Calculate column count with limits
+      const columnCount = Math.min(
+        maxColumns,
+        Math.max(1, Math.floor(containerWidth / (minColumnWidth + gutter)))
+      );
+  
+      const columnWidth = (containerWidth - (gutter * (columnCount - 1))) / columnCount;
       const columnHeights = new Array(columnCount).fill(0);
-
-      items.forEach((item) => {
+  
+      items.forEach(item => {
         item.style.width = `${columnWidth}px`;
-
-        // Find shortest column
+  
         const minCol = columnHeights.indexOf(Math.min(...columnHeights));
         const x = minCol * (columnWidth + gutter);
         const y = columnHeights[minCol];
-
+  
         item.style.transform = `translate(${x}px, ${y}px)`;
-
-        // Update column height
+  
         columnHeights[minCol] += item.offsetHeight + gutter;
       });
-
-      // Set container height
+  
       container.style.height = `${Math.max(...columnHeights)}px`;
     }
-
+  
     const container = document.getElementById("masonry");
-    layoutMasonry(container, ".masonry-item", 200, 10);
-
-    window.addEventListener("resize", () => {
-      layoutMasonry(container, ".masonry-item", 200, 10);
-    });
+  
+    function doLayout() {
+      layoutMasonryResponsive(container, ".masonry-item", {
+        minColumnWidth: 200,
+        maxColumns: 3, // 🔧 Set max number of columns
+        gutter: 10
+      });
+    }
+  
+    window.addEventListener("resize", doLayout);
+    window.addEventListener("DOMContentLoaded", doLayout);
   </script>
+  
 </body>
 </html>
