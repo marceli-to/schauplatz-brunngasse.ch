@@ -4,22 +4,22 @@
  */
 
 @font-face {
-  font-family: 'Inter-Italic';
-  src: url('fonts/Inter-Italic.woff2') format('woff2'), url('fonts/Inter-Italic.woff') format('woff');
+  font-family: 'FeixenSansRegular';
+  src: url('fonts/StudioFeixenSans-Regular.woff2') format('woff2'), url('fonts/StudioFeixenSans-Regular.woff') format('woff');
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Inter-Regular';
-  src: url('fonts/Inter-Regular.woff2') format('woff2'), url('fonts/Inter-Regular.woff') format('woff');
+  font-family: 'FeixenSansMedium';
+  src: url('fonts/StudioFeixenSans-Medium.woff2') format('woff2'), url('fonts/StudioFeixenSans-Medium.woff') format('woff');
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'RecklessNeue-Light';
-  src: url('fonts/RecklessNeue-Light.woff2') format('woff2'), url('fonts/RecklessNeue-Light.woff') format('woff');
+  font-family: 'FeixenSansSemibold';
+  src: url('fonts/StudioFeixenSans-Semibold.woff2') format('woff2'), url('fonts/StudioFeixenSans-Semibold.woff') format('woff');
   font-style: normal;
   font-display: swap;
 }

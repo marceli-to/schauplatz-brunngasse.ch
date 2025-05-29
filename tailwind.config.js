@@ -18,26 +18,27 @@ export default {
         'xs': '480px',
       },
 
-      maxWidth: {
-        'content': '90rem',
-      },
-
       fontFamily: {
-        'inter-regular': ['Inter-Regular', ...defaultTheme.fontFamily.sans],
-        'inter-italic': ['Inter-Italic', ...defaultTheme.fontFamily.sans],
-        'reckless-neue': ['RecklessNeue-Light', ...defaultTheme.fontFamily.sans],
+        'feixen-sans-regular': ['FeixenSansRegular', ...defaultTheme.fontFamily.sans],
+        'feixen-sans-medium': ['FeixenSansMedium', ...defaultTheme.fontFamily.sans],
+        'feixen-sans-semibold': ['FeixenSansSemibold', ...defaultTheme.fontFamily.sans],
       },
 
       colors: {
-        'pale': '#eee',
+        'mystiris': '#583099',
+        'verdique': '#00AD76',
+        'flareon': '#FF4237',
+        'sunella': '#FF8E4D',
+        'blushra': '#FCA1CC',
       },
 
       fontSize: {
-        'sm': '1.125rem',   // 18px
-        'md': '1.25rem',    // 20px
-        'lg': '1.875rem',   // 30px
-        'xl': '2.8125rem',  // 45px
-        '2xl': '3.75rem',   // 60px
+        'sm': ['1.125rem', { lineHeight: '1.333' }],   // 18/24
+        'md': ['1.25rem', { lineHeight: '1.3' }],      // 20/26
+        'lg': ['1.5rem', { lineHeight: '1.25' }],      // 24/30
+        'xl': ['1.625rem', { lineHeight: '1.231' }],   // 26/32
+        '2xl': ['2rem', { lineHeight: '1.188' }],      // 32/38
+        '3xl': ['2.8125rem', { lineHeight: '1.111' }], // 45/50
       },
       
       zIndex: {

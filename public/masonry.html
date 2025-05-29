@@ -5,11 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Masonry Schauplatz Brunngasse</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .masonry-items > div:nth-child(2n+1) {
+      background-color: yellow;
+    }
+    
+    .masonry-items > div:nth-child(3n+1) {
+      background-color: green;
+    }
+  </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
 
   <div class="max-w-6xl mx-auto px-4 py-8">
-    <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+    <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6 masonry-items">
 
       <!-- 1 -->
       <div class="break-inside-avoid bg-white rounded-lg shadow p-4">
