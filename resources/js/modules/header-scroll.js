@@ -23,7 +23,7 @@ document.addEventListener('alpine:init', () => {
               }
               
               // Show header if scrolling up or at the top
-              if (this.scrollY < this.lastScrollY || this.scrollY <= 10) {
+              if (this.scrollY < this.lastScrollY || this.scrollY <= 100) {
                   this.headerVisible = true;
               } 
               // Hide header if scrolling down and past a threshold
