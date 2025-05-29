@@ -15,5 +15,5 @@ p:not(:last-child) {
 }
 
 strong {
-  @apply font-feixen-sans-semibold;
+  @apply font-feixen-sans-semibold font-semibold;
 }

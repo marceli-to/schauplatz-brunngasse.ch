@@ -18,18 +18,26 @@ export default {
         'xs': '480px',
       },
 
-      fontFamily: {
-        'feixen-sans-regular': ['FeixenSansRegular', ...defaultTheme.fontFamily.sans],
-        'feixen-sans-medium': ['FeixenSansMedium', ...defaultTheme.fontFamily.sans],
-        'feixen-sans-semibold': ['FeixenSansSemibold', ...defaultTheme.fontFamily.sans],
+      maxWidth: {
+        'outer': '112.5rem',
       },
-
+      
       colors: {
         'mystiris': '#583099',
         'verdique': '#00AD76',
         'flareon': '#FF4237',
         'sunella': '#FF8E4D',
         'blushra': '#FCA1CC',
+      },
+
+      borderWidth: {
+        '6': '6px',
+      },
+
+      fontFamily: {
+        'feixen-sans-regular': ['FeixenSansRegular', ...defaultTheme.fontFamily.sans],
+        'feixen-sans-medium': ['FeixenSansMedium', ...defaultTheme.fontFamily.sans],
+        'feixen-sans-semibold': ['FeixenSansSemibold', ...defaultTheme.fontFamily.sans],
       },
 
       fontSize: {

@@ -1,5 +1,89 @@
-<footer>
+<footer class="mb-24 mt-170">
+  {{ partial:layout/outer class="border-y-6 border-y-verdique py-16 lg:pb-20" }}
+    <div class="flex flex-col lg:flex-row lg:justify-between">
 
+      <a 
+        href="https://pay.raisenow.io/qkqhx?lng=de" 
+        title="{{ "Unterstützen Sie den Schauplatz Brunngasse" | trans }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="size-140 mb-16 lg:mb-0 lg:order-4 inline-block group">
+        {{ partial:icons/donation-badge class="w-full h-auto group-hover:-rotate-[12deg] transition-all" }}
+      </a>
+
+      <div class="mb-28 lg:mb-0 lg:order-1">
+
+        <div class="mb-28 lg:mb-20 [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:no-underline">
+          {{ footer:address }}
+        </div>
+
+        <div>
+          <strong>{{ "Öffnungszeiten" | trans }}</strong>
+          {{ footer:opening_hours }}
+        </div>
+      </div>
+
+      <nav class="mb-28 lg:mb-0 lg:order-2 [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:no-underline">
+        <ul>
+          {{ nav:menu_footer }}
+            <li>
+              <a 
+                href="{{ url }}" 
+                title="{{ title }}">
+                {{ title }}
+              </a>
+            </li>
+          {{ /nav:menu_footer }}
+        </ul>
+      </nav>
+
+      {{ if social_media:facebook || social_media:instagram || social_media:linkedin }}
+        <div class="mb-28 lg:mb-0 lg:order-3 flex flex-col gap-y-2">
+          {{ if social_media:facebook }}
+            <a 
+              href="{{ social_media:facebook }}"
+              title="Facebook"
+              class="inline-flex items-center leading-none gap-x-4 group">
+              {{ partial:icons/facebook class="size-22 mt-2" }}
+              <span class="underline underline-offset-2 group-hover:no-underline">{{ "Facebook" | trans }}</span>
+            </a>
+          {{ /if }}
+          
+          {{ if social_media:instagram }}
+            <a 
+              href="{{ social_media:instagram }}"
+              title="Instagram"
+              class="inline-flex items-center leading-none gap-x-4 group">
+              {{ partial:icons/instagram class="size-22 mt-2" }}
+              <span class="underline underline-offset-2 group-hover:no-underline">{{ "Instagram" | trans }}</span>
+            </a>
+          {{ /if }}
+
+          {{ if social_media:linkedin }}
+            <a 
+              href="{{ social_media:linkedin }}" 
+              title="Twitter"
+              class="inline-flex items-center leading-none gap-x-4 group">
+              {{ partial:icons/linkedin class="size-22 mt-2" }}
+              <span class="underline underline-offset-2 group-hover:no-underline">{{ "LinkedIn" | trans }}</span>
+            </a>
+          {{ /if }}
+        </div>
+      {{ /if }}
+    </div>
+
+    <div class="mt-45">
+      <span class="block mb-5 lg:mb-10">{{ "Unterstützt von:" | trans }}</span>
+      <a 
+        href="https://www.stadt-zuerich.ch/de/stadtleben/kultur.html" 
+        target="_blank"
+        rel="noopener noreferrer"
+        title="{{ "Stadt Zürich Kultur" | trans }}">
+        {{ partial:icons/logo-city class="lg:w-180 h-auto" }}
+      </a>
+    </div>
+
+  {{ /partial:layout/outer }}
 </footer>
 {{ vite src="resources/js/app.js" }}
 {{ livewire:scripts }}
