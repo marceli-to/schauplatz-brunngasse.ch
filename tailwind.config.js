@@ -11,21 +11,30 @@ export default {
     './content/**/*.md'
   ],
 
+  safelist: [
+    'border-b-mystiris',
+    'border-b-verdique',
+    'border-b-flareon',
+    'border-b-sunella',
+    'border-b-blushra',
+    'border-t-mystiris',
+    'border-t-verdique',
+    'border-t-flareon',
+    'border-t-sunella',
+    'border-t-blushra',
+    'border-y-mystiris',
+    'border-y-verdique',
+    'border-y-flareon',
+    'border-y-sunella',
+    'border-y-blushra',
+    'border-mystiris',
+    'border-verdique',
+    'border-flareon',
+    'border-sunella',
+    'border-blushra',
+  ],
+
   theme: {
-
-    safelist: [
-      'border-b-mystiris',
-      'border-b-verdique',
-      'border-b-flareon',
-      'border-b-sunella',
-      'border-b-blushra',
-      'border-t-mystiris',
-      'border-t-verdique',
-      'border-t-flareon',
-      'border-t-sunella',
-      'border-t-blushra',
-    ],
-
 
     extend: {
 
@@ -47,7 +56,15 @@ export default {
 
       borderWidth: {
         '6': '6px',
-        '10': '10px',
+        '9': '9px',
+      },
+
+      textDecorationThickness: {
+        '3': '3px',
+      },
+
+      textUnderlineOffset: {
+        '6': '6px',
       },
 
       fontFamily: {

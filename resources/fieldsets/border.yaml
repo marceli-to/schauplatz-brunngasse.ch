@@ -1,0 +1,44 @@
+title: Rahmen
+fields:
+  -
+    handle: color
+    field:
+      options:
+        -
+          key: mystiris
+          value: Violett
+        -
+          key: verdique
+          value: Grün
+        -
+          key: flareon
+          value: Rot
+        -
+          key: sunella
+          value: Orange
+        -
+          key: blushra
+          value: Rosa
+      type: select
+      display: Farbe
+      localizable: false
+      width: 50
+      default: mystiris
+  -
+    handle: style
+    field:
+      options:
+        -
+          key: 'y'
+          value: 'oben und unten'
+        -
+          key: t
+          value: oben
+        -
+          key: b
+          value: unten
+      default: 'y'
+      type: select
+      display: Stil
+      localizable: false
+      width: 50
