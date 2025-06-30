@@ -6,7 +6,9 @@
     {{ partial:layout/header }}
   {{ /slot:header }}
 
-  {{ partial:layout/main }}
+  {{ partial:layout/outer class="flex-grow" }}
+    {{ partial:layout/main }}
+  {{ /partial:layout/outer }}
 
   {{ slot:footer }}
     {{ partial:layout/footer }}

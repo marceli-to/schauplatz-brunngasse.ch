@@ -1,5 +1,5 @@
 <footer 
-  class="px-16 lg:px-32 mb-24 mt-60 lg:mt-170 transition-opacity duration-150"
+  class="text-sm px-16 lg:px-30 mb-24 mt-60 lg:mt-170 transition-opacity duration-150"
   :class="{ 'opacity-0 pointer-events-none': $store.menu.isOpen, 'opacity-100': !$store.menu.isOpen }">
   {{ partial:layout/outer class="border-y-6 border-y-verdique py-16 lg:pb-20" }}
     <div class="flex flex-col lg:flex-row lg:justify-between">
@@ -16,26 +16,52 @@
       <div class="mb-28 lg:mb-0 lg:order-1">
 
         <div class="mb-28 lg:mb-20 [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:no-underline">
-          {{ footer:address }}
+          
+          {{ if contact_info:title }}
+            <strong>{{ contact_info:title | nl2br }}</strong><br>
+          {{ /if }}
+          
+          {{ if contact_info:address }}
+            {{ contact_info:address }}<br>
+          {{ /if }}
+
+          {{ if contact_info:email }}
+            <a 
+              href="mailto:{{ contact_info:email }}"
+              aria-label="{{ "Schreiben Sie uns eine E–Mail" | trans }}">
+              {{ contact_info:email }}
+            </a><br>
+          {{ /if }}
+
+          {{ if contact_info:phone }}
+            <a 
+              href="mailto:{{ contact_info:phone }}"
+              aria-label="{{ "Rufen Sie uns an" | trans }}">
+              {{ contact_info:phone }}
+            </a><br>
+          {{ /if }}
+          
         </div>
 
-        <div>
-          <strong>{{ "Öffnungszeiten" | trans }}</strong>
-          {{ footer:opening_hours }}
-        </div>
+        {{ if opening_hours:opening_hours }}
+          <div>
+            {{ "Öffnungszeiten" | trans }}<br>{{ opening_hours:opening_hours }}
+          </div>
+        {{ /if }}
+
       </div>
 
       <nav class="mb-28 lg:mb-0 lg:order-2 [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:no-underline">
         <ul>
-          {{ nav:menu_footer }}
+          {{ nav:footer }}
             <li>
               <a 
                 href="{{ url }}" 
-                title="{{ title }}">
+                aria-label="{{ title }}">
                 {{ title }}
               </a>
             </li>
-          {{ /nav:menu_footer }}
+          {{ /nav:footer }}
         </ul>
       </nav>
 

@@ -1,29 +1,7 @@
 title: Rahmen
 fields:
   -
-    handle: color
-    field:
-      options:
-        -
-          key: mystiris
-          value: Violett
-        -
-          key: verdique
-          value: Grün
-        -
-          key: flareon
-          value: Rot
-        -
-          key: sunella
-          value: Orange
-        -
-          key: blushra
-          value: Rosa
-      type: select
-      display: Farbe
-      localizable: false
-      width: 50
-      default: mystiris
+    import: theme_selector
   -
     handle: style
     field:
@@ -41,4 +19,3 @@ fields:
       type: select
       display: Stil
       localizable: false
-      width: 50

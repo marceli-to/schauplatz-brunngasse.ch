@@ -7,6 +7,8 @@ tabs:
         display: Content
         fields:
           -
+            import: theme_selector
+          -
             handle: title
             field:
               type: text
@@ -30,6 +32,18 @@ tabs:
                     neues_set:
                       display: 'Neues Set'
                       fields: {  }
+                special_elements:
+                  display: Spezialelemente
+                  instructions: 'Spezialelemente hinzufügen'
+                  icon: addon-boxes-stack
+                  sets:
+                    contact_information:
+                      display: Kontaktinformationen
+                      instructions: 'Kontaktinformationen hinzufügen'
+                      icon: text-formatting-initial-letter
+                      fields:
+                        -
+                          import: contact_information
   seo:
     display: SEO
     sections:

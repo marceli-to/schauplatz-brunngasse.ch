@@ -1,11 +1,10 @@
 <header 
   x-data="headerScroll()"
   :class="{ 'translate-y-[-100%]': !headerVisible, 'translate-y-0': headerVisible }"
-  class="bg-white px-16 lg:px-32 pt-16 lg:pt-30 pb-7 lg:pb-12 h-[var(--header-height-sm)] lg:h-[var(--header-height-lg)] fixed z-10 top-0 w-full flex items-center transition-transform duration-500 ease-in-out">
+  class="bg-white px-16 lg:px-30 pt-16 lg:pt-30 pb-7 lg:pb-12 h-[var(--header-height-sm)] lg:h-[var(--header-height-lg)] fixed z-10 top-0 w-full flex items-center transition-transform duration-500 ease-in-out">
   {{ partial:layout/outer class="flex justify-between" }}
     <a href="/{{ site:short_locale == 'de' ? '' : 'en' }}" title="{{ "Zurück zur Startseite" | trans }}">
       {{ partial:icons/logo class="w-194 lg:w-250 h-auto" }}
-      
     </a>
     <div 
       class="flex items-center"

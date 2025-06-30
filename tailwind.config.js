@@ -43,7 +43,8 @@ export default {
       },
 
       maxWidth: {
-        'outer': '112.5rem',
+        'outer': '112.5rem', // 1400px
+        'inner': '60rem', // 900px
       },
       
       colors: {
