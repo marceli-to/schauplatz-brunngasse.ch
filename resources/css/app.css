@@ -16,9 +16,17 @@ main {
 }
 
 p:not(:last-child) {
-
+  @apply mb-25 lg:mb-40;
 }
 
 strong {
   @apply font-feixen-sans-semibold font-semibold;
+}
+
+h1 {}
+
+h2 {}
+
+h3 {
+  @apply font-feixen-sans-medium text-lg lg:text-2xl;
 }

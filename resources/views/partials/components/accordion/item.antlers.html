@@ -1,0 +1,60 @@
+<div 
+  x-data="{
+    open: false,
+    init() {
+      this.open = selected === {{ index }};
+    },
+    toggle() {
+      selected = selected === {{ index }} ? null : {{ index }};
+    },
+    updateHeight() {
+      this.$refs.container.style.maxHeight = this.open
+        ? this.$refs.container.scrollHeight + 'px'
+        : '0px';
+    }
+  }"
+  x-effect="open = selected === {{ index }}; updateHeight()"
+  class="relative w-full border-b-6 lg:border-b-9 border-{{ accordion_border_color }}">
+
+  <button 
+    type="button"
+    class="w-full block hover:bg-white transition-colors duration-300 ease-in-out group"
+    @click="toggle()">
+    
+    <div class="w-full flex items-center justify-start gap-x-15 lg:gap-x-25">
+
+      <span 
+        class="flex items-center justify-center leading-none"
+        :class="{ 'block': !open, 'hidden': open }">
+        {{ partial:icons/chevron-down size="small" class="w-26 lg:w-40 h-auto" }}
+      </span>
+
+      <span 
+        class="flex items-center justify-center leading-none"
+        :class="{ 'block': open, 'hidden': !open }">
+        {{ partial:icons/chevron-down size="small" class="w-26 lg:w-40 h-auto rotate-180" }}
+      </span>
+
+      <h2 class="font-feixen-sans-medium text-xl lg:text-2xl pt-4 pb-6 lg:pt-8 lg:pb-12">
+        {{ title }}
+      </h2>
+  
+    </div>
+  </button>
+
+  <div 
+    x-ref="container"
+    role="region"
+    class="relative bg-transparent overflow-hidden max-h-0 transition-all duration-300 ease-in-out" 
+    :class="{ 'bg-white': open }"
+    style="max-height: 0px;">
+    <div>
+      <div 
+        class="w-full pt-20 py-40 lg:pt-36 lg:pb-80 transition-opacity duration-300 ease-in-out"
+        :class="{ 'opacity-100': open, 'opacity-0': !open }">
+        {{ slot }}
+      </div>
+    </div>
+  </div>
+
+</div>

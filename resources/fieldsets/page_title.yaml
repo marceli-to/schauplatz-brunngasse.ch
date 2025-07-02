@@ -1,0 +1,13 @@
+title: Seitentitel
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Titel
+      localizable: false
+      validate:
+        - required
+  -
+    import: border
+    prefix: title_

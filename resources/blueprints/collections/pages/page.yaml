@@ -7,21 +7,27 @@ tabs:
         display: Content
         fields:
           -
-            import: theme_selector
-          -
-            handle: title
+            handle: page_title_section
             field:
-              type: text
-              required: true
-              validate:
-                - required
-              display: Titel
-              localizable: true
+              type: section
+              display: Seitentitel
+              localizable: false
+          -
+            import: page_title
+            config:
+              title:
+                required: true
+          -
+            handle: page_content_section
+            field:
+              type: section
+              display: Inhalte
+              localizable: false
           -
             handle: page_elements
             field:
               type: replicator
-              display: Inhalte
+              display: Inhaltselemente
               localizable: true
               collapse: true
               sets:
@@ -29,12 +35,15 @@ tabs:
                   display: Hauptelemente
                   icon: addon-boxes-stack
                   sets:
-                    neues_set:
-                      display: 'Neues Set'
-                      fields: {  }
+                    accordion:
+                      display: Akkordeon
+                      instructions: 'Akkordeon hinzufügen'
+                      icon: form-drop-down-menu
+                      fields:
+                        -
+                          import: accordion
                 special_elements:
                   display: Spezialelemente
-                  instructions: 'Spezialelemente hinzufügen'
                   icon: addon-boxes-stack
                   sets:
                     contact_information:

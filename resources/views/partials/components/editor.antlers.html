@@ -1,1 +1,17 @@
-{{ editor }}
+{{ partial:layout/article class="mb-20 lg:mb-40 last-of-type:mb-0 {{ content_has_border ? 'border-{{ content_border_style }}-6 lg:border-{{ content_border_style }}-9 border-{{ content_border_color }} pt-15 lg:pt-20' : '' }}" }}
+  {{ editor }}
+    {{ if type == 'text' }}
+      {{ text }}
+    {{ /if }}
+    {{ if type == 'link' }}
+      <div>
+        <a 
+          href="{{ link }}"
+          aria-label="{{ link_text }}"
+          target="{{ target }}">
+          {{ link_text }}
+        </a>
+      </div>
+    {{ /if }}
+  {{ /editor }}
+{{ /partial:layout/article }}

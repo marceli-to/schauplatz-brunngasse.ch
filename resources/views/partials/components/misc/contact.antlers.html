@@ -1,6 +1,6 @@
 {{ partial:layout/inner }}
 
-  {{ partial:components/headings/h1 class="border-y-{{ theme_color }}" }}
+  {{ partial:components/headings/h1 class="{{ title_has_border ? 'border-y-{{ title_border_color }}' : '!border-y-0' }}" }}
     {{ title }}
   {{ /partial:components/headings/h1 }}
 
@@ -12,14 +12,54 @@
       {{ /if }}
     {{ /partial:components/headings/h2 }}
 
+    {{ if !is_contact }}
+      {{ if opening_hours:opening_hours }}
+        <div x-data="{ showSpecialOpeningHours: false }">
+          {{ partial:components/headings/h3 class="text-sm lg:text-lg mb-1" }}
+            {{ "Öffnungszeiten" | trans }}
+          {{ /partial:components/headings/h3 }}
+          <div class="font-feixen-sans-medium text-lg lg:text-2xl">
+            {{ opening_hours:opening_hours }}
+          </div>
+          {{ if special_opening_hours:special_opening_hours }}
+            <a 
+              href="javascript:;"
+              @click="showSpecialOpeningHours = !showSpecialOpeningHours"
+              class="flex items-center gap-x-4 !no-underline hover:!underline text-sm lg:text-lg mt-5"
+              aria-label="{{ "Sonderöffnungszeiten" | trans }}">
+              {{ partial:icons/chevron-down size="xsmall" class="w-16 lg:w-18 h-auto mt-8" }}
+              {{ "Sonderöffnungszeiten" | trans }}
+            </a>
+            <div 
+              x-cloak
+              x-show="showSpecialOpeningHours"
+              class="pl-17 lg:pl-20 lg:pt-5 text-sm lg:text-lg">
+              {{ special_opening_hours:special_opening_hours | nl2br }}
+            </div>
+          {{ /if }}
+        </div>
+      {{ /if }}
+    {{ /if }}
+
     {{ if contact_info:address }}
       <div>
         {{ partial:components/headings/h3 class="text-sm lg:text-lg mb-1" }}
           {{ "Adresse" | trans }}
         {{ /partial:components/headings/h3 }}
-        <div class="font-feixen-sans-medium text-lg lg:text-2xl">
-          {{ contact_info:address }}
-        </div>
+        {{ if contact_info:google_maps_url }}
+          <a 
+            href="{{ contact_info:google_maps_url }}"
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label="{{ "Adresse auf Google Maps anzeigen" | trans }}"
+            class="font-feixen-sans-medium text-lg lg:text-2xl">
+            {{ contact_info:address }}
+          </a>
+        {{ else }}
+          <div class="font-feixen-sans-medium text-lg lg:text-2xl">
+            {{ contact_info:address }}
+          </div>
+        {{ /if }}
       </div>
     {{ /if }}
 
@@ -48,34 +88,36 @@
       </div>
     {{ /if }}
 
-    {{ if opening_hours:opening_hours }}
-      <div x-data="{ showSpecialOpeningHours: false }">
-        {{ partial:components/headings/h3 class="text-sm lg:text-lg mb-1" }}
-          {{ "Öffnungszeiten" | trans }}
-        {{ /partial:components/headings/h3 }}
-        <div class="font-feixen-sans-medium text-lg lg:text-2xl">
-          {{ opening_hours:opening_hours }}
-        </div>
-        {{ if special_opening_hours:special_opening_hours }}
-          <a 
-            href="javascript:;"
-            @click="showSpecialOpeningHours = !showSpecialOpeningHours"
-            class="flex items-center gap-x-4 !no-underline hover:!underline text-sm lg:text-lg mt-5"
-            aria-label="{{ "Sonderöffnungszeiten" | trans }}">
-            {{ partial:icons/chevron-down size="xsmall" class="w-16 lg:w-18 h-auto mt-8" }}
-            {{ "Sonderöffnungszeiten" | trans }}
-          </a>
-          <div 
-            x-cloak
-            x-show="showSpecialOpeningHours"
-            class="pl-17 lg:pl-20 lg:pt-5 text-sm lg:text-lg">
-            {{ special_opening_hours:special_opening_hours | nl2br }}
+    {{ if is_contact }}
+      {{ if opening_hours:opening_hours }}
+        <div x-data="{ showSpecialOpeningHours: false }">
+          {{ partial:components/headings/h3 class="text-sm lg:text-lg mb-1" }}
+            {{ "Öffnungszeiten" | trans }}
+          {{ /partial:components/headings/h3 }}
+          <div class="font-feixen-sans-medium text-lg lg:text-2xl">
+            {{ opening_hours:opening_hours }}
           </div>
-        {{ /if }}
-      </div>
+          {{ if special_opening_hours:special_opening_hours }}
+            <a 
+              href="javascript:;"
+              @click="showSpecialOpeningHours = !showSpecialOpeningHours"
+              class="flex items-center gap-x-4 !no-underline hover:!underline text-sm lg:text-lg mt-5"
+              aria-label="{{ "Sonderöffnungszeiten" | trans }}">
+              {{ partial:icons/chevron-down size="xsmall" class="w-16 lg:w-18 h-auto mt-8" }}
+              {{ "Sonderöffnungszeiten" | trans }}
+            </a>
+            <div 
+              x-cloak
+              x-show="showSpecialOpeningHours"
+              class="pl-17 lg:pl-20 lg:pt-5 text-sm lg:text-lg">
+              {{ special_opening_hours:special_opening_hours | nl2br }}
+            </div>
+          {{ /if }}
+        </div>
+      {{ /if }}
     {{ /if }}
 
-    {{ if contact_info:newsletter }}
+    {{ if is_contact && contact_info:newsletter }}
       <div>
         {{ partial:components/headings/h3 class="text-sm lg:text-lg mb-1" }}
           {{ "Newsletter" | trans }}

@@ -1,21 +1,56 @@
 title: Rahmen
 fields:
   -
-    import: theme_selector
+    handle: has_border
+    field:
+      type: toggle
+      display: 'Rahmen?'
+      localizable: false
   -
-    handle: style
+    handle: border_color
     field:
       options:
         -
-          key: 'y'
-          value: 'oben und unten'
+          key: mystiris
+          value: Violett
+        -
+          key: verdique
+          value: Grün
+        -
+          key: flareon
+          value: Rot
+        -
+          key: sunella
+          value: Orange
+        -
+          key: blushra
+          value: Rosa
+      type: select
+      display: Rahmenfarbe
+      localizable: false
+      width: 50
+      placeholder: 'Bitte wählen...'
+      clearable: true
+      if:
+        has_border: 'equals true'
+  -
+    handle: border_style
+    field:
+      options:
         -
           key: t
           value: oben
         -
           key: b
           value: unten
-      default: 'y'
+        -
+          key: 'y'
+          value: 'oben und unten'
       type: select
-      display: Stil
+      display: Rahmenstil
       localizable: false
+      width: 50
+      placeholder: 'Bitte wählen...'
+      clearable: true
+      if:
+        has_border: 'equals true'

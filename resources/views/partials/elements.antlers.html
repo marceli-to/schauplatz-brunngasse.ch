@@ -6,3 +6,19 @@
   {{ partial:components/misc/contact }}
 {{ /if }}
 
+{{ if type == 'accordion' }}
+  {{ partial:layout/inner }}
+    {{ partial:components/accordion/wrapper }}
+      {{ accordion_elements }}
+        {{ partial:components/accordion/item index="{{ index }}" title="{{ accordion_title }}" }}
+          {{ accordion_element_contents }}
+            {{ if type == 'editor' }}
+              {{ partial:components/editor }}
+            {{ /if }}
+          {{ /accordion_element_contents }}
+        {{ /partial:components/accordion/item }}
+      {{ /accordion_elements }}
+    {{ /partial:components/accordion/wrapper }}
+  {{ /partial:layout/inner }}
+{{ /if }}
+

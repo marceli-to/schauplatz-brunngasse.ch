@@ -13,16 +13,6 @@ return [
 
     'styles' => [
 
-        // 'title' => [
-        //     'type' => 'heading_1',
-        //     'name' => 'Title',
-        //     'ident' => 'T',
-        //     'icon' => null,
-        //     'class' => 'title',
-        //     'cp_css' => 'text-decoration: underline; text-underline-offset: 0.1em; text-decoration-color: #c5ccd4',
-        //     'cp_badge' => false,
-        // ],
-
         'nobr' => [
           'type' => 'span',
           'name' => 'No Break',
@@ -33,68 +23,16 @@ return [
           'cp_badge' => false,
         ],
 
-        // 'brand' => [
-        //     'type' => 'span',
-        //     'name' => 'Brand Text',
-        //     'ident' => 'B',
-        //     'icon' => null,
-        //     'class' => 'brand-text',
-        //     'cp_css' => 'color: #ff269e; font-weight: 700',
-        //     'cp_badge' => false,
-        // ],
+        'lead' => [
+          'type' => 'paragraph',
+          'name' => 'Lead',
+          'ident' => 'L',
+          'icon' => null,
+          'class' => 'font-feixen-sans-medium text-xl lg:text-2xl !mb-50 lg:!mb-80',
+          'cp_css' => 'font-size: 1.4rem; line-height: 2rem',
+          'cp_badge' => false,
+      ],
 
-        // 'action' => [
-        //     'type' => 'link',
-        //     'name' => 'Action',
-        //     'ident' => 'A',
-        //     'icon' => null,
-        //     'class' => 'action',
-        //     'cp_css' => 'background: #737f8d; color: white; padding: 0.2em 0.5em; border-radius: 4px',
-        //     'cp_badge' => false,
-        // ],
-
-        // 'square_list' => [
-        //     'type' => 'unordered_list',
-        //     'name' => 'Square List',
-        //     'ident' => '■',
-        //     'icon' => null,
-        //     'class' => 'square-list',
-        //     'cp_css' => 'list-style-type: square',
-        //     'cp_badge' => false,
-        // ],
-
-        // 'roman_list' => [
-        //     'type' => 'ordered_list',
-        //     'name' => 'Roman List',
-        //     'ident' => 'IV',
-        //     'icon' => null,
-        //     'class' => 'roman-list',
-        //     'cp_css' => [
-        //         '&' => 'list-style-type: upper-roman',
-        //         '& ol' => 'list-style-type: lower-roman',
-        //     ],
-        //     'cp_badge' => false,
-        // ],
-
-        // 'two_columns' => [
-        //     'type' => 'div',
-        //     'name' => 'Two Columns',
-        //     'ident' => '❙ ❙',
-        //     'icon' => null,
-        //     'class' => 'two-columns',
-        //     'cp_css' => 'column-count: 2; column-gap: 16px',
-        //     'cp_badge' => true,
-        // ],
-
-        // 'three_columns' => [
-        //     'type' => 'div',
-        //     'name' => 'Three Columns',
-        //     'ident' => '❙❙❙',
-        //     'icon' => null,
-        //     'class' => 'three-columns',
-        //     'cp_css' => 'column-count: 3; column-gap: 16px',
-        //     'cp_badge' => true,
-        // ],
 
     ],
 
