@@ -109,35 +109,8 @@ return [
           'xl' => ['w' => 1440, 'h' => 10000, 'q' => 90, 'fit' => 'contain'],
           '2xl' => ['w' => 1680, 'h' => 10000, 'q' => 90, 'fit' => 'contain'],
 
-          // Focal point images (4:3)
-          'md-focal-4-3-webp' => ['w' => 768, 'h' => 576, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
-          'lg-focal-4-3-webp' => ['w' => 1280, 'h' => 960, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
-          'xl-focal-4-3-webp' => ['w' => 1440, 'h' => 1080, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
-          '2xl-focal-4-3-webp' => ['w' => 1680, 'h' => 1260, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
-          'md-focal-4-3' => ['w' => 768, 'h' => 576, 'q' => 90, 'fit' => 'crop_focal'],
-          'lg-focal-4-3' => ['w' => 1280, 'h' => 960, 'q' => 90, 'fit' => 'crop_focal'],
-          'xl-focal-4-3' => ['w' => 1440, 'h' => 1080, 'q' => 90, 'fit' => 'crop_focal'],
-          '2xl-focal-4-3' => ['w' => 1680, 'h' => 1260, 'q' => 90, 'fit' => 'crop_focal'],
-
-          // Focal point images (16:9)
-          'md-focal-16-9-webp' => ['w' => 768, 'h' => 432, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
-          'lg-focal-16-9-webp' => ['w' => 1280, 'h' => 720, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
-          'xl-focal-16-9-webp' => ['w' => 1440, 'h' => 810, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
-          '2xl-focal-16-9-webp' => ['w' => 1680, 'h' => 945, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
-          'md-focal-16-9' => ['w' => 768, 'h' => 432, 'q' => 90, 'fit' => 'crop_focal'],
-          'lg-focal-16-9' => ['w' => 1280, 'h' => 720, 'q' => 90, 'fit' => 'crop_focal'],
-          'xl-focal-16-9' => ['w' => 1440, 'h' => 810, 'q' => 90, 'fit' => 'crop_focal'],
-          '2xl-focal-16-9' => ['w' => 1680, 'h' => 945, 'q' => 90, 'fit' => 'crop_focal'],
-
-          // Focal point images (16:10)
-          'md-focal-16-10-webp' => ['w' => 768, 'h' => 480, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
-          'lg-focal-16-10-webp' => ['w' => 1280, 'h' => 800, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
-          'xl-focal-16-10-webp' => ['w' => 1440, 'h' => 810, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
-          '2xl-focal-16-10-webp' => ['w' => 1680, 'h' => 945, 'q' => 90, 'fit' => 'crop_focal', 'fm' => 'webp'],
-          'md-focal-16-10' => ['w' => 768, 'h' => 480, 'q' => 90, 'fit' => 'crop_focal'],
-          'lg-focal-16-10' => ['w' => 1280, 'h' => 800, 'q' => 90, 'fit' => 'crop_focal'],
-          'xl-focal-16-10' => ['w' => 1440, 'h' => 810, 'q' => 90, 'fit' => 'crop_focal'],
-          '2xl-focal-16-10' => ['w' => 1680, 'h' => 945, 'q' => 90, 'fit' => 'crop_focal'],
+          // Lightbox
+          'lightbox' => ['w' => 2000, 'h' => 10000, 'q' => 90, 'fit' => 'contain'],
 
           'max_upload_size' => ['w' => 4000, 'h' => 4000, 'fit' => 'max'],
 

@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-a903ee39.css",
+    "file": "assets/app-7204c8ce.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -28,8 +28,27 @@
     "file": "assets/StudioFeixenSans-Semibold-81386a8a.woff2",
     "src": "resources/css/fonts/StudioFeixenSans-Semibold.woff2"
   },
+  "resources/img/chevron-left.svg": {
+    "file": "assets/chevron-left-2d9e263f.svg",
+    "src": "resources/img/chevron-left.svg"
+  },
+  "resources/img/chevron-right.svg": {
+    "file": "assets/chevron-right-daa46e29.svg",
+    "src": "resources/img/chevron-right.svg"
+  },
+  "resources/img/cross.svg": {
+    "file": "assets/cross-bef9d1b7.svg",
+    "src": "resources/img/cross.svg"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app-c30d931d.css",
+    "src": "resources/js/app.css"
+  },
   "resources/js/app.js": {
-    "file": "assets/app-6c03652c.js",
+    "css": [
+      "assets/app-c30d931d.css"
+    ],
+    "file": "assets/app-efcae30a.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }

@@ -19,6 +19,6 @@
   "dependencies": {
     "@vitejs/plugin-vue": "^4.6.2",
     "alpinejs": "^3.13.8",
-    "@fancyapps/ui": "^5.0.22"
+    "@fancyapps/ui": "^5.0.36"
   }
 }

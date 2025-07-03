@@ -1,0 +1,18 @@
+{{ images }}
+  {{ if first }}
+    <a 
+      href="{{ glide:image preset="lightbox"}}" 
+      data-fancybox="gallery" 
+      data-bg-color="bg-{{ ligthbox_background }}"
+      data-caption="{{ image:alt }}">
+      {{ partial:components/media/image show_caption="true" is_gallery="true" image_count="{{ images | count }}" }}
+    </a>
+  {{ else }}
+    <a 
+      href="{{ glide:image preset="lightbox"}}"
+      data-fancybox="gallery" 
+      data-bg-color="bg-{{ ligthbox_background }}"
+      data-caption="{{ image:alt }}">
+    </a>
+  {{ /if }}
+{{ /images }}

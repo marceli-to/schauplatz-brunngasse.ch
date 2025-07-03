@@ -24,4 +24,10 @@ export default defineConfig({
       }),
       //vue(),
   ],
+  server: {
+    cors: {
+      origin: '*',
+      // You can specify other CORS options here if needed
+    },
+  },
 });

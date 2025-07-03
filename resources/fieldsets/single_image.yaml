@@ -1,0 +1,17 @@
+title: Einzelbild
+fields:
+  -
+    handle: image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: Bild
+      localizable: false
+  -
+    handle: show_caption
+    field:
+      type: toggle
+      display: Bildlegende
+      instructions: 'Soll der ALT-Text des Bildes angezeigt werden?'
+      localizable: false

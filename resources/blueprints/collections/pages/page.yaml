@@ -35,6 +35,13 @@ tabs:
                   display: Hauptelemente
                   icon: addon-boxes-stack
                   sets:
+                    editor:
+                      display: Texteditor
+                      instructions: 'Texteditor hinzufügen'
+                      icon: text-formatting-markdown
+                      fields:
+                        -
+                          import: editor
                     accordion:
                       display: Akkordeon
                       instructions: 'Akkordeon hinzufügen'
@@ -42,6 +49,20 @@ tabs:
                       fields:
                         -
                           import: accordion
+                    single_image:
+                      display: Einzelbild
+                      instructions: 'Einzelbild hinzufügen'
+                      icon: media-image-picture-orientation
+                      fields:
+                        -
+                          import: single_image
+                    image_gallery:
+                      display: Bildergalerie
+                      instructions: 'Bildergalerie hinzufügen'
+                      icon: media-image-picture-gallery
+                      fields:
+                        -
+                          import: image_gallery
                 special_elements:
                   display: Spezialelemente
                   icon: addon-boxes-stack

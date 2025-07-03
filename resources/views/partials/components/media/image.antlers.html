@@ -16,10 +16,17 @@
     <img 
       src="{{ glide:image preset="{{ preset ? 'md-{{ preset }}' : 'md' }}" }}" 
       alt="{{ alt ? alt : image:alt }}" 
-      title="{{ alt ? alt : image:alt }}" 
       height="{{ image:height }}" 
       width="{{ image:width }}"
       class="block {{ class ?? '' }}"
       loading="lazy">
+    {{ if show_caption }}
+      <figcaption class="mt-7 lg:mt-14 text-xs lg:text-sm">
+        {{ if is_gallery }}
+          1/{{ image_count }}
+        {{ /if }}
+        {{ alt ? alt : image:alt }}
+      </figcaption>
+    {{ /if }}
   </picture>
 </figure>

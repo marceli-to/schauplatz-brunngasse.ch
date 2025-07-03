@@ -30,3 +30,85 @@ h2 {}
 h3 {
   @apply font-feixen-sans-medium text-lg lg:text-2xl;
 }
+
+/* Lightbox */
+.fancybox__backdrop {
+  @apply !bg-mystiris
+}
+
+.fancybox__backdrop.bg-mystiris {
+  @apply !bg-mystiris
+}
+
+.fancybox__backdrop.bg-verdique {
+  @apply !bg-verdique
+}
+
+.fancybox__backdrop.bg-sunella {
+  @apply !bg-sunella
+}
+
+.fancybox__backdrop.bg-flareon {
+  @apply !bg-flareon
+}
+
+.fancybox__backdrop.bg-blushra {
+  @apply !bg-blushra
+}
+
+.f-button {
+  @apply !bg-transparent
+}
+
+.fancybox__content {
+  @apply !px-25 lg:!px-50
+}
+
+.fancybox__footer {
+  @apply !px-15 !bg-transparent;
+}
+
+.fancybox__caption {
+  @apply !text-white !text-xs lg:!text-sm !p-0 !pb-10 lg:!pb-0 !flex !gap-x-10 !mt-0 lg:!mt-14
+}
+
+.fancybox__caption div:first-of-type {
+  @apply !shrink-0;
+}
+
+.fancybox__slide {
+  @apply !flex items-center justify-center;
+}
+
+.fancybox__content {
+  @apply lg:!max-h-[90vh] !h-auto flex items-center justify-center;
+}
+
+.fancybox__content img {
+  @apply max-h-[90vh] w-auto h-auto object-contain;
+}
+
+.f-button[data-fancybox-close] svg,
+.f-button.is-next svg,
+.f-button.is-prev svg {
+  @apply !hidden
+}
+
+.f-button[data-fancybox-close] {
+  @apply bg-[url('../img/cross.svg')] bg-center bg-no-repeat bg-[length:25px_25px] size-25 top-10 right-10 lg:bg-[length:35px_35px] lg:size-35 lg:top-30 lg:right-30;
+}
+
+.f-button.is-next,
+.f-button.is-prev {
+  @apply bg-center bg-no-repeat bg-[length:15px_30px] w-[15px] h-[30px] lg:bg-[length:25px_50px] lg:w-[25px] lg:h-[40px]
+}
+
+.f-button.is-next {
+  @apply bg-[url('../img/chevron-right.svg')] !right-10 lg:!right-30
+}
+
+.f-button.is-prev {
+  @apply bg-[url('../img/chevron-left.svg')] !left-10 lg:!left-30
+}
+
+  

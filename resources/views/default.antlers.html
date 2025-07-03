@@ -1,3 +1,11 @@
+{{ if title }}
+  {{ partial:layout/inner }}
+    {{ partial:components/headings/h1 class="{{ title_has_border ? 'border-y-{{ title_border_color }}' : '!border-y-0' }}" }}
+      {{ title }}
+    {{ /partial:components/headings/h1 }}
+  {{ /partial:layout/inner }}
+{{ /if }}
+
 {{ page_elements }}
   {{ partial:elements }}
 {{ /page_elements }}

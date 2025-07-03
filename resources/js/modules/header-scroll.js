@@ -7,33 +7,39 @@ document.addEventListener('alpine:init', () => {
     scrollY: 0,
     lastScrollY: 0,
     headerVisible: true,
+    offset: 300,
+    scrollUpThreshold: 100, // ⬅️ minimum pixels to scroll up before showing header
+  
     init() {
       this.scrollY = window.pageYOffset;
       this.lastScrollY = this.scrollY;
-      
+  
       window.addEventListener('scroll', () => {
         this.scrollY = window.pageYOffset;
-        
+  
         // Don't hide header if menu is open
         if (this.$store.menu.isOpen) {
           this.headerVisible = true;
           this.lastScrollY = this.scrollY;
           return;
         }
-        
-        // Show header if scrolling up or at the top
-        if (this.scrollY < this.lastScrollY || this.scrollY <= 100) {
+  
+        const scrollDelta = this.scrollY - this.lastScrollY;
+  
+        // Show header only if scrolling up significantly or near the top
+        if ((scrollDelta < -this.scrollUpThreshold) || this.scrollY <= this.offset) {
           this.headerVisible = true;
         } 
-        // Hide header if scrolling down and past a threshold
-        else if (this.scrollY > this.lastScrollY && this.scrollY > 100) {
+        // Hide header if scrolling down and past offset
+        else if (scrollDelta > 0 && this.scrollY > this.offset) {
           this.headerVisible = false;
         }
-        
+  
         this.lastScrollY = this.scrollY;
       });
     }
   }));
+  
   
   Alpine.data('menuToggle', () => ({
     get isOpen() {

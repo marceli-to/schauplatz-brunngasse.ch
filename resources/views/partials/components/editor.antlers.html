@@ -4,12 +4,14 @@
       {{ text }}
     {{ /if }}
     {{ if type == 'link' }}
-      <div>
+      <div class="my-5">
         <a 
           href="{{ link }}"
           aria-label="{{ link_text }}"
-          target="{{ target }}">
-          {{ link_text }}
+          target="{{ target }}"
+          class="!no-underline group">
+          &rarr;
+          <span class="underline decoration-2 underline-offset-2 group-hover:no-underline">{{ link_text }}</span>
         </a>
       </div>
     {{ /if }}

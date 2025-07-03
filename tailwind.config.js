@@ -43,8 +43,9 @@ export default {
       },
 
       maxWidth: {
-        'outer': '112.5rem', // 1400px
-        'inner': '60rem', // 900px
+        'outer-container': '112.5rem', // 1400px
+        'inner-container': '53.75rem', // 860px
+        'media-container': '67.5rem', // 1080px
       },
       
       colors: {
@@ -75,6 +76,7 @@ export default {
       },
 
       fontSize: {
+        'xs': ['1rem', { lineHeight: '1.3125' }],      // 16/21  
         'sm': ['1.125rem', { lineHeight: '1.333' }],   // 18/24
         'md': ['1.25rem', { lineHeight: '1.3' }],      // 20/26
         'lg': ['1.5rem', { lineHeight: '1.25' }],      // 24/30
