@@ -28,8 +28,8 @@ fields:
           icon: addon-boxes-stack
           sets:
             link:
-              display: Link
-              instructions: 'Link hinzufügen'
+              display: Weblink
+              instructions: 'Webseite verlinken'
               icon: link
               fields:
                 -
@@ -41,12 +41,16 @@ fields:
                     type: link
                     display: Link
                     localizable: false
+                    validate:
+                      - required
                 -
                   handle: link_text
                   field:
                     type: text
                     display: Linktext
                     localizable: false
+                    validate:
+                      - required
                 -
                   handle: target
                   field:
@@ -61,3 +65,45 @@ fields:
                     type: select
                     display: 'Öffnen in'
                     localizable: false
+            link_mail:
+              display: Maillink
+              instructions: 'E-Mail verlinken'
+              icon: link
+              fields:
+                -
+                  handle: email
+                  field:
+                    type: text
+                    display: E-Mail
+                    localizable: false
+                    validate:
+                      - required
+                -
+                  handle: link_text
+                  field:
+                    type: text
+                    display: Linktext
+                    localizable: false
+                    validate:
+                      - required
+            link_phone:
+              display: Telefonlink
+              instructions: 'Telefon verlinken'
+              icon: link
+              fields:
+                -
+                  handle: phone
+                  field:
+                    type: text
+                    display: Telefon
+                    localizable: false
+                    validate:
+                      - required
+                -
+                  handle: link_text
+                  field:
+                    type: text
+                    display: Linktext
+                    localizable: false
+                    validate:
+                      - required

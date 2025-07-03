@@ -1,4 +1,4 @@
-{{ partial:layout/article class="mb-20 lg:mb-40 last-of-type:mb-0 {{ content_has_border ? 'border-{{ content_border_style }}-6 lg:border-{{ content_border_style }}-9 border-{{ content_border_color }} pt-15 lg:pt-20' : '' }}" }}
+{{ partial:layout/article class=" {{ content_has_border ? 'border-{{ content_border_style }}-6 lg:border-{{ content_border_style }}-9 border-{{ content_border_color }} py-15 lg:py-20' : '' }}" }}
   {{ editor }}
     {{ if type == 'text' }}
       {{ text }}
@@ -9,6 +9,30 @@
           href="{{ link }}"
           aria-label="{{ link_text }}"
           target="{{ target }}"
+          class="!no-underline group">
+          &rarr;
+          <span class="underline decoration-2 underline-offset-2 group-hover:no-underline">{{ link_text }}</span>
+        </a>
+      </div>
+    {{ /if }}
+    {{ if type == 'link_mail' }}
+      <div class="my-5">
+        <a 
+          href="mailto:{{ email }}"
+          aria-label="{{ link_text }}"
+          target="_blank"
+          class="!no-underline group">
+          &rarr;
+          <span class="underline decoration-2 underline-offset-2 group-hover:no-underline">{{ link_text }}</span>
+        </a>
+      </div>
+    {{ /if }}
+    {{ if type == 'link_phone' }}
+      <div class="my-5">
+        <a 
+          href="tel:{{ phone }}"
+          aria-label="{{ link_text }}"
+          target="_blank"
           class="!no-underline group">
           &rarr;
           <span class="underline decoration-2 underline-offset-2 group-hover:no-underline">{{ link_text }}</span>

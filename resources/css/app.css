@@ -16,7 +16,7 @@ main {
 }
 
 p:not(:last-child) {
-  @apply mb-25 lg:mb-40;
+  @apply mb-20 lg:mb-30;
 }
 
 strong {

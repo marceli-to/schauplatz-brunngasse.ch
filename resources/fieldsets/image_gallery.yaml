@@ -19,7 +19,7 @@ fields:
             localizable: false
             width: 66
         -
-          handle: ligthbox_background
+          handle: lightbox_background
           field:
             options:
               -
@@ -38,7 +38,7 @@ fields:
                 key: blushra
                 value: Rosa
             type: select
-            display: Hintergrundfarbe
+            display: Hintergrund (Lightbox)
             localizable: false
             width: 33
             default: mystiris

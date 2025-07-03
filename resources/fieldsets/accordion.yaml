@@ -41,6 +41,15 @@ fields:
                         sets:
                           editor:
                             display: Texteditor
+                            instructions: 'Texteditor hinzufügen'
+                            icon: text-formatting-markdown
                             fields:
                               -
                                 import: editor
+                          single_image:
+                            display: Einzelbild
+                            instructions: 'Einzelbild hinzufügen'
+                            icon: media-image-picture-orientation
+                            fields:
+                              -
+                                import: single_image
