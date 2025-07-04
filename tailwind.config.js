@@ -32,6 +32,7 @@ export default {
     'border-flareon',
     'border-sunella',
     'border-blushra',
+    'bg-sunella'
   ],
 
   theme: {

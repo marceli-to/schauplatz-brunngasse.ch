@@ -57,4 +57,12 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
+  settings:
+    display: Einstellungen
+    sections:
+      -
+        display: Einstellungen
+        fields:
+          -
+            import: search_index
 title: Pressespiegel

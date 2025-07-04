@@ -71,3 +71,8 @@
 {{ /if }}
 
 
+{{ if type == 'search' }}
+  {{ partial:layout/inner }}
+    {{ partial:search/full }}
+  {{ /partial:layout/inner }}
+{{ /if }}

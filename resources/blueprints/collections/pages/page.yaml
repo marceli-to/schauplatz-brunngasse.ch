@@ -74,6 +74,11 @@ tabs:
                       fields:
                         -
                           import: contact_information
+                    search:
+                      display: Suche
+                      instructions: 'Suchformular und Suchresultate'
+                      icon: search-magnifying-glass
+                      fields: {  }
   seo:
     display: SEO
     sections:
@@ -90,6 +95,8 @@ tabs:
         fields:
           -
             import: settings
+          -
+            import: search_index
   sidebar:
     display: Sidebar
     sections:

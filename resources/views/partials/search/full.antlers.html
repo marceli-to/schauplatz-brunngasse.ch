@@ -1,0 +1,62 @@
+
+<form action="/{{ "suche" | trans }}" class="mb-30 lg:mb-50 max-w-3xl">
+  <div class="relative">
+    <input 
+      type="text" 
+      name="q" 
+      value="{{ get:q }}"
+      placeholder="{{ "Suchbegriff" | trans }}..."
+      class="!border !border-black !p-10">
+    <button 
+      class="absolute top-1 right-1 px-7 inline-block h-[calc(100%_-_2px)]" 
+      type="submit">
+      [lupe]
+    </button>
+  </div>
+</form>
+
+{{ if get:q }}
+  <div class="max-w-3xl">
+    {{ keyword = get:q }}
+    {{ search:results index="default" }}
+      {{ if !no_results }}
+        <div class="mb-10 md:mb-20 lg:mb-30">
+          <a href="{{ url }}" class="block no-underline hover:text-gray-600 transition-colors mb-5 group">
+            <h2 class="mb-5 text-md lg:text-lg">{{ title }}</h2>
+            <div class="text-xxs lg:!text-xs">{{ searchable_content | highlight:{keyword} }}</div>
+          </a>
+          <div class="text-xxs text-gray-400">{{ "Gefunden in:" | trans }} "{{ title }}"</div>
+        </div>
+      {{ /if }}
+    {{ /search:results }}
+
+    {{ search:results index="publications" }}
+      {{ if !no_results }}
+        <div class="mb-10 md:mb-20 lg:mb-30">
+          <a href="/{{ "diskurs" | trans }}?q={{ get:q }}" class="block no-underline hover:text-turquoise transition-colors mb-5 group">
+            {{ tags }}
+              {{ title }}
+            {{ /tags }}
+            <h2 class="text-lg lg:text-xl !mb-0">{{ title | highlight:{keyword} }}</h2>
+          </a>
+          <div class="text-xxs text-neutral-400">{{ "Diskurs &rarr; Publikationen" | trans }}</div>
+        </div>
+      {{ /if }}
+    {{ /search:results }}
+
+    {{ search:results index="press_reviews" }}
+      {{ if !no_results }}
+        <div class="mb-10 md:mb-20 lg:mb-30">
+          <a href="/{{ "diskurs" | trans }}?q={{ get:q }}" class="block no-underline hover:text-turquoise transition-colors mb-5 group">
+            {{ tags }}
+              {{ title }}
+            {{ /tags }}
+            <h2 class="text-lg lg:text-xl !mb-0">{{ title | highlight:{keyword} }}</h2>
+          </a>
+          <div class="text-xxs text-neutral-400">{{ "Diskurs &rarr; Pressespiegel" | trans }}</div>
+        </div>
+      {{ /if }}
+    {{ /search:results }}
+
+  </div>
+{{ /if }}
