@@ -5,7 +5,7 @@ fields:
     field:
       type: text
       display: Titel
-      localizable: false
+      localizable: true
       validate:
         - required
   -

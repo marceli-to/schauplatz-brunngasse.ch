@@ -1,6 +1,8 @@
 {{ if type == 'editor' }}
   {{ partial:layout/inner }}
+
     {{ partial:components/editor }}
+
   {{ /partial:layout/inner }}
 {{ /if }}
 
@@ -10,34 +12,57 @@
 
 {{ if type == 'accordion' }}
   {{ partial:layout/inner }}
+
     {{ partial:components/accordion/wrapper }}
+
       {{ accordion_elements }}
+    
         {{ partial:components/accordion/item index="{{ index }}" title="{{ accordion_title }}" }}
+
           {{ accordion_element_contents }}
+
             {{ if type == 'editor' }}
               {{ partial:components/editor }}
             {{ /if }}
+
             {{ if type == 'single_image' }}
               <div class="max-w-media-container-narrow mx-auto my-20 lg:my-40">
                 {{ partial:components/media/image }}
               </div>
             {{ /if }}
+
+            {{ if type == 'spacer' }}
+              <div class="mb-30 lg:mb-66 h-0">&nbsp;</div>
+            {{ /if }}
+
+            {{ if type == 'press_reviews' }}
+              {{ partial:press_reviews/list }}
+            {{ /if }}
+
           {{ /accordion_element_contents }}
+
         {{ /partial:components/accordion/item }}
+
       {{ /accordion_elements }}
+
     {{ /partial:components/accordion/wrapper }}
+
   {{ /partial:layout/inner }}
 {{ /if }}
 
 {{ if type == 'single_image' }}
   {{ partial:components/media/container }}
+
     {{ partial:components/media/image }}
+
   {{ /partial:components/media/container }}
 {{ /if }}
 
 {{ if type == 'image_gallery' }}
   {{ partial:components/media/container }}
+
     {{ partial:components/media/gallery }}
+
   {{ /partial:components/media/container }}
 {{ /if }}
 

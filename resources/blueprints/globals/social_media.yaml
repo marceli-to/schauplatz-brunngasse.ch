@@ -9,16 +9,16 @@ tabs:
             field:
               type: text
               display: Facebook
-              localizable: false
+              localizable: true
           -
             handle: instagram
             field:
               type: text
               display: Instagram
-              localizable: false
+              localizable: true
           -
             handle: linkedin
             field:
               type: text
               display: LinkedIn
-              localizable: false
+              localizable: true

@@ -9,4 +9,4 @@ tabs:
             field:
               type: textarea
               display: Spezialöffnungszeiten
-              localizable: false
+              localizable: true

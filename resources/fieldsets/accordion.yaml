@@ -8,7 +8,7 @@ fields:
     field:
       type: replicator
       display: Elemente
-      localizable: false
+      localizable: true
       collapse: true
       sets:
         accordion_elements:
@@ -53,3 +53,19 @@ fields:
                             fields:
                               -
                                 import: single_image
+                          spacer:
+                            display: Abstand
+                            instructions: 'Zusätzlicher Abstand nach unten einfügen'
+                            icon: layout-split-horizontal
+                            fields:
+                              -
+                                handle: spacer
+                                field:
+                                  type: spacer
+                                  display: Abstand
+                                  localizable: false
+                          press_reviews:
+                            display: Pressespiegel
+                            instructions: 'Pressespiegel hinzufügen'
+                            icon: file-content-list
+                            fields: {  }

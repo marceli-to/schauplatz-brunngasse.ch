@@ -1,7 +1,16 @@
 {
   "Öffnungszeiten": "Opening hours",
+  "Sonderöffnungszeiten": "Special opening hours",
   "Unterstützen Sie den Schauplatz Brunngasse": "Support the Schauplatz Brunngasse",
   "Stadt Zürich Kultur": "City of Zurich Culture",
   "Unterstützt von:": "Supported by:",
-  "Suche": "Search"
+  "Suche": "Search",
+  "Kontakt": "Contact",
+  "Adresse": "Address",
+  "Telefon": "Phone",
+  "E-Mail": "Email",
+  "Impressum": "Imprint",
+  "Datenschutz": "Privacy policy",
+  "Schreiben Sie uns eine E–Mail": "Send us an email",
+  "Rufen Sie uns an": "Call us"
 }

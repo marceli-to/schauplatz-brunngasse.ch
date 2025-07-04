@@ -9,4 +9,4 @@ tabs:
             field:
               type: textarea
               display: Öffnungszeiten
-              localizable: false
+              localizable: true
