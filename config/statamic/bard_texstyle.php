@@ -28,12 +28,11 @@ return [
           'name' => 'Lead',
           'ident' => 'L',
           'icon' => null,
-          'class' => 'font-feixen-sans-medium text-xl lg:text-2xl !mb-50 lg:!mb-80',
+          'class' => 'font-feixen-sans-medium text-xl lg:text-2xl',
           'cp_css' => 'font-size: 1.4rem; line-height: 2rem',
           'cp_badge' => false,
       ],
-
-
+      
     ],
 
     /*
