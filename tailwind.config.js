@@ -55,6 +55,7 @@ export default {
         'flareon': '#FF4237',
         'sunella': '#FF8E4D',
         'blushra': '#FCA1CC',
+        'silvara': '#ebebeb',
       },
 
       borderWidth: {

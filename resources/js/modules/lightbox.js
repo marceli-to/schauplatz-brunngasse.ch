@@ -52,9 +52,9 @@ Fancybox.bind('[data-fancybox]', {
 });
 
 function updateBackdropColor(fancybox) {
-  const currentSlide = fancybox.carousel.slides[fancybox.carousel.page];
+  const currentSlide = fancybox.userSlides.length == 1 ? fancybox.userSlides[0] : fancybox.carousel.slides[fancybox.carousel.page];
   const backdrop = fancybox.container.querySelector('.fancybox__backdrop');
-  
+
   if (backdrop && currentSlide && currentSlide.triggerEl) {
     // Remove any existing background color classes
     backdrop.className = backdrop.className.replace(/\bbg-\w+/g, '');

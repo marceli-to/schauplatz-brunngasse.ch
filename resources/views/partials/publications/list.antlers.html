@@ -1,0 +1,40 @@
+<div class="relative lg:columns-2 lg:gap-18">
+  {{ collection:publications }}
+    <div class="
+      border-t-6 
+      lg:border-t-9 
+      border-blushra 
+      {{ if total_results == 2 }} 
+      {{ elseif total_results % 2 == 0 }} 
+        {{ unless index >= total_results - 1 }} pb-35 lg:pb-70 {{ /unless }} 
+      {{ else }} 
+        {{ unless last }} pb-35 lg:pb-70 {{ /unless }}
+      {{ /if }}">
+      <div class="mt-4 lg:mt-10">
+        {{ tags }}
+          {{ title }}
+        {{/tags}}
+      </div>
+      <h3 class="mt-6 lg:mt-16">
+        {{ title }}
+      </h3>
+      {{ if image }}
+        <div class="mt-12 lg:mt-18 bg-silvara px-40 py-30 lg:px-70 lg:py-40">
+          {{ partial:components/media/image image="{{ image }}" }}
+        </div>
+      {{ /if }}
+      {{ if description }}
+        <div class="mt-12 lg:mt-18">
+          {{ description }}
+            {{ if type == 'text' }}
+              {{ text }}
+            {{ /if }}
+            {{ if type == 'link' }}
+              {{ partial:components/links/link }}
+            {{ /if }}
+          {{ /description }}
+        </div>
+      {{ /if }}
+    </div>
+  {{ /collection:publications }}
+</div>

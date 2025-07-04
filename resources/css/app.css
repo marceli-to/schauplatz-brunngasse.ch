@@ -31,6 +31,35 @@ h3 {
   @apply font-feixen-sans-medium text-lg lg:text-2xl;
 }
 
+/* Spacing between elements */
+
+/* inner-container follows inner-container */
+.max-w-inner-container:not(.is-page-title) + .max-w-inner-container {
+  @apply mt-40 lg:mt-80;
+}
+
+/* media-container follows inner-container */
+.max-w-media-container-wide + .max-w-inner-container {
+  @apply mt-40 lg:mt-80;
+}
+
+/* inner-container follows media-container */
+.max-w-inner-container + .max-w-media-container-wide {
+  @apply mt-40 lg:mt-80;
+}
+
+/* media-container follows article */
+article + .max-w-media-container-narrow {
+  @apply mt-20 lg:mt-40;
+}
+
+/* article follows media-container */
+.max-w-media-container-narrow + article {
+  @apply mt-20 lg:mt-40;
+}
+
+
+
 /* Lightbox */
 .fancybox__backdrop {
   @apply !bg-mystiris

@@ -26,7 +26,7 @@
             {{ /if }}
 
             {{ if type == 'single_image' }}
-              <div class="max-w-media-container-narrow mx-auto my-20 lg:my-40">
+              <div class="max-w-media-container-narrow mx-auto">
                 {{ partial:components/media/image }}
               </div>
             {{ /if }}
@@ -37,6 +37,10 @@
 
             {{ if type == 'press_reviews' }}
               {{ partial:press_reviews/list }}
+            {{ /if }}
+
+            {{ if type == 'publications' }}
+              {{ partial:publications/list }}
             {{ /if }}
 
           {{ /accordion_element_contents }}

@@ -64,8 +64,14 @@ fields:
                                   type: spacer
                                   display: Abstand
                                   localizable: false
+                                  instructions: 'Erzeugt einen Abstand nach unten'
                           press_reviews:
                             display: Pressespiegel
                             instructions: 'Pressespiegel hinzufügen'
+                            icon: file-content-list
+                            fields: {  }
+                          publications:
+                            display: Publikationen
+                            instructions: 'Publikationen/Vorträge hinzufügen'
                             icon: file-content-list
                             fields: {  }

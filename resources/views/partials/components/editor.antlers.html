@@ -5,46 +5,13 @@
       {{ text }}
     {{ /if }}
     {{ if type == 'link' }}
-      <div class="my-5">
-        <a 
-          href="{{ link }}"
-          aria-label="{{ link_text }}"
-          target="{{ target }}"
-          class="!no-underline group">
-          &rarr;
-          <span class="underline decoration-2 underline-offset-2 group-hover:no-underline">
-            {{ link_text }}
-          </span>
-        </a>
-      </div>
+      {{ partial:components/links/link }}
     {{ /if }}
     {{ if type == 'link_mail' }}
-      <div class="my-5">
-        <a 
-          href="mailto:{{ email }}"
-          aria-label="{{ link_text }}"
-          target="_blank"
-          class="!no-underline group">
-          &rarr;
-          <span class="underline decoration-2 underline-offset-2 group-hover:no-underline">
-            {{ link_text }}
-          </span>
-        </a>
-      </div>
+      {{ partial:components/links/link_mail }}
     {{ /if }}
     {{ if type == 'link_phone' }}
-      <div class="my-5">
-        <a 
-          href="tel:{{ phone }}"
-          aria-label="{{ link_text }}"
-          target="_blank"
-          class="!no-underline group">
-          &rarr;
-          <span class="underline decoration-2 underline-offset-2 group-hover:no-underline">
-            {{ link_text }}
-          </span>
-        </a>
-      </div>
+      {{ partial:components/links/link_phone }}
     {{ /if }}
   {{ /editor }}
 {{ /partial:layout/article }}

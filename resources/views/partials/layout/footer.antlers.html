@@ -15,7 +15,7 @@
 
       <div class="mb-28 lg:mb-0 lg:order-1">
 
-        <div class="mb-28 lg:mb-20 [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:no-underline">
+        <div class="mb-28 lg:mb-20 [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-sunella transition-colors">
           
           {{ if contact_info:title }}
             <strong>{{ contact_info:title | nl2br }}</strong><br>
@@ -51,7 +51,7 @@
 
       </div>
 
-      <nav class="mb-28 lg:mb-0 lg:order-2 [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:no-underline">
+      <nav class="mb-28 lg:mb-0 lg:order-2 [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-sunella transition-colors">
         <ul>
           {{ nav:footer }}
             <li>
@@ -73,7 +73,7 @@
               title="Facebook"
               class="inline-flex items-center leading-none gap-x-4 group">
               {{ partial:icons/facebook class="size-22 mt-2" }}
-              <span class="underline underline-offset-2 group-hover:no-underline">{{ "Facebook" | trans }}</span>
+              <span class="underline underline-offset-2 group-hover:text-sunella transition-colors">{{ "Facebook" | trans }}</span>
             </a>
           {{ /if }}
           
@@ -83,7 +83,7 @@
               title="Instagram"
               class="inline-flex items-center leading-none gap-x-4 group">
               {{ partial:icons/instagram class="size-22 mt-2" }}
-              <span class="underline underline-offset-2 group-hover:no-underline">{{ "Instagram" | trans }}</span>
+              <span class="underline underline-offset-2 group-hover:text-sunella transition-colors">{{ "Instagram" | trans }}</span>
             </a>
           {{ /if }}
 
@@ -93,7 +93,7 @@
               title="Twitter"
               class="inline-flex items-center leading-none gap-x-4 group">
               {{ partial:icons/linkedin class="size-22 mt-2" }}
-              <span class="underline underline-offset-2 group-hover:no-underline">{{ "LinkedIn" | trans }}</span>
+              <span class="underline underline-offset-2 group-hover:text-sunella transition-colors">{{ "LinkedIn" | trans }}</span>
             </a>
           {{ /if }}
         </div>
