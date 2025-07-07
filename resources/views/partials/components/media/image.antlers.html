@@ -24,7 +24,7 @@
         height="{{ image:height }}" 
         width="{{ image:width }}"
         class="block {{ class ?? '' }}"
-        loading="lazy">
+        loading="{{ eager ? 'eager' : 'lazy' }}">
       <figcaption class="mt-7 lg:mt-14 text-xs lg:text-sm">
         {{ alt ? alt : image:alt }}
       </figcaption>

@@ -57,6 +57,7 @@ export default {
         'sunella': '#FF8E4D',
         'blushra': '#FCA1CC',
         'silvara': '#ebebeb',
+        'graisel': '#9D9D9D',
       },
 
       borderWidth: {

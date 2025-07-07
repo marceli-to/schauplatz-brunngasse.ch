@@ -14,6 +14,7 @@
     }
   }"
   x-effect="open = selected === {{ index }}; updateHeight()"
+  id="item-{{ title | slugify }}"
   class="relative w-full border-b-6 lg:border-b-9 border-{{ accordion_border_bottom_color }}">
 
   <button 

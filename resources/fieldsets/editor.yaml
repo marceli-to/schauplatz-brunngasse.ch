@@ -13,6 +13,7 @@ fields:
         - italic
         - unorderedlist
         - removeformat
+        - superscript
         - anchor
         - nobr
         - lead

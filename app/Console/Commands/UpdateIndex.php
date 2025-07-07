@@ -37,9 +37,13 @@ class UpdateIndex extends Command
     foreach ($entries as $entry)
     {
       $searchableContent = $this->getSearchableContent($entry);
+      $accordionAnchors = $this->getAccordionAnchors($entry);
+      $entryUrl = $entry->url();
       $entry->set('searchable_content', $searchableContent);
+      $entry->set('accordion_anchors', $accordionAnchors);
+      $entry->set('entry_url', $entryUrl);
       $entry->save();
-      $this->info("Updated {$type} entry: {$entry->get('title')}");
+      $this->info("Updated {$type} entry: {$entry->get('title')} - URL: {$entryUrl}");
     }
   }
 
@@ -84,7 +88,9 @@ class UpdateIndex extends Command
           $this->info("Processing element type: " . ($element['type'] ?? 'unknown'));
           switch ($element['type'] ?? '') {
             case 'editor':
-              if (isset($element['content'])) {
+              if (isset($element['editor'])) {
+                $this->processBardField($element['editor'], $content);
+              } elseif (isset($element['content'])) {
                 $this->processBardField($element['content'], $content);
               }
               break;
@@ -304,5 +310,68 @@ class UpdateIndex extends Command
         $this->info("Added Bard string: " . substr($item, 0, 50) . "...");
       }
     }
+  }
+
+  private function getAccordionAnchors($entry)
+  {
+    $anchors = [];
+
+    // Only process pages with accordion elements
+    if ($entry->collection()->handle() === 'pages') {
+      $pageElements = $entry->get('page_elements');
+      
+      if (is_array($pageElements)) {
+        foreach ($pageElements as $element) {
+          if (($element['type'] ?? '') === 'accordion') {
+            if (isset($element['accordion_elements']) && is_array($element['accordion_elements'])) {
+              foreach ($element['accordion_elements'] as $item) {
+                if (isset($item['accordion_title'])) {
+                  $title = $item['accordion_title'];
+                  $slug = $this->slugify($title);
+                  $anchors[] = [
+                    'title' => $title,
+                    'anchor' => "item-{$slug}",
+                    'content' => $this->getAccordionContent($item)
+                  ];
+                  $this->info("Added accordion anchor: item-{$slug}");
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    return $anchors;
+  }
+
+  private function getAccordionContent($accordionItem)
+  {
+    $content = [];
+    
+    if (isset($accordionItem['accordion_element_contents']) && is_array($accordionItem['accordion_element_contents'])) {
+      foreach ($accordionItem['accordion_element_contents'] as $contentItem) {
+        if (isset($contentItem['editor'])) {
+          $this->processBardField($contentItem['editor'], $content);
+        }
+      }
+    }
+    
+    return implode(' ', array_filter($content));
+  }
+
+  private function slugify($text)
+  {
+    // Handle German umlauts first
+    $text = str_replace(['ä', 'Ä'], 'ae', $text);
+    $text = str_replace(['ö', 'Ö'], 'oe', $text);
+    $text = str_replace(['ü', 'Ü'], 'ue', $text);
+    $text = str_replace(['ß'], 'ss', $text);
+    
+    // Convert to lowercase and replace non-alphanumeric characters with hyphens
+    $slug = strtolower(trim($text));
+    $slug = preg_replace('/[^a-z0-9\s-]/', '', $slug);
+    $slug = preg_replace('/[\s-]+/', '-', $slug);
+    return trim($slug, '-');
   }
 }

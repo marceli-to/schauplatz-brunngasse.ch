@@ -45,10 +45,17 @@ class Highlight extends Modifier
       $startEllipsis = mb_strlen($matches[1]) > mb_strlen($prefix) ? '...' : '';
       $endEllipsis = mb_strlen($matches[3]) > mb_strlen($suffix) ? '...' : '';
       
+      // return 
+      //   $startEllipsis . 
+      //   $prefix . 
+      //     '<mark class="bg-sunella">' . $matches[2] . '</mark>' . 
+      //   $suffix .
+      //   $endEllipsis;
+
       return 
-        $startEllipsis . 
-        $prefix . 
-          '<mark class="bg-sunella">' . $matches[2] . '</mark>' . 
+        // $startEllipsis . 
+        // $prefix . 
+        $matches[2] . 
         $suffix .
         $endEllipsis;
     }
