@@ -6,5 +6,6 @@ import './bootstrap';
 import './modules/header-scroll';
 import './modules/lightbox';
 import './modules/masonry';
+import './modules/accordion';
 
 

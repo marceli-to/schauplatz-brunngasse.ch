@@ -1,30 +1,12 @@
 <div 
-  x-data="{
-    open: false,
-    init() {
-      this.open = selected === {{ index }};
-    },
-    toggle() {
-      selected = selected === {{ index }} ? null : {{ index }};
-    },
-    updateHeight() {
-      if (this.open) {
-        setTimeout(() => {
-          this.$refs.container.style.maxHeight = this.$refs.container.scrollHeight + 'px';
-        }, 75);
-      } 
-      else {
-        this.$refs.container.style.maxHeight = '0px';
-      }
-    }
-  }"
+  x-data="AccordionItem({{ index }})"
   x-effect="open = selected === {{ index }}; updateHeight()"
   id="item-{{ title | slugifier }}"
   class="relative w-full border-b-6 lg:border-b-9 border-{{ accordion_border_bottom_color }}">
 
   <button 
     type="button"
-    class="w-full block hover:bg-white transition-colors duration-300 ease-in-out group"
+    class="w-full block text-left hover:bg-white transition-colors duration-300 ease-in-out group"
     @click="toggle()">
     
     <div class="w-full flex items-center justify-start gap-x-15 lg:gap-x-25">
@@ -54,7 +36,7 @@
     class="relative bg-transparent overflow-hidden max-h-0 transition-all duration-300 ease-in-out" 
     :class="{ 'bg-white': open }"
     style="max-height: 0px;">
-    <div>
+    <div x-ref="content">
       <div 
         class="w-full pt-20 lg:pt-35 pb-40 lg:pb-80 transition-opacity duration-300 ease-in-out"
         :class="{ 'opacity-100': open, 'opacity-0': !open }">
