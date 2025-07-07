@@ -6,7 +6,7 @@ use Statamic\Modifiers\Modifier;
 use Statamic\Facades\Entry;
 use Illuminate\Support\Str;
 
-class AccordionSlug extends Modifier
+class AccordionForContentType extends Modifier
 {
     public function index($value, $params, $context)
     {
@@ -15,7 +15,7 @@ class AccordionSlug extends Modifier
         }
 
         $pageSlug = $value; // e.g., "diskurs"
-        $accordionTitle = $params[0]; // e.g., "Pressespiegel"
+        $contentType = $params[0]; // e.g., "publications"
         $targetLocale = $params[1] ?? 'de'; // target locale, defaults to 'de'
         
         // Find the page entry by slug
@@ -37,23 +37,19 @@ class AccordionSlug extends Modifier
             return null;
         }
         
-        // Find the accordion title in the target entry's content
+        // Find the accordion that contains the specified content type
         $accordionElements = $targetEntry->get('page_elements', []);
         
         foreach ($accordionElements as $element) {
             if ($element['type'] === 'accordion' && isset($element['accordion_elements'])) {
                 foreach ($element['accordion_elements'] as $accordionElement) {
-                    if (isset($accordionElement['accordion_title'])) {
-                        $title = $accordionElement['accordion_title'];
-                        
-                        // Check if this matches our source accordion title (case-insensitive)
-                        if (strtolower(trim($title)) === strtolower(trim($accordionTitle))) {
-                            return 'item-' . Str::slug($title);
-                        }
-                        
-                        // If we're looking for a translation, check if the German title matches
-                        if ($targetLocale !== 'de' && $this->isGermanTitleMatch($accordionTitle, $title)) {
-                            return 'item-' . Str::slug($title);
+                    if (isset($accordionElement['accordion_title']) && isset($accordionElement['accordion_element_contents'])) {
+                        // Check if this accordion contains the content type we're looking for
+                        foreach ($accordionElement['accordion_element_contents'] as $content) {
+                            if (isset($content['type']) && $content['type'] === $contentType) {
+                                // Found it! Return the accordion anchor
+                                return 'item-' . Str::slug($accordionElement['accordion_title']);
+                            }
                         }
                     }
                 }
@@ -96,21 +92,5 @@ class AccordionSlug extends Modifier
                 
             return $translations->first();
         }
-    }
-    
-    private function isGermanTitleMatch($germanTitle, $translatedTitle)
-    {
-        // Simple mapping for known accordion titles
-        $mappings = [
-            'Pressespiegel' => ['Press reviews', 'press reviews'],
-            'Publikationen und Vorträge' => ['Publications and lectures', 'publications and lectures'],
-            'Hausbibliothek' => ['In-house library', 'in-house library'],
-        ];
-        
-        if (isset($mappings[$germanTitle])) {
-            return in_array(strtolower(trim($translatedTitle)), array_map('strtolower', $mappings[$germanTitle]));
-        }
-        
-        return false;
     }
 }

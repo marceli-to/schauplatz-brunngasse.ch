@@ -70,7 +70,7 @@
       {{ if !no_results }}
         {{ partial:layout/article class="py-10 lg:py-14 border-t-6 lg:border-t-9 border-blushra" }}
           <a 
-            href="/{{ "diskurs" | translated_slug:{site:short_locale} }}#{{ "diskurs" | accordion_slug:'Publikationen und Vorträge':{site:short_locale} }}" 
+            href="/{{ "diskurs" | translated_slug:{site:short_locale} }}#{{ "diskurs" | accordion_for_content_type:'publications':{site:short_locale} }}" 
             class="!no-underline flex flex-col gap-y-2 lg:gap-y-4">
             <div class="text-md lg:text-lg">
               {{ tags }}{{ title }}{{ /tags }}
@@ -90,7 +90,7 @@
       {{ if !no_results }}
         {{ partial:layout/article class="py-10 lg:py-14 border-t-6 lg:border-t-9 border-blushra" }}
           <a 
-            href="/{{ "diskurs" | translated_slug:{site:short_locale} }}#{{ "diskurs" | accordion_slug:'Pressespiegel':{site:short_locale} }}"
+            href="/{{ "diskurs" | translated_slug:{site:short_locale} }}#{{ "diskurs" | accordion_for_content_type:'press_reviews':{site:short_locale} }}"
             class="!no-underline flex flex-col gap-y-2 lg:gap-y-4">
             <div class="text-md lg:text-lg">
               {{ tags }}{{ title }}{{ /tags }}

@@ -31,6 +31,18 @@ h3 {
   @apply font-feixen-sans-medium text-lg lg:text-2xl;
 }
 
+/* Masonry layout styles */
+/* #masonry-container {
+  position: relative;
+}
+
+#masonry-container .masonry-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+} */
+
 /* Spacing between elements */
 
 /* inner-container follows inner-container */

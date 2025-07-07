@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Statamic\Facades\Entry;
+use Illuminate\Support\Str;
 
 class UpdateIndex extends Command
 {
@@ -327,7 +328,7 @@ class UpdateIndex extends Command
               foreach ($element['accordion_elements'] as $item) {
                 if (isset($item['accordion_title'])) {
                   $title = $item['accordion_title'];
-                  $slug = $this->slugify($title);
+                  $slug = Str::slug($title);
                   $anchors[] = [
                     'title' => $title,
                     'anchor' => "item-{$slug}",
@@ -360,18 +361,4 @@ class UpdateIndex extends Command
     return implode(' ', array_filter($content));
   }
 
-  private function slugify($text)
-  {
-    // Handle German umlauts first
-    $text = str_replace(['ä', 'Ä'], 'ae', $text);
-    $text = str_replace(['ö', 'Ö'], 'oe', $text);
-    $text = str_replace(['ü', 'Ü'], 'ue', $text);
-    $text = str_replace(['ß'], 'ss', $text);
-    
-    // Convert to lowercase and replace non-alphanumeric characters with hyphens
-    $slug = strtolower(trim($text));
-    $slug = preg_replace('/[^a-z0-9\s-]/', '', $slug);
-    $slug = preg_replace('/[\s-]+/', '-', $slug);
-    return trim($slug, '-');
-  }
 }

@@ -1,8 +1,9 @@
 import { MasonryLayout } from '../vendor/masonry-layout.js';
 
-const masonry = MasonryLayout.init('#masonry-container', {
+// Initialize masonry for publications
+const publicationsMasonry = MasonryLayout.init('#masonry-container', {
   itemSelector: '.masonry-item',
-  minColumnWidth: 200,
+  minColumnWidth: 300,
   maxColumns: 2,
   gutter: 18
 });

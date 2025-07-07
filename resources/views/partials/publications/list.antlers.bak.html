@@ -1,6 +1,15 @@
-<div id="masonry-container" class="relative">
+<div class="relative lg:columns-2 lg:gap-18">
   {{ collection:publications }}
-    <div class="masonry-item absolute top-0 left-0 border-t-6 lg:border-t-9 border-blushra mb-35 lg:mb-70">
+    <div class="
+      border-t-6 
+      lg:border-t-9 
+      border-blushra 
+      {{ if total_results == 2 }} 
+      {{ elseif total_results % 2 == 0 }} 
+        {{ unless index >= total_results - 1 }} pb-35 lg:pb-70 {{ /unless }} 
+      {{ else }} 
+        {{ unless last }} pb-35 lg:pb-70 {{ /unless }}
+      {{ /if }}">
       <div class="mt-4 lg:mt-10">
         {{ tags }}
           {{ title }}
