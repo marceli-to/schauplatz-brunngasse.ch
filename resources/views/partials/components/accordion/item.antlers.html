@@ -8,9 +8,13 @@
       selected = selected === {{ index }} ? null : {{ index }};
     },
     updateHeight() {
-      this.$refs.container.style.maxHeight = this.open
-        ? this.$refs.container.scrollHeight + 'px'
-        : '0px';
+      if (this.open) {
+        setTimeout(() => {
+          this.$refs.container.style.maxHeight = this.$refs.container.scrollHeight + 'px';
+        }, 50);
+      } else {
+        this.$refs.container.style.maxHeight = '0px';
+      }
     }
   }"
   x-effect="open = selected === {{ index }}; updateHeight()"
