@@ -120,4 +120,12 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
+  settings:
+    display: Einstellungen
+    sections:
+      -
+        display: 'Neuer Abschnitt'
+        fields:
+          -
+            import: search_index
 title: Agenda

@@ -27,6 +27,10 @@ class UpdateIndex extends Command
     $publications = Entry::query()->where('collection', 'publications')->get();
     $this->updateEntries($publications, 'publications');
 
+    // Get all entries from agenda collection
+    $agenda = Entry::query()->where('collection', 'agenda')->get();
+    $this->updateEntries($agenda, 'agenda');
+
     // Update search index
     $this->call('statamic:search:update', ['--all' => true]);
 
@@ -144,6 +148,30 @@ class UpdateIndex extends Command
               break;
           }
         }
+      }
+    }
+
+    // Handle editor field for agenda entries
+    if ($entry->collection()->handle() === 'agenda') {
+      $editor = $entry->get('editor');
+      if ($editor) {
+        if (is_array($editor)) {
+          $this->processBardField($editor, $content);
+        } else {
+          $content[] = $editor;
+        }
+        $this->info("Added agenda editor field");
+      }
+
+      // Handle summary field for agenda entries (also in Bard format)
+      $summary = $entry->get('summary');
+      if ($summary) {
+        if (is_array($summary)) {
+          $this->processBardField($summary, $content);
+        } else {
+          $content[] = $summary;
+        }
+        $this->info("Added agenda summary field");
       }
     }
 

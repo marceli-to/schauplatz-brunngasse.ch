@@ -11,19 +11,17 @@
 {{ nocache }}
   {{ collection:agenda as="items" sort="agenda_date:desc" agenda_date:is_before="{now}" }}
     {{ if items }}
-    {{ partial:components/accordion/wrapper accordion_border_top_color="blushra" }}
-      {{ partial:components/accordion/item index="1" title="{{ "Vergangene Veranstaltungen" | trans }}" accordion_border_bottom_color="blushra" }}
-      <div class="flex flex-col lg:grid lg:grid-cols-12 gap-18">
-        {{ items }}
-        <div class="lg:col-span-6">
-          {{ partial:agenda/item borderColor="sunella" }}
+      {{ partial:components/accordion/wrapper accordion_border_top_color="blushra" }}
+        {{ partial:components/accordion/item index="0" title="{{ "Vergangene Veranstaltungen" | trans }}" accordion_border_bottom_color="blushra" }}
+        <div class="flex flex-col lg:grid lg:grid-cols-12 gap-18">
+          {{ items }}
+          <div class="lg:col-span-6">
+            {{ partial:agenda/item borderColor="sunella" isArchive="true" }}
+          </div>
+          {{ /items }}
         </div>
-        {{ /items }}
-      </div>
-      {{ /partial:components/accordion/item }}
-    {{ /partial:components/accordion/wrapper }}
-
-        
+        {{ /partial:components/accordion/item }}
+      {{ /partial:components/accordion/wrapper }}
     {{ /if }}
   {{ /collection:agenda }}
 {{ /nocache }}

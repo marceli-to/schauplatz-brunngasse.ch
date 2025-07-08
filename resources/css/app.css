@@ -64,15 +64,13 @@ h3 {
 
 /* media-container follows article */
 article + .max-w-media-container-narrow {
-  @apply mt-20 lg:mt-40;
+  @apply mt-30 lg:mt-60;
 }
 
-/* article follows media-container */
+/* article fo3llows media-container */
 .max-w-media-container-narrow + article {
-  @apply mt-20 lg:mt-40;
+  @apply mt-30 lg:mt-60;
 }
-
-
 
 /* Lightbox */
 .fancybox__backdrop {

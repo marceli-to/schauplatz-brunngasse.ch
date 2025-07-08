@@ -139,6 +139,48 @@
 
     {{ /search:results }}
 
+    {{ search:results index="agenda" }}
+
+      {{ if !no_results }}
+
+        {{ partial:layout/article class="pt-4 pb-12 lg:pt-6 lg:pb-20 border-t-6 lg:border-t-9 border-blushra" }}
+
+          {{ if agenda_date < now }}
+            <a 
+              href="/{{ "agenda" | translated_slug:{site:short_locale} }}#item-{{ "Vergangene Veranstaltungen" | trans | slugify }}"
+              class="!no-underline flex flex-col gap-y-3 lg:gap-y-6">
+
+              {{ partial:components/headings/h2 }}
+                {{ title }}
+              {{ /partial:components/headings/h2 }}
+
+              <div class="underline underline-offset-2 decoration-2">
+                {{ "Agenda &rarr; Vergangene Veranstaltungen" | trans }}
+              </div>
+
+            </a>
+          {{ else }}
+            <a 
+              href="/{{ "agenda" | translated_slug:{site:short_locale} }}"
+              class="!no-underline flex flex-col gap-y-3 lg:gap-y-6">
+
+              {{ partial:components/headings/h2 }}
+                {{ title }}
+              {{ /partial:components/headings/h2 }}
+
+              <div class="underline underline-offset-2 decoration-2">
+                {{ "Agenda" | trans }}
+              </div>
+
+            </a>
+          {{ /if }}
+
+        {{ /partial:layout/article }}
+        
+      {{ /if }}
+
+    {{ /search:results }}
+
   {{ /if }}
    
 {{ /partial:layout/inner }}

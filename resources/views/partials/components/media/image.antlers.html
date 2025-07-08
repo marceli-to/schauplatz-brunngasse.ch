@@ -25,9 +25,6 @@
         width="{{ image:width }}"
         class="block {{ class ?? '' }}"
         loading="{{ eager ? 'eager' : 'lazy' }}">
-      {{ partial:components/media/caption class="mt-7 lg:mt-14 {{ !hasCaption ? 'hidden' : '' }}" }}
-        {{ alt ? alt : image:alt }}
-      {{ /partial:components/media/caption }}
     </picture>
   </figure>
 </a>
