@@ -4,7 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-[x-cloak] { display: none !important; }
+[x-cloak] { 
+  @apply !hidden;
+}
 
 :root {
   --header-height-sm: 4.5rem;  /* 72 px */

@@ -63,6 +63,11 @@ tabs:
                       fields:
                         -
                           import: image_gallery
+                    agenda:
+                      display: Agenda
+                      instructions: 'Agenda hinzufügen'
+                      icon: dashboard-layout
+                      fields: {  }
                 special_elements:
                   display: Spezialelemente
                   icon: addon-boxes-stack

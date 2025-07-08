@@ -3,13 +3,13 @@
 
   <form 
     action="/{{ "suche" | trans }}"
-    class="border-y-6 lg:border-y-9 border-sunella mb-30 lg:mb-65">
+    class="mb-30 lg:mb-65">
     <input 
       type="text" 
       name="q" 
       value="{{ get:q }}"
       placeholder="{{ "Suchbegriff" | trans }}..."
-      class="block w-full !border-none !ring-0 focus:!ring-0 !outline-none py-9 lg:py-13 text-xl lg:text-3xl !leading-[1.2] placeholder:text-graisel placeholder:text-lg placeholder:lg:text-3xl">
+      class="block w-full !ring-0 focus:!ring-0 !outline-none pb-6 lg:pt-6 lg:pb-10 border-y-6 lg:border-y-9 border-sunella font-feixen-sans-medium text-xl lg:text-3xl !leading-[1.2] placeholder:text-graisel placeholder:text-lg placeholder:lg:text-3xl">
   </form>
 
   {{ if get:q }}
@@ -30,83 +30,115 @@
           {{ /if }}
           
           {{ if accordion_match }}
-            {{ partial:layout/article class="py-10 lg:py-14 border-t-6 lg:border-t-9 border-blushra" }}
+
+            {{ partial:layout/article class="pt-4 pb-12 lg:pt-6 lg:pb-20 border-t-6 lg:border-t-9 border-blushra" }}
 
               <a 
                 href="{{ entry_url }}#{{ accordion_anchor }}"
-                class="!no-underline">
-                {{# <div class="text-md lg:text-lg">
-                  {{ "Seiteninhalt" | trans }}
-                </div> #}}
-                <h2 class="text-lg lg:text-xl font-feixen-sans-medium">
+                class="!no-underline flex flex-col gap-y-3 lg:gap-y-6">
+
+                {{ partial:components/headings/h2 }}
                   {{ searchable_content | highlight:{keyword} }}
-                </h2>
+                {{ /partial:components/headings/h2 }}
+
                 <div class="underline underline-offset-2 decoration-2">
                   {{ title }} &rarr; {{ accordion_title }}
                 </div>
+
               </a>
+              
             {{ /partial:layout/article }}
+
           {{ else }}
-            {{ partial:layout/article class="py-10 lg:py-14 border-t-6 lg:border-t-9 border-blushra" }}
-              {{# <div class="text-md lg:text-lg">
-                {{ "Seiteninhalt" | trans }}
-              </div> #}}
-            <a 
-              href="{{ url }}"
-              class="!no-underline flex flex-col gap-y-2 lg:gap-y-4">
-                <h2 class="text-lg lg:text-xl font-feixen-sans-medium">
+
+            {{ partial:layout/article class="pt-4 pb-12 lg:pt-6 lg:pb-20 border-t-6 lg:border-t-9 border-blushra" }}
+
+              <a 
+                href="{{ url }}"
+                class="!no-underline flex flex-col gap-y-3 lg:gap-y-6">
+
+                {{ partial:components/headings/h2 }}
                   {{ searchable_content | highlight:{keyword} }}
-                </h2>
+                {{ /partial:components/headings/h2 }}
+
                 <div class="underline underline-offset-2 decoration-2">
                   {{ title }}
                 </div>
+
               </a>
+
             {{ /partial:layout/article }}
+
           {{ /if }}
+
       {{ /if }}
+
     {{ /search:results }}
 
     {{ search:results index="publications" }}
+
       {{ if !no_results }}
-        {{ partial:layout/article class="py-10 lg:py-14 border-t-6 lg:border-t-9 border-blushra" }}
+
+        {{ partial:layout/article class="pt-4 pb-12 lg:pt-6 lg:pb-20 border-t-6 lg:border-t-9 border-blushra" }}
+
           <a 
             href="/{{ "diskurs" | translated_slug:{site:short_locale} }}#{{ "diskurs" | accordion_for_content_type:'publications':{site:short_locale} }}" 
-            class="!no-underline flex flex-col gap-y-2 lg:gap-y-4">
-            <div class="text-md lg:text-lg">
-              {{ tags }}{{ title }}{{ /tags }}
-            </div>
-            <h2 class="text-lg lg:text-xl font-feixen-sans-medium">
+            class="!no-underline flex flex-col gap-y-3 lg:gap-y-6">
+
+            {{ if tags }}
+              <div class="text-md lg:text-lg">
+                {{ tags }}{{ title }}{{ /tags }}
+              </div>
+            {{ /if }}
+
+            {{ partial:components/headings/h2 }}
               {{ title }}
-            </h2>
+            {{ /partial:components/headings/h2 }}
+
             <div class="underline underline-offset-2 decoration-2">
               {{ "Diskurs &rarr; Publikationen" | trans }} &rarr; {{ tags }} {{ title }} {{ /tags }}
             </div>
+
           </a>
+
         {{ /partial:layout/article }}
+
       {{ /if }}
+
     {{ /search:results }}
 
     {{ search:results index="press_reviews" }}
+
       {{ if !no_results }}
-        {{ partial:layout/article class="py-10 lg:py-14 border-t-6 lg:border-t-9 border-blushra" }}
+
+        {{ partial:layout/article class="pt-4 pb-12 lg:pt-6 lg:pb-20 border-t-6 lg:border-t-9 border-blushra" }}
+
           <a 
             href="/{{ "diskurs" | translated_slug:{site:short_locale} }}#{{ "diskurs" | accordion_for_content_type:'press_reviews':{site:short_locale} }}"
-            class="!no-underline flex flex-col gap-y-2 lg:gap-y-4">
-            <div class="text-md lg:text-lg">
-              {{ tags }}{{ title }}{{ /tags }}
-            </div>
-            <h2 class="text-lg lg:text-xl font-feixen-sans-medium">
+            class="!no-underline flex flex-col gap-y-3 lg:gap-y-6">
+            
+            {{ if tags }}
+              <div class="text-md lg:text-lg">
+                {{ tags }}{{ title }}{{ /tags }}
+              </div>
+            {{ /if }}
+
+            {{ partial:components/headings/h2 }}
               {{ title }}
-            </h2>
+            {{ /partial:components/headings/h2 }}
+
             <div class="underline underline-offset-2 decoration-2">
               {{ "Diskurs &rarr; Pressespiegel" | trans }} &rarr; {{ tags }} {{ title }} {{ /tags }}
             </div>
+
           </a>
+
         {{ /partial:layout/article }}
+        
       {{ /if }}
+
     {{ /search:results }}
 
   {{ /if }}
-
-    
+   
 {{ /partial:layout/inner }}

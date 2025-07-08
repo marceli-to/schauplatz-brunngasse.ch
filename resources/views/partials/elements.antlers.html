@@ -1,8 +1,6 @@
 {{ if type == 'editor' }}
   {{ partial:layout/inner }}
-
     {{ partial:components/editor }}
-
   {{ /partial:layout/inner }}
 {{ /if }}
 
@@ -64,8 +62,12 @@
 
 {{ if type == 'image_gallery' }}
   {{ partial:components/media/container }}
-
     {{ partial:components/media/gallery }}
-
   {{ /partial:components/media/container }}
+{{ /if }}
+
+{{ if type == 'agenda' }}
+  {{ partial:layout/inner }}
+    {{ partial:agenda/wrapper }}
+  {{ /partial:layout/inner }}
 {{ /if }}

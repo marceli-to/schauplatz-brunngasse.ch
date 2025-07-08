@@ -1,11 +1,29 @@
 {{ collection:press_reviews }}
+
   {{ partial:layout/article class="pb-10 lg:pb-14 pt-13 lg:pt-17 border-t-6 lg:border-t-9 border-blushra" }}
-  <div class="flex flex-col lg:gap-y-2">
-    {{ tags }}
-      {{ title }}
-    {{/tags}}
-    <h3>{{ title }}</h3>
-    <div>{{ description }}</div>
-  </div>
+
+    <div class="flex flex-col lg:gap-y-2">
+      
+      {{ if tags }}
+
+        {{ tags }}
+          {{ title }}
+        {{/tags }}
+        
+      {{ /if }}
+
+      {{ partial:components/headings/h3 }}
+        {{ title }}
+      {{ /partial:components/headings/h3 }}
+
+      {{ if description }}
+        <div>
+          {{ description }}
+        </div>
+      {{ /if }}
+
+    </div>
+    
   {{ /partial:layout/article }}
+
 {{ /collection:press_reviews }}

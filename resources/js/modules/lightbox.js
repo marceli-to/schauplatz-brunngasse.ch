@@ -41,8 +41,7 @@ Fancybox.bind('[data-fancybox]', {
     return `<div>${currentIndex}/${totalSlides}</div>` + `<div>${originalCaption}</div>`;
   },
   on: {
-    // Update backdrop color when slide changes
-    ready: (fancybox) => {
+    loaded: (fancybox) => {
       updateBackdropColor(fancybox);
     },
     "Carousel.change": (fancybox) => {
@@ -52,16 +51,21 @@ Fancybox.bind('[data-fancybox]', {
 });
 
 function updateBackdropColor(fancybox) {
-  const currentSlide = fancybox.userSlides.length == 1 ? fancybox.userSlides[0] : fancybox.carousel.slides[fancybox.carousel.page];
   const backdrop = fancybox.container.querySelector('.fancybox__backdrop');
-
-  if (backdrop && currentSlide && currentSlide.triggerEl) {
+  if (!backdrop) return;
+  
+  // Get current slide - carousel should be properly initialized when loaded event fires
+  const currentIndex = fancybox.carousel ? fancybox.carousel.page : 0;
+  const currentSlide = fancybox.carousel && fancybox.carousel.slides 
+    ? fancybox.carousel.slides[currentIndex]
+    : null;
+  
+  if (currentSlide && currentSlide.triggerEl) {
     // Remove any existing background color classes
     backdrop.className = backdrop.className.replace(/\bbg-\w+/g, '');
     
     // Get the background color from the trigger element's data attribute or class
     const bgColor = currentSlide.triggerEl.getAttribute('data-bg-color') || getBgColorFromClasses(currentSlide.triggerEl);
-    
     if (bgColor) {
       backdrop.classList.add(bgColor);
     }

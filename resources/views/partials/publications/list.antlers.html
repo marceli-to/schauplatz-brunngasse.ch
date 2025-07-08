@@ -1,19 +1,27 @@
 <div id="masonry-container" class="relative">
+
   {{ collection:publications }}
+  
     <div class="masonry-item absolute top-0 left-0 border-t-6 lg:border-t-9 border-blushra mb-35 lg:mb-70">
-      <div class="mt-4 lg:mt-10">
-        {{ tags }}
-          {{ title }}
-        {{/tags}}
-      </div>
-      <h3 class="mt-6 lg:mt-16">
+      
+      {{ if tags }}
+        <div class="mt-4 lg:mt-10">
+          {{ tags }}
+            {{ title }}
+          {{ /tags }}
+        </div>
+      {{ /if }}
+
+      {{ partial:components/headings/h3 class="mt-6 lg:mt-16" }}
         {{ title }}
-      </h3>
+      {{ /partial:components/headings/h3 }}
+      
       {{ if image }}
         <div class="mt-12 lg:mt-18 bg-silvara px-40 py-30 lg:px-70 lg:py-40">
           {{ partial:components/media/image image="{{ image }}" eager="true" }}
         </div>
       {{ /if }}
+
       {{ if description }}
         <div class="mt-12 lg:mt-18">
           {{ description }}
@@ -26,6 +34,9 @@
           {{ /description }}
         </div>
       {{ /if }}
+
     </div>
+
   {{ /collection:publications }}
+
 </div>
