@@ -71,7 +71,7 @@ tabs:
                         -
                           import: image_gallery
                         -
-                          handle: show_current_event
+                          handle: show_latest_event
                           field:
                             type: toggle
                             display: 'Aktuelle Veranstaltung anzeigen?'

@@ -2,7 +2,7 @@
   role="main" 
   class="w-full px-15 lg:px-30 pt-[var(--header-height-sm)] lg:pt-[var(--header-height-lg)] transition-opacity duration-150"
   :class="{ 'opacity-0 pointer-events-none': $store.menu.isOpen, 'opacity-100': !$store.menu.isOpen }">
-  <div class="{{ !is_homepage ? 'pt-15 lg:pt-30' : '' }}">
+  <div class="{{ !is_homepage ? 'pt-15 lg:pt-30' : '' }} relative">
     {{ template_content }}
   </div>
 </main>

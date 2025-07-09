@@ -1,6 +1,6 @@
 {{ images }}
   {{ if first }}
-  <div class="mb-30 lg:mb-60 relative">
+  <div class="md:mb-30 lg:mb-60 relative">
     {{ partial:components/media/image 
       :sizes="['2xl', 'xl', 'lg']" 
       class="w-full h-full object-cover aspect-[16/9]"
@@ -17,6 +17,6 @@
   {{ /if }}
 {{ /images }}
 
-{{ if show_current_event }}
-    
+{{ if show_latest_event }}
+  {{ partial:agenda/latest }}
 {{ /if }}
