@@ -1,12 +1,22 @@
 {{ images }}
   {{ if first }}
-    {{ partial:components/media/image }}
+  <div class="mb-30 lg:mb-60 relative">
+    {{ partial:components/media/image 
+      :sizes="['2xl', 'xl', 'lg']" 
+      class="w-full h-full object-cover aspect-[16/9]"
+      fancybox="gallery-home"
+     }}
+  </div>
   {{ else }}
     <a 
       href="{{ glide:image preset="lightbox"}}"
-      data-fancybox="gallery" 
+      data-fancybox="gallery-home" 
       data-bg-color="bg-{{ lightbox_background }}"
       data-caption="{{ image:alt }}">
     </a>
   {{ /if }}
 {{ /images }}
+
+{{ if show_current_event }}
+    
+{{ /if }}

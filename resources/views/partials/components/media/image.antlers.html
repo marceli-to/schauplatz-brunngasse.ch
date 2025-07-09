@@ -1,6 +1,6 @@
 <a 
   href="{{ glide:image preset="lightbox"}}" 
-  data-fancybox="gallery" 
+  data-fancybox="{{ fancybox ? fancybox : 'gallery' }}" 
   data-bg-color="bg-{{ lightbox_background }}"
   data-caption="{{ image:alt }}">
   <figure class="{{ wrapperClass }}">

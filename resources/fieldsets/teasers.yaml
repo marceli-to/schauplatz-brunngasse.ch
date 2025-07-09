@@ -13,9 +13,9 @@ fields:
           instructions: 'Teaser hinzufügen'
           icon: addon-boxes-stack
           sets:
-            teaser_event:
-              display: Veranstaltung
-              instructions: 'Veranstaltungs-Teaser hinzufügen'
+            teaser_agenda:
+              display: Agenda
+              instructions: 'Teaser Agenda hinzufügen'
               icon: text-formatting-image-bottom
               fields:
                 -
@@ -27,9 +27,9 @@ fields:
                     type: entries
                     display: Veranstaltung
                     localizable: false
-            teaser_discourse:
-              display: Diskurs
-              instructions: 'Diskurs-Teaser hinzufügen'
+            teaser_publication:
+              display: Publikation
+              instructions: 'Teaser Publikation hinzufügen'
               icon: text-formatting-image-bottom
               fields:
                 -

@@ -70,6 +70,12 @@ tabs:
                       fields:
                         -
                           import: image_gallery
+                        -
+                          handle: show_current_event
+                          field:
+                            type: toggle
+                            display: 'Aktuelle Veranstaltung anzeigen?'
+                            localizable: false
                     agenda:
                       display: Agenda
                       instructions: 'Agenda hinzufügen'
