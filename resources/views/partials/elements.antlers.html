@@ -1,3 +1,11 @@
+{{ if type == 'teasers' }}
+  {{ partial:components/teaser/wrapper }}
+{{ /if }}
+
+{{ if type == 'page_title' }}
+{{ partial:components/misc/page_title }}
+{{ /if }}
+
 {{ if type == 'editor' }}
   {{ partial:layout/inner }}
     {{ partial:components/editor }}

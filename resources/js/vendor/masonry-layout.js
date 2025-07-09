@@ -57,7 +57,6 @@ export const MasonryLayout = (function() {
         : selector;
 
       if (!container) {
-        console.warn('MasonryLayout: Container not found');
         return null;
       }
 

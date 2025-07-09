@@ -35,6 +35,13 @@ tabs:
                   display: Hauptelemente
                   icon: addon-boxes-stack
                   sets:
+                    page_title:
+                      display: Seitentitel
+                      instructions: 'Seitentitel hinzufügen'
+                      icon: text-formatting-all-caps
+                      fields:
+                        -
+                          import: page_title
                     editor:
                       display: Texteditor
                       instructions: 'Texteditor hinzufügen'
@@ -68,6 +75,13 @@ tabs:
                       instructions: 'Agenda hinzufügen'
                       icon: dashboard-layout
                       fields: {  }
+                    teasers:
+                      display: Teaser
+                      instructions: 'Teaser für Startseite hinzufügen'
+                      icon: layout-grid-dots
+                      fields:
+                        -
+                          import: teasers
                 special_elements:
                   display: Spezialelemente
                   icon: addon-boxes-stack

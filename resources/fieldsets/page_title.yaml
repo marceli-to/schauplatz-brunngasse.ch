@@ -11,3 +11,10 @@ fields:
   -
     import: border
     prefix: title_
+  -
+    handle: display
+    field:
+      default: true
+      type: toggle
+      display: 'Anzeigen?'
+      localizable: false

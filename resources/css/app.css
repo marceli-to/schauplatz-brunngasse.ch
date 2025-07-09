@@ -34,16 +34,18 @@ h3 {
 }
 
 /* Masonry layout styles */
-/* #masonry-container {
+#teaser-masonry-container,
+#publication-masonry-container {
   position: relative;
 }
 
-#masonry-container .masonry-item {
+#teaser-masonry-container .masonry-item,
+#publication-masonry-container .masonry-item {
   position: absolute;
   top: 0;
   left: 0;
   transition: transform 0.3s ease;
-} */
+}
 
 /* Spacing between elements */
 
