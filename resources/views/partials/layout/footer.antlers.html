@@ -1,5 +1,5 @@
 <footer 
-  class="text-sm px-16 lg:px-30 mb-24 mt-60 lg:mt-170 transition-opacity duration-150"
+  class="text-sm px-16 lg:px-30 mb-24 {{ is_homepage ? 'mt-20 lg:mt-100' : 'mt-60 lg:mt-170' }} transition-opacity duration-150"
   :class="{ 'opacity-0 pointer-events-none': $store.menu.isOpen, 'opacity-100': !$store.menu.isOpen }">
   {{ partial:layout/outer class="border-y-6 border-y-verdique py-16 lg:pb-20" }}
     <div class="flex flex-col lg:flex-row lg:justify-between">

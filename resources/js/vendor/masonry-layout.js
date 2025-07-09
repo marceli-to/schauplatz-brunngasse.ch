@@ -80,6 +80,9 @@ export const MasonryLayout = (function() {
           }
           
           layoutMasonryResponsive(container, config.itemSelector, config);
+          
+          // Make container visible after layout is complete
+          container.style.visibility = 'visible';
         },
         destroy() {
           instances.delete(container);
@@ -90,6 +93,9 @@ export const MasonryLayout = (function() {
       };
 
       instances.set(container, instance);
+
+      // Hide container initially to prevent FOUC
+      container.style.visibility = 'hidden';
 
       // Set up resize handling if this is the first instance
       if (instances.size === 1 && config.autoResize) {

@@ -36,15 +36,12 @@ h3 {
 /* Masonry layout styles */
 #teaser-masonry-container,
 #publication-masonry-container {
-  position: relative;
+  @apply relative;
 }
 
 #teaser-masonry-container .masonry-item,
 #publication-masonry-container .masonry-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform 0.3s ease;
+  @apply absolute top-0 left-0 pb-50 lg:pb-70
 }
 
 /* Spacing between elements */
