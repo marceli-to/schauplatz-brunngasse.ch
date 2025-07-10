@@ -44,10 +44,11 @@ export default {
       },
 
       maxWidth: {
-        'outer-container': '112.5rem',       // 1400px
-        'inner-container': '53.75rem',       //  860px
-        'media-container-wide': '67.5rem',   // 1080px
-        'media-container-narrow': '40.125rem'  //  642px
+        'outer-container': '112.5rem',          // 1400px
+        'inner-container': '53.75rem',          //  860px
+        'media-container-wide': '67.5rem',      // 1080px
+        'media-container-narrow': '40.125rem',  //  642px
+        'teaser-container': '81.25rem',         // 1300px
       },
       
       colors: {
