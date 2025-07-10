@@ -10,14 +10,23 @@ fields:
       add_row: 'Bild hinzufügen'
       fields:
         -
-          handle: image
+          handle: image_large
           field:
             max_files: 1
             container: assets
             type: assets
-            display: Bild
+            display: 'Bild (Desktop)'
             localizable: false
-            width: 66
+            width: 50
+        -
+          handle: image_small
+          field:
+            max_files: 1
+            container: assets
+            type: assets
+            display: 'Bild (Mobile)'
+            localizable: false
+            width: 50
         -
           handle: lightbox_background
           field:
@@ -38,7 +47,7 @@ fields:
                 key: blushra
                 value: Rosa
             type: select
-            display: Hintergrund (Lightbox)
+            display: 'Hintergrund (Lightbox)'
             localizable: false
-            width: 33
+            width: 50
             default: mystiris

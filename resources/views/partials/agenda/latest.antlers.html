@@ -4,7 +4,7 @@
     {{ latest_event }}
       <div class="w-[calc(100%_+_30px)] mb-30 md:mb-0 relative md:absolute md:top-15 lg:top-30 -left-15 md:left-0 lg:-left-30 p-15 md:px-15 lg:px-20 py-15 lg:py-20 bg-verdique text-white md:max-w-sm lg:max-w-md flex flex-col gap-y-8 lg:gap-y-12">
 
-        <div>
+        <div class="text-sm lg:text-md">
           {{ "Aktuelle Veranstaltung" | trans }}
         </div>
         
@@ -22,7 +22,7 @@
           {{ /if }}
         </div>
         <div>
-          <a href="{{ site:short_locale == "de" ? '/agenda' : '/en/agenda' }}" class="group">
+          <a href="{{ site:short_locale == "de" ? '/agenda' : '/en/agenda' }}" class="text-sm lg:text-md group">
             &rarr;
             <span class="underline underline-offset-2 decoration-2 group-hover:no-underline">
               {{ "Agenda" | trans }}
