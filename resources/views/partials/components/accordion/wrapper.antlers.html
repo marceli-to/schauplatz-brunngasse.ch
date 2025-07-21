@@ -7,7 +7,6 @@
       if (targetElement) {
         const allAccordions = $el.querySelectorAll('[id^=\'item-\']');
         const index = Array.from(allAccordions).indexOf(targetElement);
-        console.log(index);
         if (index !== -1) {
           selected = index;
           setTimeout(() => {
