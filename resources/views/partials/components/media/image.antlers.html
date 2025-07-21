@@ -1,30 +1,24 @@
-<a 
-  href="{{ glide:image preset="lightbox"}}" 
-  data-fancybox="{{ fancybox ? fancybox : 'gallery' }}" 
-  data-bg-color="bg-{{ lightbox_background }}"
-  data-caption="{{ image:alt }}">
-  <figure class="{{ wrapperClass }}">
-    <picture>
-      {{ if (sizes | in_array('2xl')) }}
-        <source media="(min-width: 1280px)" srcset="{{ glide:image preset="{{ preset ? '2xl-{{ preset }}-webp' : '2xl-webp' }}" }}" type="image/webp">
-        <source media="(min-width: 1280px)" srcset="{{ glide:image preset="{{ preset ? '2xl-{{ preset }}' : '2xl' }}" }}" type="image/jpeg">
-      {{ /if }}
-      {{ if (sizes | in_array('xl')) }}
-        <source media="(min-width: 1024px)" srcset="{{ glide:image preset="{{ preset ? 'xl-{{ preset }}-webp' : 'xl-webp' }}" }}" type="image/webp">
-        <source media="(min-width: 1024px)" srcset="{{ glide:image preset="{{ preset ? 'xl-{{ preset }}' : 'xl' }}" }}" type="image/jpeg">
-      {{ /if }}
-      {{ if (sizes | in_array('lg')) }}
-        <source media="(min-width: 768px)" srcset="{{ glide:image preset="{{ preset ? 'lg-{{ preset }}-webp' : 'lg-webp' }}" }}" type="image/webp">
-        <source media="(min-width: 768px)" srcset="{{ glide:image preset="{{ preset ? 'lg-{{ preset }}' : 'lg' }}" }}" type="image/jpeg">
-      {{ /if }}
-      <source srcset="{{ glide:image preset="{{ preset ? 'md-{{ preset }}-webp' : 'md-webp' }}" }}" />
-      <img 
-        src="{{ glide:image preset="{{ preset ? 'md-{{ preset }}' : 'md' }}" }}" 
-        alt="{{ alt ? alt : image:alt }}" 
-        height="{{ image:height }}" 
-        width="{{ image:width }}"
-        class="block {{ class ?? '' }}"
-        loading="{{ eager ? 'eager' : 'lazy' }}">
-    </picture>
-  </figure>
-</a>
+<figure class="{{ wrapperClass }}">
+  <picture>
+    {{ if (sizes | in_array('2xl')) }}
+      <source media="(min-width: 1280px)" srcset="{{ glide:image preset="{{ preset ? '2xl-{{ preset }}-webp' : '2xl-webp' }}" }}" type="image/webp">
+      <source media="(min-width: 1280px)" srcset="{{ glide:image preset="{{ preset ? '2xl-{{ preset }}' : '2xl' }}" }}" type="image/jpeg">
+    {{ /if }}
+    {{ if (sizes | in_array('xl')) }}
+      <source media="(min-width: 1024px)" srcset="{{ glide:image preset="{{ preset ? 'xl-{{ preset }}-webp' : 'xl-webp' }}" }}" type="image/webp">
+      <source media="(min-width: 1024px)" srcset="{{ glide:image preset="{{ preset ? 'xl-{{ preset }}' : 'xl' }}" }}" type="image/jpeg">
+    {{ /if }}
+    {{ if (sizes | in_array('lg')) }}
+      <source media="(min-width: 768px)" srcset="{{ glide:image preset="{{ preset ? 'lg-{{ preset }}-webp' : 'lg-webp' }}" }}" type="image/webp">
+      <source media="(min-width: 768px)" srcset="{{ glide:image preset="{{ preset ? 'lg-{{ preset }}' : 'lg' }}" }}" type="image/jpeg">
+    {{ /if }}
+    <source srcset="{{ glide:image preset="{{ preset ? 'md-{{ preset }}-webp' : 'md-webp' }}" }}" />
+    <img 
+      src="{{ glide:image preset="{{ preset ? 'md-{{ preset }}' : 'md' }}" }}" 
+      alt="{{ alt ? alt : image:alt }}" 
+      height="{{ image:height }}" 
+      width="{{ image:width }}"
+      class="block {{ class ?? '' }}"
+      loading="{{ eager ? 'eager' : 'lazy' }}">
+  </picture>
+</figure>

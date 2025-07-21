@@ -6,7 +6,6 @@ Fancybox.bind('[data-fancybox]', {
   Images: {
     zoom: false,
   },
-  groupAll: true,
   Thumbs: false,
   Toolbar: {
     display: {

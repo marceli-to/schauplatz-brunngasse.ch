@@ -33,7 +33,9 @@ h3 {
   @apply font-feixen-sans-medium text-lg lg:text-2xl;
 }
 
-/* Masonry layout styles */
+/* Masonry layout styles 
+*************************/
+
 #teaser-masonry-container,
 #publication-masonry-container {
   @apply relative;
@@ -41,10 +43,11 @@ h3 {
 
 #teaser-masonry-container .masonry-item,
 #publication-masonry-container .masonry-item {
-  @apply absolute top-0 left-0 pb-50 lg:pb-70
+  @apply absolute top-0 left-0 pb-15 lg:pb-25
 }
 
-/* Spacing between elements */
+/* Spacing between elements
+*****************************/
 
 /* inner-container follows inner-container */
 .max-w-inner-container:not(.is-page-title) + .max-w-inner-container {
@@ -71,7 +74,9 @@ article + .max-w-media-container-narrow {
   @apply mt-30 lg:mt-60;
 }
 
-/* Lightbox */
+/* Lightbox 
+************/
+
 .fancybox__backdrop {
   @apply !bg-mystiris
 }
@@ -101,7 +106,7 @@ article + .max-w-media-container-narrow {
 }
 
 .fancybox__content {
-  @apply !px-25 lg:!px-50
+  @apply lg:!px-50
 }
 
 .fancybox__footer {
@@ -125,7 +130,7 @@ article + .max-w-media-container-narrow {
 }
 
 .fancybox__content img {
-  @apply max-h-[90vh] w-auto h-auto object-contain;
+  @apply w-full h-auto sm:max-h-[90vh] sm:w-auto sm:h-auto sm:object-contain;
 }
 
 .f-button[data-fancybox-close] svg,
