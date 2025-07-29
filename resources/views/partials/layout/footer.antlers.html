@@ -57,7 +57,9 @@
             <li>
               <a 
                 href="{{ url }}" 
-                aria-label="{{ title }}">
+                aria-label="{{ title }}"
+                target="{{ is_external ? '_blank' : '_self' }}"
+                rel="noopener noreferrer">
                 {{ title }}
               </a>
             </li>

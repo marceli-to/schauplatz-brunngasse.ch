@@ -4,14 +4,14 @@
     {{ latest_event }}
       <div class="w-[calc(100%_+_30px)] mb-30 md:mb-0 relative md:absolute md:top-15 lg:top-30 -left-15 md:left-0 lg:-left-30 p-15 md:px-15 lg:px-20 py-15 lg:py-20 bg-verdique text-white md:max-w-sm lg:max-w-md flex flex-col gap-y-8 lg:gap-y-12">
 
-        <div class="text-sm lg:text-md">
-          {{ "Aktuelle Veranstaltung" | trans }}
+        <div>
+          <div class="text-sm lg:text-md mb-2 lg:mb-4">
+            {{ "Aktuelle Veranstaltung" | trans }}
+          </div>
+          {{ partial:components/headings/h2 }}
+            {{ title }}
+          {{ /partial:components/headings/h2 }}
         </div>
-        
-        {{ partial:components/headings/h2 }}
-          {{ title }}
-        {{ /partial:components/headings/h2 }}
-
         <div>
           <span>{{ if site:short_locale == "de" }}{{ agenda_date iso_format="dddd, DD. MMMM YYYY" }}{{ else }}{{ agenda_date iso_format="dddd, Do MMMM YYYY" }}{{ /if }}</span>{{ if agenda_time }}, {{ if site:short_locale == "de" }}{{ agenda_time iso_format="H.mm" }} Uhr{{ else }}{{ agenda_time iso_format="h.mma" }}{{ /if }}{{ /if }}
         </div>

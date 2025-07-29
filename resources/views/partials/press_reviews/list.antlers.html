@@ -2,6 +2,32 @@
 
   {{ partial:layout/article class="pb-10 lg:pb-14 pt-13 lg:pt-17 border-t-6 lg:border-t-9 border-blushra" }}
 
+  {{ if link }} 
+    <a 
+      href="{{ link }}" 
+      aria-label="{{ title }}"
+      target="{{ link | is_external_url ? '_blank' : '_self' }}"
+      class="!no-underline flex flex-col gap-y-3 lg:gap-y-6">
+      {{ if tags }}
+
+        {{ tags }}
+          {{ title }}
+        {{/tags }}
+        
+      {{ /if }}
+
+      {{ partial:components/headings/h3 }}
+        {{ title }}
+      {{ /partial:components/headings/h3 }}
+
+      {{ if description }}
+        <div>
+          {{ description }}
+        </div>
+      {{ /if }}
+    </a>
+  {{ else }}
+    
     <div class="flex flex-col lg:gap-y-2">
       
       {{ if tags }}
@@ -23,7 +49,9 @@
       {{ /if }}
 
     </div>
-    
+
+  {{ /if }}
+
   {{ /partial:layout/article }}
 
 {{ /collection:press_reviews }}

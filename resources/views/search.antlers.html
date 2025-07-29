@@ -13,7 +13,41 @@
   </form>
 
   {{ if get:q }}
-    {{ keyword = get:q }}
+
+    {{ has_default_results = true }}
+    {{ has_publications_results = true }}
+    {{ has_press_reviews_results = true }}
+    {{ has_agenda_results = true }}
+
+    {{ search:results index="default" limit="1" }}
+      {{ if no_results }}
+        {{ has_default_results = false }}
+      {{ /if }}
+    {{ /search:results }}
+
+    {{ search:results index="publications" limit="1" }}
+      {{ if no_results }}
+        {{ has_publications_results = false }}
+      {{ /if }}
+    {{ /search:results }}
+
+    {{ search:results index="press_reviews" limit="1" }}
+      {{ if no_results }}
+        {{ has_press_reviews_results = false }}
+      {{ /if }}
+    {{ /search:results }}
+
+    {{ search:results index="agenda" limit="1" }}
+      {{ if no_results }}
+        {{ has_agenda_results = false }}
+      {{ /if }}
+    {{ /search:results }}
+
+    {{ if !has_default_results && !has_publications_results && !has_press_reviews_results && !has_agenda_results }}
+      <p>Kein Eintrag</p>
+    {{ /if }}
+     
+
     {{ search:results index="default" }}
       {{ if !no_results }}
         {{ accordion_match = false }}
@@ -31,7 +65,7 @@
           
           {{ if accordion_match }}
 
-            {{ partial:layout/article class="pt-4 pb-12 lg:pt-6 lg:pb-20 border-t-6 lg:border-t-9 border-blushra" }}
+            {{ partial:layout/article class="pt-4 pb-12 lg:pt-6 lg:pb-20 border-t-6 lg:border-t-9 border-blushra last:border-b-6 lg:last:border-b-9 last:border-blushra" }}
 
               <a 
                 href="{{ entry_url }}#{{ accordion_anchor }}"
@@ -51,7 +85,7 @@
 
           {{ else }}
 
-            {{ partial:layout/article class="pt-4 pb-12 lg:pt-6 lg:pb-20 border-t-6 lg:border-t-9 border-blushra" }}
+            {{ partial:layout/article class="pt-4 pb-12 lg:pt-6 lg:pb-20 border-t-6 lg:border-t-9 border-blushra last:border-b-6 lg:last:border-b-9 last:border-blushra" }}
 
               <a 
                 href="{{ url }}"
@@ -79,7 +113,7 @@
 
       {{ if !no_results }}
 
-        {{ partial:layout/article class="pt-4 pb-12 lg:pt-6 lg:pb-20 border-t-6 lg:border-t-9 border-blushra" }}
+        {{ partial:layout/article class="pt-4 pb-12 lg:pt-6 lg:pb-20 border-t-6 lg:border-t-9 border-blushra last:border-b-6 lg:last:border-b-9 last:border-blushra" }}
 
           <a 
             href="/{{ "diskurs" | translated_slug:{site:short_locale} }}#{{ "diskurs" | accordion_for_content_type:'publications':{site:short_locale} }}" 
@@ -111,7 +145,7 @@
 
       {{ if !no_results }}
 
-        {{ partial:layout/article class="pt-4 pb-12 lg:pt-6 lg:pb-20 border-t-6 lg:border-t-9 border-blushra" }}
+        {{ partial:layout/article class="pt-4 pb-12 lg:pt-6 lg:pb-20 border-t-6 lg:border-t-9 border-blushra last:border-b-6 lg:last:border-b-9 last:border-blushra" }}
 
           <a 
             href="/{{ "diskurs" | translated_slug:{site:short_locale} }}#{{ "diskurs" | accordion_for_content_type:'press_reviews':{site:short_locale} }}"
@@ -143,7 +177,7 @@
 
       {{ if !no_results }}
 
-        {{ partial:layout/article class="pt-4 pb-12 lg:pt-6 lg:pb-20 border-t-6 lg:border-t-9 border-blushra" }}
+        {{ partial:layout/article class="pt-4 pb-12 lg:pt-6 lg:pb-20 border-t-6 lg:border-t-9 border-blushra last:border-b-6 lg:last:border-b-9 last:border-blushra" }}
 
           {{ if agenda_date < now }}
             <a 
