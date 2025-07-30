@@ -24,18 +24,19 @@ export const AccordionItem = (index) => ({
   
   updateHeight() {
     if (this.open) {
-      // Set initial height to auto to let masonry calculate
-      this.$refs.container.style.maxHeight = 'none';
+      // Start from 0px to enable animation
+      this.$refs.container.style.maxHeight = '0px';
       
       setTimeout(() => {
         if (window.MasonryLayout) {
           window.MasonryLayout.refreshAll();
         }
         
-        // ResizeObserver will handle the height update
+        // Animate to the actual height
         setTimeout(() => {
           this.$refs.container.style.maxHeight = this.$refs.container.scrollHeight + 'px';
         }, 100);
+
       }, 10);
     } else {
       this.$refs.container.style.maxHeight = '0px';
