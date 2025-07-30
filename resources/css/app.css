@@ -25,6 +25,10 @@ strong {
   @apply font-feixen-sans-semibold font-normal;
 }
 
+sup {
+  @apply text-[60%] -top-[.60em]
+}
+
 h1 {}
 
 h2 {}
