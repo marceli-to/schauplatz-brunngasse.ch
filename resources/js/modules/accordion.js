@@ -4,6 +4,7 @@ export const AccordionItem = (index) => ({
   resizeObserver: null,
   
   init() {
+    // Check if this item should be opened via deep linking
     this.open = this.selected === index;
     
     // Set up resize observer to watch content changes
@@ -17,7 +18,8 @@ export const AccordionItem = (index) => ({
   },
   
   toggle() {
-    this.selected = this.selected === index ? null : index;
+    // Simply toggle this item's open state independently
+    this.open = !this.open;
   },
   
   updateHeight() {

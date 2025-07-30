@@ -1,6 +1,6 @@
 <div 
   x-data="AccordionItem({{ index }})"
-  x-effect="open = selected === {{ index }}; updateHeight()"
+  x-effect="updateHeight()"
   id="item-{{ title | slugifier }}"
   class="relative w-full border-b-6 lg:border-b-9 border-{{ accordion_border_bottom_color }}">
 
