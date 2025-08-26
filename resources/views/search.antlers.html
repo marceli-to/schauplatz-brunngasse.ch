@@ -55,7 +55,7 @@
           {{ accordion_anchor = "" }}
           {{ if accordion_anchors }}
             {{ accordion_anchors }}
-              {{ if content | contains:keyword }}
+              {{ if content | contains:{get:q} }}
                 {{ accordion_match = true }}
                 {{ accordion_title = title }}
                 {{ accordion_anchor = anchor }}
@@ -72,7 +72,7 @@
                 class="!no-underline flex flex-col gap-y-3 lg:gap-y-6">
 
                 {{ partial:components/headings/h2 }}
-                  {{ searchable_content | highlight:{keyword} }}
+                  {{ searchable_content | highlight:{get:q} }}
                 {{ /partial:components/headings/h2 }}
 
                 <div class="underline underline-offset-2 decoration-2">
@@ -92,7 +92,7 @@
                 class="!no-underline flex flex-col gap-y-3 lg:gap-y-6">
 
                 {{ partial:components/headings/h2 }}
-                  {{ searchable_content | highlight:{keyword} }}
+                  {{ searchable_content | highlight:{get:q} }}
                 {{ /partial:components/headings/h2 }}
 
                 <div class="underline underline-offset-2 decoration-2">
