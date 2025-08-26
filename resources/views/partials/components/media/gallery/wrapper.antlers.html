@@ -1,7 +1,7 @@
 {{ images }}
   {{ if first }}
     <div class="md:mb-30 lg:mb-60 relative">
-      {{ partial:components/media/preview 
+      {{ partial:components/media/gallery/item 
         :image="image_large"
         :sizes="['2xl', 'xl', 'lg']" 
         class="!hidden md:!block w-full h-full object-cover aspect-[16/9]"
@@ -9,7 +9,7 @@
       }}
     </div>
     <div class="md:hidden">
-      {{ partial:components/media/preview 
+      {{ partial:components/media/gallery/item 
         :image="image_small"
         :sizes="['2xl', 'xl', 'lg']" 
         class="w-full h-full object-cover aspect-square md:!hidden"

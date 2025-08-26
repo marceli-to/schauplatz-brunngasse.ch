@@ -33,10 +33,7 @@
 
             {{ if type == 'single_image' }}
               <div class="max-w-media-container-narrow mx-auto">
-                {{ partial:components/media/preview :sizes="['xl', 'lg']" class="lg:max-h-[645px] w-full" }}
-                {{ partial:components/media/caption }}
-                  {{ image:alt }}
-                {{ /partial:components/media/caption }}
+                {{ partial:components/media/preview :sizes="['2xl', 'xl', 'lg']" showCaption="true" }}
               </div>
             {{ /if }}
 
@@ -65,15 +62,12 @@
 
 {{ if type == 'single_image' }}
   {{ partial:components/media/container }}
-    {{ partial:components/media/preview :sizes="['2xl', 'xl', 'lg']" class="max-h-[768px] w-full h-full object-cover" }}
-    {{ partial:components/media/caption }}
-      {{ image:alt }}
-    {{ /partial:components/media/caption }}
+    {{ partial:components/media/preview :sizes="['2xl', 'xl', 'lg']" showCaption="true" }}
   {{ /partial:components/media/container }}
 {{ /if }}
 
 {{ if type == 'image_gallery' }}
-  {{ partial:components/media/gallery }}
+  {{ partial:components/media/gallery/wrapper }}
 {{ /if }}
 
 {{ if type == 'agenda' }}

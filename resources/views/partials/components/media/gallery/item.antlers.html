@@ -2,8 +2,7 @@
   href="{{ glide:image preset="lightbox" }}" 
   data-fancybox="{{ fancybox ? fancybox : 'gallery' }}" 
   data-bg-color="bg-{{ lightbox_background }}"
-  data-caption="{{ image:alt }}"
-  class="flex justify-center">
+  data-caption="{{ image:alt }}">
   <figure class="{{ wrapperClass }}">
     <picture>
       {{ if (sizes | in_array('2xl')) }}
@@ -19,22 +18,13 @@
         <source media="(min-width: 768px)" srcset="{{ glide:image preset="{{ preset ? 'lg-{{ preset }}' : 'lg' }}" }}" type="image/jpeg">
       {{ /if }}
       <source srcset="{{ glide:image preset="{{ preset ? 'md-{{ preset }}-webp' : 'md-webp' }}" }}" />
-      
       <img 
         src="{{ glide:image preset="{{ preset ? 'md-{{ preset }}' : 'md' }}" }}" 
         alt="{{ alt ? alt : image:alt }}" 
         height="{{ image:height }}" 
         width="{{ image:width }}"
-        class="block mx-auto w-full md:w-auto h-auto
-        {{ if image:height > image:width }} max-h-[760px] {{ /if }}
-        {{ if image:height == image:width }} max-h-[700px] max-w-[700px]{{ /if }}
-        {{ if image:width > image:height }} max-w-[1080px]{{ /if }}"
+        class="block {{ class ?? '' }}"
         loading="{{ eager ? 'eager' : 'lazy' }}">
     </picture>
-    {{ if showCaption }}
-      {{ partial:components/media/caption }}
-        {{ image:alt }}
-      {{ /partial:components/media/caption }}
-    {{ /if }}
   </figure>
 </a>
