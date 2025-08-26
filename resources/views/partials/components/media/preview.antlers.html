@@ -32,7 +32,7 @@
         loading="{{ eager ? 'eager' : 'lazy' }}">
     </picture>
     {{ if showCaption }}
-      {{ partial:components/media/caption }}
+      {{ partial:components/media/caption class="inline" }}
         {{ image:alt }}
       {{ /partial:components/media/caption }}
     {{ /if }}
