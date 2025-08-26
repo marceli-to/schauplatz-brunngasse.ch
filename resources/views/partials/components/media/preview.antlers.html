@@ -5,7 +5,7 @@
   data-caption="{{ image:alt }}"
   class="flex justify-center">
   <figure class="{{ wrapperClass }}">
-    <picture>
+    <picture class="block relative pb-40 lg:pb-60">
       {{ if (sizes | in_array('2xl')) }}
         <source media="(min-width: 1280px)" srcset="{{ glide:image preset="{{ preset ? '2xl-{{ preset }}-webp' : '2xl-webp' }}" }}" type="image/webp">
         <source media="(min-width: 1280px)" srcset="{{ glide:image preset="{{ preset ? '2xl-{{ preset }}' : '2xl' }}" }}" type="image/jpeg">
@@ -19,7 +19,6 @@
         <source media="(min-width: 768px)" srcset="{{ glide:image preset="{{ preset ? 'lg-{{ preset }}' : 'lg' }}" }}" type="image/jpeg">
       {{ /if }}
       <source srcset="{{ glide:image preset="{{ preset ? 'md-{{ preset }}-webp' : 'md-webp' }}" }}" />
-      
       <img 
         src="{{ glide:image preset="{{ preset ? 'md-{{ preset }}' : 'md' }}" }}" 
         alt="{{ alt ? alt : image:alt }}" 
@@ -30,11 +29,12 @@
         {{ if image:height == image:width }} max-h-[700px] max-w-[700px]{{ /if }}
         {{ if image:width > image:height }} max-w-[1080px]{{ /if }}"
         loading="{{ eager ? 'eager' : 'lazy' }}">
+        {{ if showCaption }}
+          {{ partial:components/media/caption class="block hyphens-auto absolute" }}
+            {{ image:alt }}
+          {{ /partial:components/media/caption }}
+        {{ /if }}
     </picture>
-    {{ if showCaption }}
-      {{ partial:components/media/caption class="inline" }}
-        {{ image:alt }}
-      {{ /partial:components/media/caption }}
-    {{ /if }}
+
   </figure>
 </a>
