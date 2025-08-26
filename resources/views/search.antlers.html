@@ -17,7 +17,6 @@
     {{ has_default_results = true }}
     {{ has_publications_results = true }}
     {{ has_press_reviews_results = true }}
-    {{ has_agenda_results = true }}
 
     {{ search:results index="default" limit="1" phrase="{get:q}" }}
       {{ if no_results }}
@@ -37,13 +36,8 @@
       {{ /if }}
     {{ /search:results }}
 
-    {{ search:results index="agenda" limit="1" phrase="{get:q}" }}
-      {{ if no_results }}
-        {{ has_agenda_results = false }}
-      {{ /if }}
-    {{ /search:results }}
 
-    {{ if !has_default_results && !has_publications_results && !has_press_reviews_results && !has_agenda_results }}
+    {{ if !has_default_results && !has_publications_results && !has_press_reviews_results }}
       <p>Kein Eintrag</p>
     {{ /if }}
      
@@ -87,19 +81,51 @@
 
             {{ partial:layout/article class="pt-4 pb-12 lg:pt-6 lg:pb-20 border-t-6 lg:border-t-9 border-blushra last:border-b-6 lg:last:border-b-9 last:border-blushra" }}
 
-              <a 
-                href="{{ url }}"
-                class="!no-underline flex flex-col gap-y-3 lg:gap-y-6">
+              {{ if collection.handle == 'agenda' }}
+                {{ if agenda_date < now }}
+                  <a 
+                    href="/{{ "agenda" | translated_slug:{site:short_locale} }}#item-{{ "Vergangene Veranstaltungen" | trans | slugify }}"
+                    class="!no-underline flex flex-col gap-y-3 lg:gap-y-6">
 
-                {{ partial:components/headings/h2 }}
-                  {{ searchable_content | highlight:{get:q} }}
-                {{ /partial:components/headings/h2 }}
+                    {{ partial:components/headings/h2 }}
+                      {{ title }}
+                    {{ /partial:components/headings/h2 }}
 
-                <div class="underline underline-offset-2 decoration-2">
-                  {{ title }}
-                </div>
+                    <div class="underline underline-offset-2 decoration-2">
+                      {{ "Agenda &rarr; Vergangene Veranstaltungen" | trans }}
+                    </div>
 
-              </a>
+                  </a>
+                {{ else }}
+                  <a 
+                    href="/{{ "agenda" | translated_slug:{site:short_locale} }}"
+                    class="!no-underline flex flex-col gap-y-3 lg:gap-y-6">
+
+                    {{ partial:components/headings/h2 }}
+                      {{ title }}
+                    {{ /partial:components/headings/h2 }}
+
+                    <div class="underline underline-offset-2 decoration-2">
+                      {{ "Agenda" | trans }}
+                    </div>
+
+                  </a>
+                {{ /if }}
+              {{ else }}
+                <a 
+                  href="{{ url }}"
+                  class="!no-underline flex flex-col gap-y-3 lg:gap-y-6">
+
+                  {{ partial:components/headings/h2 }}
+                    {{ searchable_content | highlight:{get:q} }}
+                  {{ /partial:components/headings/h2 }}
+
+                  <div class="underline underline-offset-2 decoration-2">
+                    {{ title }}
+                  </div>
+
+                </a>
+              {{ /if }}
 
             {{ /partial:layout/article }}
 
@@ -173,47 +199,6 @@
 
     {{ /search:results }}
 
-    {{ search:results index="agenda" phrase="{get:q}" }}
-
-      {{ if !no_results }}
-
-        {{ partial:layout/article class="pt-4 pb-12 lg:pt-6 lg:pb-20 border-t-6 lg:border-t-9 border-blushra last:border-b-6 lg:last:border-b-9 last:border-blushra" }}
-
-          {{ if agenda_date < now }}
-            <a 
-              href="/{{ "agenda" | translated_slug:{site:short_locale} }}#item-{{ "Vergangene Veranstaltungen" | trans | slugify }}"
-              class="!no-underline flex flex-col gap-y-3 lg:gap-y-6">
-
-              {{ partial:components/headings/h2 }}
-                {{ title }}
-              {{ /partial:components/headings/h2 }}
-
-              <div class="underline underline-offset-2 decoration-2">
-                {{ "Agenda &rarr; Vergangene Veranstaltungen" | trans }}
-              </div>
-
-            </a>
-          {{ else }}
-            <a 
-              href="/{{ "agenda" | translated_slug:{site:short_locale} }}"
-              class="!no-underline flex flex-col gap-y-3 lg:gap-y-6">
-
-              {{ partial:components/headings/h2 }}
-                {{ title }}
-              {{ /partial:components/headings/h2 }}
-
-              <div class="underline underline-offset-2 decoration-2">
-                {{ "Agenda" | trans }}
-              </div>
-
-            </a>
-          {{ /if }}
-
-        {{ /partial:layout/article }}
-        
-      {{ /if }}
-
-    {{ /search:results }}
 
   {{ /if }}
    

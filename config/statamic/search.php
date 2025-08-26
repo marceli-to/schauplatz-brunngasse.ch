@@ -28,7 +28,7 @@ return [
     'default' => [
       'driver' => 'local',
       'sites' => ['de', 'en'],
-      'searchables' => ['collection:pages'],
+      'searchables' => ['collection:pages', 'collection:agenda'],
       'filter' => function ($item) {
         return $item->status() === 'published' && ! $item->exclude_from_search;
       },
@@ -37,6 +37,8 @@ return [
         'description^2', // Boost description matches  
         'content',
         'searchable_content',
+        'teasers',     // Include teaser content
+        'page_elements', // Include all page elements
       ],
       'phrase_search' => true, // Enable phrase search support
       'stop_words' => [
