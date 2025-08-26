@@ -19,25 +19,25 @@
     {{ has_press_reviews_results = true }}
     {{ has_agenda_results = true }}
 
-    {{ search:results index="default" limit="1" }}
+    {{ search:results index="default" limit="1" phrase="{get:q}" }}
       {{ if no_results }}
         {{ has_default_results = false }}
       {{ /if }}
     {{ /search:results }}
 
-    {{ search:results index="publications" limit="1" }}
+    {{ search:results index="publications" limit="1" phrase="{get:q}" }}
       {{ if no_results }}
         {{ has_publications_results = false }}
       {{ /if }}
     {{ /search:results }}
 
-    {{ search:results index="press_reviews" limit="1" }}
+    {{ search:results index="press_reviews" limit="1" phrase="{get:q}" }}
       {{ if no_results }}
         {{ has_press_reviews_results = false }}
       {{ /if }}
     {{ /search:results }}
 
-    {{ search:results index="agenda" limit="1" }}
+    {{ search:results index="agenda" limit="1" phrase="{get:q}" }}
       {{ if no_results }}
         {{ has_agenda_results = false }}
       {{ /if }}
@@ -48,7 +48,7 @@
     {{ /if }}
      
 
-    {{ search:results index="default" }}
+    {{ search:results index="default" phrase="{get:q}" }}
       {{ if !no_results }}
         {{ accordion_match = false }}
           {{ accordion_title = "" }}
@@ -109,7 +109,7 @@
 
     {{ /search:results }}
 
-    {{ search:results index="publications" }}
+    {{ search:results index="publications" phrase="{get:q}" }}
 
       {{ if !no_results }}
 
@@ -141,7 +141,7 @@
 
     {{ /search:results }}
 
-    {{ search:results index="press_reviews" }}
+    {{ search:results index="press_reviews" phrase="{get:q}" }}
 
       {{ if !no_results }}
 
@@ -173,7 +173,7 @@
 
     {{ /search:results }}
 
-    {{ search:results index="agenda" }}
+    {{ search:results index="agenda" phrase="{get:q}" }}
 
       {{ if !no_results }}
 

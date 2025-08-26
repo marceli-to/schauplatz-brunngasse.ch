@@ -33,11 +33,12 @@ return [
         return $item->status() === 'published' && ! $item->exclude_from_search;
       },
       'fields' => [
-        'title',
-        'description',
+        'title^3',     // Boost title matches
+        'description^2', // Boost description matches  
         'content',
         'searchable_content',
       ],
+      'phrase_search' => true, // Enable phrase search support
       'stop_words' => [
         'a', 'an', 'and', 'are', 'as', 'at', 'be', 'but', 'by', 'for',
         'if', 'in', 'into', 'is', 'it', 'no', 'not', 'of', 'on', 'or',
@@ -79,10 +80,11 @@ return [
       'driver' => 'local',
       'searchables' => 'collection:press_reviews',
       'fields' => [
-        'title', 
-        'description', 
+        'title^3', 
+        'description^2', 
         'tags'
       ],
+      'phrase_search' => true,
       'stop_words' => [
         'a', 'an', 'and', 'are', 'as', 'at', 'be', 'but', 'by', 'for',
         'if', 'in', 'into', 'is', 'it', 'no', 'not', 'of', 'on', 'or',
@@ -124,10 +126,11 @@ return [
       'driver' => 'local',
       'searchables' => 'collection:publications',
       'fields' => [
-        'title', 
-        'description', 
+        'title^3', 
+        'description^2', 
         'tags'
       ],
+      'phrase_search' => true,
       'stop_words' => [
         'a', 'an', 'and', 'are', 'as', 'at', 'be', 'but', 'by', 'for',
         'if', 'in', 'into', 'is', 'it', 'no', 'not', 'of', 'on', 'or',
@@ -169,11 +172,12 @@ return [
       'driver' => 'local',
       'searchables' => 'collection:agenda',
       'fields' => [
-        'title', 
+        'title^3', 
         'text', 
-        'summary',
+        'summary^2',
         'searchable_content'
       ],
+      'phrase_search' => true,
       'stop_words' => [
         'a', 'an', 'and', 'are', 'as', 'at', 'be', 'but', 'by', 'for',
         'if', 'in', 'into', 'is', 'it', 'no', 'not', 'of', 'on', 'or',
