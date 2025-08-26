@@ -12,15 +12,9 @@
     <div class="w-full flex items-center justify-start gap-x-15 lg:gap-x-25">
 
       <span 
-        class="flex items-center justify-center leading-none"
-        :class="{ 'block': !open, 'hidden': open }">
+        class="flex items-center justify-center leading-none transition-transform"
+        :class="open ? 'scale-y-[-1]' : ''">
         {{ partial:icons/chevron-down size="small" class="w-26 lg:w-40 h-auto" }}
-      </span>
-
-      <span 
-        class="flex items-center justify-center leading-none"
-        :class="{ 'block': open, 'hidden': !open }">
-        {{ partial:icons/chevron-down size="small" class="w-26 lg:w-40 h-auto rotate-180" }}
       </span>
 
       {{ partial:components/headings/h2 class="pt-4 pb-6 lg:pt-8 lg:pb-12" }}

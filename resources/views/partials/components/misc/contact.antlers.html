@@ -101,7 +101,9 @@
               @click="showSpecialOpeningHours = !showSpecialOpeningHours"
               class="flex items-center gap-x-4 !no-underline hover:!underline text-sm lg:text-lg mt-5"
               aria-label="{{ "Sonderöffnungszeiten" | trans }}">
-              {{ partial:icons/chevron-down size="xsmall" class="w-16 lg:w-18 h-auto mt-8" }}
+              <span class="mt-8 block transition-transform" :class="showSpecialOpeningHours ? 'scale-y-[-1] transition-transform' : ''">
+                {{ partial:icons/chevron-down size="xsmall" class="w-16 lg:w-18 h-auto" }}
+              </span>
               {{ "Sonderöffnungszeiten" | trans }}
             </a>
             <div 

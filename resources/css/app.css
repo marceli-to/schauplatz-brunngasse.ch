@@ -73,7 +73,7 @@ article + .max-w-media-container-narrow {
   @apply mt-30 lg:mt-60;
 }
 
-/* article fo3llows media-container */
+/* article follows media-container */
 .max-w-media-container-narrow + article {
   @apply mt-30 lg:mt-60;
 }
@@ -160,4 +160,20 @@ article + .max-w-media-container-narrow {
   @apply bg-[url('../img/chevron-left.svg')] !left-10 lg:!left-30
 }
 
-  
+/* Page specific styles
+*****************************/
+.page-privacy h2 {
+  @apply font-feixen-sans-medium text-lg lg:text-2xl mb-20 lg:mb-30;
+}
+
+.page-privacy h3 {
+  @apply font-feixen-sans-medium text-md lg:text-lg mb-5 lg:mb-10;
+}
+
+.page-privacy main ul {
+  @apply m-0 p-0 mb-20 lg:mb-30 ml-20 flex flex-col gap-y-5 lg:gap-y-10;
+}
+
+.page-privacy main li {
+  @apply list-disc list-item;
+}
