@@ -1,53 +1,76 @@
 document.addEventListener('alpine:init', () => {
-  Alpine.store('menu', {
-    isOpen: false
-  });
-  
+  Alpine.store('menu', { isOpen: false });
+
   Alpine.data('headerScroll', () => ({
     scrollY: 0,
     lastScrollY: 0,
     headerVisible: true,
     offset: 300,
-    scrollUpThreshold: 100, // ⬅️ minimum pixels to scroll up before showing header
-  
+
+    // thresholds
+    scrollUpThreshold: 100,
+    scrollDownThreshold: 30,
+
+    // accumulators
+    upAccum: 0,
+    downAccum: 0,
+
     init() {
-      this.scrollY = window.pageYOffset;
-      this.lastScrollY = this.scrollY;
-  
-      window.addEventListener('scroll', () => {
+      this.scrollY = this.lastScrollY = window.pageYOffset;
+
+      const onScroll = () => {
         this.scrollY = window.pageYOffset;
-  
-        // Don't hide header if menu is open
+        const delta = this.scrollY - this.lastScrollY;
+
+        // Keep header visible while menu is open
         if (this.$store.menu.isOpen) {
           this.headerVisible = true;
+          this.upAccum = this.downAccum = 0;
           this.lastScrollY = this.scrollY;
           return;
         }
-  
-        const scrollDelta = this.scrollY - this.lastScrollY;
-  
-        // Show header only if scrolling up significantly or near the top
-        if ((scrollDelta < -this.scrollUpThreshold) || this.scrollY <= this.offset) {
+
+        // Always show near the top
+        if (this.scrollY <= this.offset) {
           this.headerVisible = true;
-        } 
-        // Hide header if scrolling down and past offset
-        else if (scrollDelta > 0 && this.scrollY > this.offset) {
-          this.headerVisible = false;
+          this.upAccum = this.downAccum = 0;
+          this.lastScrollY = this.scrollY;
+          return;
         }
-  
+
+        if (delta > 0) {            // scrolling down
+          this.downAccum += delta;
+          this.upAccum = 0;
+          if (this.downAccum >= this.scrollDownThreshold) {
+            this.headerVisible = false;
+          }
+        } else if (delta < 0) {     // scrolling up
+          this.upAccum += -delta;
+          this.downAccum = 0;
+          if (this.upAccum >= this.scrollUpThreshold) {
+            this.headerVisible = true;
+          }
+        }
+
         this.lastScrollY = this.scrollY;
-      });
+      };
+
+      // rAF throttle to avoid firing every pixel
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            onScroll();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
     }
   }));
-  
-  
+
   Alpine.data('menuToggle', () => ({
-    get isOpen() {
-      return this.$store.menu.isOpen;
-    },
-    
-    toggle() {
-      this.$store.menu.isOpen = !this.$store.menu.isOpen;
-    }
+    get isOpen() { return this.$store.menu.isOpen; },
+    toggle() { this.$store.menu.isOpen = !this.$store.menu.isOpen; }
   }));
 });
