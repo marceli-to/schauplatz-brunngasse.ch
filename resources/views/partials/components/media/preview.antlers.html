@@ -5,7 +5,7 @@
   data-caption="{{ image:alt }}"
   class="flex justify-center">
   <figure class="{{ wrapperClass }}">
-    <picture class="block relative pb-40 lg:pb-60">
+    <picture class="block relative {{ if image:alt }} pb-40 lg:pb-60 {{ /if }}">
       {{ if (sizes | in_array('2xl')) }}
         <source media="(min-width: 1280px)" srcset="{{ glide:image preset="{{ preset ? '2xl-{{ preset }}-webp' : '2xl-webp' }}" }}" type="image/webp">
         <source media="(min-width: 1280px)" srcset="{{ glide:image preset="{{ preset ? '2xl-{{ preset }}' : '2xl' }}" }}" type="image/jpeg">
