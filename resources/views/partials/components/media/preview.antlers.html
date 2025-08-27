@@ -24,9 +24,9 @@
         alt="{{ alt ? alt : image:alt }}" 
         height="{{ image:height }}" 
         width="{{ image:width }}"
-        class="block mx-auto w-full md:w-auto h-auto
-        {{ if image:height > image:width }} max-h-[760px] {{ /if }}
-        {{ if image:height == image:width }} max-h-[700px] max-w-[700px]{{ /if }}
+        class="block mx-auto w-full h-auto
+        {{ if image:height > image:width }} md:w-auto max-h-[760px] {{ /if }}
+        {{ if image:height == image:width }} md:w-auto max-h-[700px] max-w-[700px]{{ /if }}
         {{ if image:width > image:height }} max-w-[1080px]{{ /if }}"
         loading="{{ eager ? 'eager' : 'lazy' }}">
         {{ if showCaption }}
