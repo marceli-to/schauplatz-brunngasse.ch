@@ -21,6 +21,14 @@ p:not(:last-child) {
   @apply mb-20 lg:mb-30;
 }
 
+article ul {
+  @apply m-0 p-0 mb-20 lg:mb-30 ml-20 flex flex-col gap-y-5 lg:gap-y-10;
+}
+
+article li {
+  @apply list-disc list-item;
+}
+
 strong {
   @apply font-feixen-sans-semibold font-normal;
 }
@@ -35,6 +43,10 @@ h2 {}
 
 h3 {
   @apply font-feixen-sans-medium text-lg lg:text-2xl;
+}
+
+h4 {
+  @apply font-feixen-sans-medium;
 }
 
 /* Masonry layout styles 

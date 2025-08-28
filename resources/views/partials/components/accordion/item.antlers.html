@@ -1,9 +1,8 @@
 <div 
   x-data="AccordionItem({{ index }})"
   x-effect="updateHeight()"
-  id="item-{{ title | slugifier }}"
+  id="item-{{ slug }}"
   class="relative w-full border-b-6 lg:border-b-9 border-{{ accordion_border_bottom_color }}">
-
   <button 
     type="button"
     class="w-full block text-left hover:bg-white transition-colors duration-300 ease-in-out group"

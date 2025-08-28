@@ -21,6 +21,14 @@ fields:
               icon: form-drop-down-menu
               fields:
                 -
+                  handle: slug
+                  field:
+                    type: slug
+                    display: Slug
+                    localizable: false
+                    from: accordion_title
+                    show_regenerate: true
+                -
                   handle: accordion_title
                   field:
                     type: text
