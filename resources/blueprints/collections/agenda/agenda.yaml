@@ -157,6 +157,23 @@ tabs:
                             type: select
                             display: 'Öffnen in'
                             localizable: false
+                    link_mail:
+                      display: Maillink
+                      instructions: 'E-Mail verlinken'
+                      icon: link
+                      fields:
+                        -
+                          handle: email
+                          field:
+                            type: text
+                            display: E-Mail
+                            localizable: false
+                        -
+                          handle: link_text
+                          field:
+                            type: text
+                            display: 'Link Text'
+                            localizable: false
   settings:
     display: Einstellungen
     sections:

@@ -53,6 +53,9 @@
           {{ if type == 'link' }}
             {{ partial:components/links/link }}
           {{ /if }}
+          {{ if type == 'link_mail' }}
+            {{ partial:components/links/link_mail }}
+          {{ /if }}
         {{ /editor }}
       </div>
 
