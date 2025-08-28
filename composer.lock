@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "24ee1dd16dd925dd91ac21e31cb26cb5",
+    "content-hash": "8a9d6ee513885cde5a4f5863bb4b4912",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -7657,56 +7657,6 @@
                 }
             ],
             "time": "2024-11-21T01:49:47+00:00"
-        },
-        {
-            "name": "wadm/statamic-multisite-for-assets",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/WADM/statamic-multisite-assets.git",
-                "reference": "4b5b16acdead162a6dcae668c41f18df3c5c80d3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/WADM/statamic-multisite-assets/zipball/4b5b16acdead162a6dcae668c41f18df3c5c80d3",
-                "reference": "4b5b16acdead162a6dcae668c41f18df3c5c80d3",
-                "shasum": ""
-            },
-            "type": "statamic-addon",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "WADM\\MultisiteForAssets\\ServiceProvider"
-                    ]
-                },
-                "statamic": {
-                    "name": "Multisite for assets",
-                    "description": "Add alt and title field in asset blueprint for each site."
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "WADM\\MultisiteForAssets\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Rowdy Klijnsmit",
-                    "email": "rowdy@wadm.nl"
-                }
-            ],
-            "description": "Add alt and title field in asset blueprint for each site.",
-            "keywords": [
-                "WADM",
-                "assets",
-                "statamic"
-            ],
-            "support": {
-                "issues": "https://github.com/WADM/statamic-multisite-assets/issues",
-                "source": "https://github.com/WADM/statamic-multisite-assets/tree/1.0.0"
-            },
-            "time": "2023-06-27T14:39:43+00:00"
         },
         {
             "name": "webmozart/assert",
