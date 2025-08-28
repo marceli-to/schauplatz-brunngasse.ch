@@ -69,7 +69,7 @@
 
       {{ if social_media:facebook || social_media:instagram || social_media:linkedin }}
         <div class="lg:order-3 flex flex-col gap-y-2">
-          {{ if social_media:facebook }}
+          {{# {{ if social_media:facebook }}
             <a 
               href="{{ social_media:facebook }}"
               title="Facebook"
@@ -77,7 +77,7 @@
               {{ partial:icons/facebook class="size-22 mt-2" }}
               <span class="underline underline-offset-2 group-hover:text-sunella transition-colors">{{ "Facebook" | trans }}</span>
             </a>
-          {{ /if }}
+          {{ /if }} #}}
           
           {{ if social_media:instagram }}
             <a 
@@ -89,7 +89,7 @@
             </a>
           {{ /if }}
 
-          {{ if social_media:linkedin }}
+          {{# {{ if social_media:linkedin }}
             <a 
               href="{{ social_media:linkedin }}" 
               title="Twitter"
@@ -97,7 +97,7 @@
               {{ partial:icons/linkedin class="size-22 mt-2" }}
               <span class="underline underline-offset-2 group-hover:text-sunella transition-colors">{{ "LinkedIn" | trans }}</span>
             </a>
-          {{ /if }}
+          {{ /if }} #}}
         </div>
       {{ /if }}
     </div>
