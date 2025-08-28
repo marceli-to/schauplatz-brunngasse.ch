@@ -2,7 +2,12 @@
   href="{{ glide:image preset="lightbox" }}" 
   data-fancybox="{{ fancybox ? fancybox : 'gallery' }}" 
   data-bg-color="bg-{{ lightbox_background }}"
-  data-caption="{{ image:alt }}">
+  {{ if site:short_locale == "de" }}
+    data-caption="{{ image:alt_de }}"
+  {{ elseif site:short_locale == "en" }}
+    data-caption="{{ image:alt_en }}"
+  {{ /if }}
+  >
   <figure class="{{ wrapperClass }}">
     <picture>
       {{ if (sizes | in_array('2xl')) }}
@@ -20,7 +25,11 @@
       <source srcset="{{ glide:image preset="{{ preset ? 'md-{{ preset }}-webp' : 'md-webp' }}" }}" />
       <img 
         src="{{ glide:image preset="{{ preset ? 'md-{{ preset }}' : 'md' }}" }}" 
-        alt="{{ alt ? alt : image:alt }}" 
+        {{ if site:short_locale == "de" }}
+          alt="{{ image:alt_de }}"
+        {{ elseif site:short_locale == "en" }}
+          alt="{{ image:alt_en }}"
+        {{ /if }}
         height="{{ image:height }}" 
         width="{{ image:width }}"
         class="block {{ class ?? '' }}"

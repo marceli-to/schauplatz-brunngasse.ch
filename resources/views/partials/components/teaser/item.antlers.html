@@ -25,7 +25,7 @@
     {{ if image }}
       <div class="mt-8 lg:mt-12">
         {{ partial:components/media/image 
-          image="{{ image }}" 
+          :image="image" 
           eager="true"
           wrapperClass="bg-silvara px-40 lg:px-70 py-30 lg:py-40 aspect-[4/3]" 
           class="w-full h-full object-contain"

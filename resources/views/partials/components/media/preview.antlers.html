@@ -2,7 +2,11 @@
   href="{{ glide:image preset="lightbox" }}" 
   data-fancybox="{{ fancybox ? fancybox : 'gallery' }}" 
   data-bg-color="bg-{{ lightbox_background }}"
-  data-caption="{{ image:alt }}"
+  {{ if site:short_locale == "de" }}
+    data-caption="{{ image:alt_de }}"
+  {{ elseif site:short_locale == "en" }}
+    data-caption="{{ image:alt_en }}"
+  {{ /if }}
   class="flex justify-center">
   <figure class="{{ wrapperClass }}">
     <picture class="block relative {{ if image:alt }} pb-40 lg:pb-60 {{ /if }}">
@@ -21,7 +25,11 @@
       <source srcset="{{ glide:image preset="{{ preset ? 'md-{{ preset }}-webp' : 'md-webp' }}" }}" />
       <img 
         src="{{ glide:image preset="{{ preset ? 'md-{{ preset }}' : 'md' }}" }}" 
-        alt="{{ alt ? alt : image:alt }}" 
+        {{ if site:short_locale == "de" }}
+          alt="{{ image:alt_de }}"
+        {{ elseif site:short_locale == "en" }}
+          alt="{{ image:alt_en }}"
+        {{ /if }}
         height="{{ image:height }}" 
         width="{{ image:width }}"
         class="block mx-auto w-full h-auto
@@ -32,6 +40,11 @@
         {{ if showCaption }}
           {{ partial:components/media/caption class="block hyphens-auto absolute" }}
             {{ image:alt }}
+            {{ if site:short_locale == "de" }}
+              {{ image:alt_de }}
+            {{ elseif site:short_locale == "en" }}
+              {{ image:alt_en }}
+            {{ /if }}
           {{ /partial:components/media/caption }}
         {{ /if }}
     </picture>
