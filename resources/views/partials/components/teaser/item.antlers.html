@@ -1,6 +1,6 @@
 <div class="masonry-item">
   <div class="pt-4 lg:pt-8 border-t-6 lg:border-t-9 {{ border_class ?? 'border-blushra' }}">
-    {{ if isAgenda }}
+    {{ if teaserType == 'agenda' }}
       {{ "Agenda" | trans }}
     {{ else }}
       {{ if tag }}
@@ -42,6 +42,25 @@
             {{ partial:components/links/link }}
           {{ /if }}
         {{ /description }}
+
+        {{ if teaserType == 'agenda' }}
+          <div>
+            {{ partial:components/links/link 
+              link="{{ site:short_locale == "de" ? '/agenda' : '/en/agenda' }}/#{{ slug }}" 
+              link_text="{{ "Weiterlesen" | trans }}" 
+              target="_self" }}
+          </div>
+        {{ /if }}
+        {{ if teaserType == 'publication' }}
+          <div>
+            {{ partial:components/links/link 
+              
+              link="{{ site:short_locale == "de" ? '/diskurs/#item-publikationen-und-vortraege' : '/en/discourse/#publications-and-presentations' }}" 
+              link_text="{{ "Weiterlesen" | trans }}" 
+              target="_self" }}
+          </div>
+        {{ /if }}
+
       </div>
     {{ else if editor }}
       <div class="mt-12 lg:mt-18">
