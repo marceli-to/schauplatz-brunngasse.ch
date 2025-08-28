@@ -53,7 +53,7 @@
 
       <nav class="mb-28 lg:mb-0 lg:order-2 [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-sunella [&_a]:transition-colors">
         <ul>
-          {{ nav:footer }}
+          {{ nav:social_media }}
             <li>
               <a 
                 href="{{ url }}" 
@@ -63,43 +63,25 @@
                 {{ title }}
               </a>
             </li>
-          {{ /nav:footer }}
+          {{ /nav:social_media }}
         </ul>
       </nav>
 
-      {{ if social_media:facebook || social_media:instagram || social_media:linkedin }}
-        <div class="lg:order-3 flex flex-col gap-y-2">
-          {{# {{ if social_media:facebook }}
-            <a 
-              href="{{ social_media:facebook }}"
-              title="Facebook"
-              class="inline-flex items-center leading-none gap-x-4 group">
-              {{ partial:icons/facebook class="size-22 mt-2" }}
-              <span class="underline underline-offset-2 group-hover:text-sunella transition-colors">{{ "Facebook" | trans }}</span>
-            </a>
-          {{ /if }} #}}
-          
-          {{ if social_media:instagram }}
-            <a 
-              href="{{ social_media:instagram }}"
-              title="Instagram"
-              class="inline-flex items-center leading-none gap-x-4 group">
-              {{ partial:icons/instagram class="size-22 mt-2" }}
-              <span class="underline underline-offset-2 group-hover:text-sunella transition-colors">{{ "Instagram" | trans }}</span>
-            </a>
-          {{ /if }}
-
-          {{# {{ if social_media:linkedin }}
-            <a 
-              href="{{ social_media:linkedin }}" 
-              title="Twitter"
-              class="inline-flex items-center leading-none gap-x-4 group">
-              {{ partial:icons/linkedin class="size-22 mt-2" }}
-              <span class="underline underline-offset-2 group-hover:text-sunella transition-colors">{{ "LinkedIn" | trans }}</span>
-            </a>
-          {{ /if }} #}}
-        </div>
-      {{ /if }}
+      <nav class="lg:order-3 [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-sunella [&_a]:transition-colors">
+        <ul>
+          {{ nav:privacy }}
+            <li>
+              <a 
+                href="{{ url }}" 
+                aria-label="{{ title }}"
+                target="{{ is_external ? '_blank' : '_self' }}"
+                rel="noopener noreferrer">
+                {{ title }}
+              </a>
+            </li>
+          {{ /nav:privacy }}
+        </ul>
+      </nav>
     </div>
     <div class="mt-45">
       <span class="block mb-5 lg:mb-10">{{ "Unterstützt von:" | trans }}</span>
