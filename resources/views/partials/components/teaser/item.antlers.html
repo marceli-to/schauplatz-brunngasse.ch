@@ -1,16 +1,20 @@
 <div class="masonry-item">
   <div class="pt-4 lg:pt-8 border-t-6 lg:border-t-9 {{ border_class ?? 'border-blushra' }}">
-    {{ if tag }}
-      <div>
-        {{ tag:title }}
-      </div>
+    {{ if isAgenda }}
+      {{ "Agenda" | trans }}
     {{ else }}
-      {{ if tags }}
+      {{ if tag }}
         <div>
-          {{ tags }}
-            {{ title }}
-          {{ /tags }}
+          {{ tag:title }}
         </div>
+      {{ else }}
+        {{ if tags }}
+          <div>
+            {{ tags }}
+              {{ title }}
+            {{ /tags }}
+          </div>
+        {{ /if }}
       {{ /if }}
     {{ /if }}
 

@@ -47,6 +47,30 @@ return [
           'width' => 50,
           'sort' => 'order',
         ], 
+        [ 
+          'type' => 'collection',
+          'collection' => 'agenda',
+          'limit' => 5,
+          'title' => 'Agenda',
+          'width' => 50,
+          'sort' => 'order',
+        ],
+        [ 
+          'type' => 'collection',
+          'collection' => 'press_reviews',
+          'limit' => 5,
+          'title' => 'Pressespiegel',
+          'width' => 50,
+          'sort' => 'order',
+        ],
+        [ 
+          'type' => 'collection',
+          'collection' => 'publications',
+          'limit' => 5,
+          'title' => 'Publikationen',
+          'width' => 50,
+          'sort' => 'order',
+        ],
     ],
 
     /*
