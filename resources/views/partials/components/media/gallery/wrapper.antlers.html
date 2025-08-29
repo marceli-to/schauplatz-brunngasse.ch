@@ -22,9 +22,9 @@
       data-fancybox="gallery-home-desktop" 
       data-bg-color="bg-{{ lightbox_background }}"
       {{ if site:short_locale == "de" }}
-        data-caption="{{ image:alt_de }}"
+        data-caption="{{ image_large:alt_de }}"
       {{ elseif site:short_locale == "en" }}
-        data-caption="{{ image:alt_en }}"
+        data-caption="{{ image_large:alt_en }}"
       {{ /if }}
       class="hidden md:!block">
     </a>
@@ -33,9 +33,9 @@
       data-fancybox="gallery-home-mobile" 
       data-bg-color="bg-{{ lightbox_background }}"
       {{ if site:short_locale == "de" }}
-        data-caption="{{ image:alt_de }}"
+        data-caption="{{ image_small:alt_de }}"
       {{ elseif site:short_locale == "en" }}
-        data-caption="{{ image:alt_en }}"
+        data-caption="{{ image_small:alt_en }}"
       {{ /if }}
       class="block md:!hidden">
     </a>
