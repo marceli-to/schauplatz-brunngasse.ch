@@ -104,6 +104,13 @@ tabs:
                       instructions: 'Suchformular und Suchresultate'
                       icon: search-magnifying-glass
                       fields: {  }
+                    latest_event:
+                      display: 'Aktuelle Veranstaltung'
+                      instructions: 'Aktuelle Veranstaltung anzeigen'
+                      icon: mail-chat-bubble-text
+                      fields:
+                        -
+                          import: latest_event
   seo:
     display: SEO
     sections:

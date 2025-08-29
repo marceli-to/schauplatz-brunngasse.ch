@@ -2,7 +2,7 @@
 {{ collection:agenda as="latest_event" sort="agenda_date:asc" agenda_date:is_after="{now modify_date='-1 day' format='Y-m-d'}" limit="1" }}
   {{ if latest_event }}
     {{ latest_event }}
-      <div class="w-[calc(100%_+_30px)] relative text-sm lg:text-md md:absolute md:top-15 lg:top-30 -left-15 md:left-0 lg:-left-30 p-15 md:px-15 lg:px-20 py-15 lg:py-20 bg-verdique text-white md:max-w-sm lg:max-w-md flex flex-col gap-y-8 lg:gap-y-12">
+      <div class="w-[calc(100%_+_30px)] relative text-sm lg:text-md md:absolute md:z-10 md:top-15 lg:top-30 -left-15 md:left-0 lg:-left-30 p-15 md:px-15 lg:px-20 py-15 lg:py-20 bg-verdique text-white md:max-w-sm lg:max-w-md flex flex-col gap-y-8 lg:gap-y-12">
 
         <div>
           <div class="mb-2 lg:mb-4">

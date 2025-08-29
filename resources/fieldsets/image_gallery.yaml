@@ -49,5 +49,4 @@ fields:
             type: select
             display: 'Hintergrund (Lightbox)'
             localizable: false
-            width: 50
             default: mystiris

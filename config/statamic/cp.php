@@ -38,21 +38,12 @@ return [
     */
 
     'widgets' => [
-        // 'getting_started',
-        [ 
-          'type' => 'collection',
-          'collection' => 'pages',
-          'limit' => 5,
-          'title' => 'Seiten',
-          'width' => 50,
-          'sort' => 'order',
-        ], 
         [ 
           'type' => 'collection',
           'collection' => 'agenda',
           'limit' => 5,
           'title' => 'Agenda',
-          'width' => 50,
+          'width' => 100,
           'sort' => 'order',
         ],
         [ 
@@ -60,7 +51,7 @@ return [
           'collection' => 'press_reviews',
           'limit' => 5,
           'title' => 'Pressespiegel',
-          'width' => 50,
+          'width' => 100,
           'sort' => 'order',
         ],
         [ 
@@ -68,9 +59,17 @@ return [
           'collection' => 'publications',
           'limit' => 5,
           'title' => 'Publikationen',
-          'width' => 50,
+          'width' => 100,
           'sort' => 'order',
         ],
+        [ 
+          'type' => 'collection',
+          'collection' => 'pages',
+          'limit' => 15,
+          'title' => 'Seiten',
+          'width' => 100,
+          'sort' => 'order',
+        ], 
     ],
 
     /*

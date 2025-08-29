@@ -39,7 +39,6 @@
         loading="{{ eager ? 'eager' : 'lazy' }}">
         {{ if showCaption }}
           {{ partial:components/media/caption class="block hyphens-auto absolute" }}
-            {{ image:alt }}
             {{ if site:short_locale == "de" }}
               {{ image:alt_de }}
             {{ elseif site:short_locale == "en" }}
