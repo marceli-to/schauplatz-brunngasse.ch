@@ -5,6 +5,13 @@ tabs:
       -
         fields:
           -
+            handle: is_latest
+            field:
+              type: toggle
+              display: 'Störer?'
+              instructions: 'Anwählen um den Eintrag als Störer auf der Startseite zu publizieren.'
+              localizable: false
+          -
             handle: agenda_date
             field:
               type: date
