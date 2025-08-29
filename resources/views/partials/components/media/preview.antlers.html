@@ -7,7 +7,7 @@
   {{ elseif site:short_locale == "en" }}
     data-caption="{{ image:alt_en }}"
   {{ /if }}
-  class="flex justify-center">
+  class="flex justify-center relative">
   <figure class="{{ wrapperClass }}">
     <picture class="block relative {{ if image:alt }} pb-40 lg:pb-60 {{ /if }}">
       {{ if (sizes | in_array('2xl')) }}
@@ -49,4 +49,6 @@
     </picture>
 
   </figure>
+  {{ partial:icons/lightbox class="block absolute bottom-8 lg:bottom-16 left-8 lg:left-16 w-30 lg:w-60 h-auto z-10" }}
+
 </a>
