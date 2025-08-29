@@ -21,14 +21,22 @@
       href="{{ glide:image_large preset="lightbox"}}"
       data-fancybox="gallery-home-desktop" 
       data-bg-color="bg-{{ lightbox_background }}"
-      data-caption="{{ image:alt }}"
+      {{ if site:short_locale == "de" }}
+        data-caption="{{ image:alt_de }}"
+      {{ elseif site:short_locale == "en" }}
+        data-caption="{{ image:alt_en }}"
+      {{ /if }}
       class="hidden md:!block">
     </a>
     <a 
       href="{{ glide:image_small preset="lightbox"}}"
       data-fancybox="gallery-home-mobile" 
       data-bg-color="bg-{{ lightbox_background }}"
-      data-caption="{{ image:alt }}"
+      {{ if site:short_locale == "de" }}
+        data-caption="{{ image:alt_de }}"
+      {{ elseif site:short_locale == "en" }}
+        data-caption="{{ image:alt_en }}"
+      {{ /if }}
       class="block md:!hidden">
     </a>
   {{ /if }}
