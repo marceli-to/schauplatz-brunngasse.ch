@@ -3,7 +3,7 @@
     <a 
       href="{{ glide:image_large preset="lightbox" }}" 
       class="relative hidden md:block"
-      data-fancybox="{{ fancybox ? fancybox : 'gallery' }}" 
+      data-fancybox="{{ fancybox ? fancybox : 'gallery-home-desktop' }}" 
       data-bg-color="bg-{{ lightbox_background }}"
       {{ if site:short_locale == "de" }}
         data-caption="{{ image_large:alt_de }}"
@@ -23,7 +23,7 @@
       <a 
         href="{{ glide:image_small preset="lightbox" }}" 
         class="relative block md:hidden"
-        data-fancybox="{{ fancybox ? fancybox : 'gallery' }}" 
+        data-fancybox="{{ fancybox ? fancybox : 'gallery-home-mobile' }}" 
         data-bg-color="bg-{{ lightbox_background }}"
         {{ if site:short_locale == "de" }}
           data-caption="{{ image_small:alt_de }}"
