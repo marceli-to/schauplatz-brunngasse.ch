@@ -1,23 +1,31 @@
 {{ images }}
   {{ if first }}
-    <div class="md:mb-30 lg:mb-60">
-      {{ partial:components/media/gallery/item 
-        :image="image_large"
-        :sizes="['2xl', 'xl', 'lg']" 
-        class="!hidden md:!block w-full h-full object-cover aspect-[16/9]"
-        arrowClass="hidden md:block"
-        fancybox="gallery-home-desktop"
-      }}
-    </div>
-    <div class="md:hidden">
-      {{ partial:components/media/gallery/item 
-        :image="image_small"
-        :sizes="['2xl', 'xl', 'lg']" 
-        class="w-full h-full object-cover aspect-square md:!hidden"
-        arrowClass="block md:hidden"
-        fancybox="gallery-home-mobile"
-      }}
-    </div>
+    <a 
+      href="{{ glide:image preset="lightbox" }}" 
+      class="relative block"
+      data-fancybox="{{ fancybox ? fancybox : 'gallery' }}" 
+      data-bg-color="bg-{{ lightbox_background }}"
+      {{ if site:short_locale == "de" }}
+        data-caption="{{ image:alt_de }}"
+      {{ elseif site:short_locale == "en" }}
+        data-caption="{{ image:alt_en }}"
+      {{ /if }}
+      >
+        {{ partial:components/media/gallery/item 
+          :image="image_large"
+          :sizes="['2xl', 'xl', 'lg']" 
+          class="!hidden md:!block w-full h-full object-cover aspect-[16/9] md:mb-30 lg:mb-60"
+          fancybox="gallery-home-desktop"
+        }}
+
+        {{ partial:components/media/gallery/item 
+          :image="image_small"
+          :sizes="['2xl', 'xl', 'lg']" 
+          class="w-full h-full object-cover aspect-square md:!hidden"
+          fancybox="gallery-home-mobile"
+        }}
+      {{ partial:icons/lightbox class="block absolute top-8 md:top-auto md:bottom-8 lg:bottom-16 left-8 lg:left-16 w-22 lg:w-45 h-auto z-10" }}
+    </a>
   {{ else }}
     <a 
       href="{{ glide:image_large preset="lightbox"}}"
