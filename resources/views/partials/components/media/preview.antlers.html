@@ -9,7 +9,7 @@
   {{ /if }}
   class="flex justify-center relative">
   <figure class="{{ wrapperClass }}">
-    <picture class="block relative {{ if image:alt_de || image:alt_en }} pb-30 lg:pb-50 {{ /if }}">
+    <picture class="block relative">
       {{ if (sizes | in_array('2xl')) }}
         <source media="(min-width: 1280px)" srcset="{{ glide:image preset="{{ preset ? '2xl-{{ preset }}-webp' : '2xl-webp' }}" }}" type="image/webp">
         <source media="(min-width: 1280px)" srcset="{{ glide:image preset="{{ preset ? '2xl-{{ preset }}' : '2xl' }}" }}" type="image/jpeg">
@@ -38,7 +38,7 @@
         {{ if image:width > image:height }} max-w-[1080px]{{ /if }}"
         loading="{{ eager ? 'eager' : 'lazy' }}">
         {{ if showCaption }}
-          {{ partial:components/media/caption class="block hyphens-auto absolute" }}
+          {{ partial:components/media/caption class="block hyphens-auto" }}
             {{ if site:short_locale == "de" }}
               {{ image:alt_de }}
             {{ elseif site:short_locale == "en" }}
@@ -46,9 +46,10 @@
             {{ /if }}
           {{ /partial:components/media/caption }}
         {{ /if }}
+        {{ partial:icons/lightbox class="block absolute top-8 lg:top-16 left-8 lg:left-16 w-22 lg:w-45 h-auto z-10 rotate-90" }}
+
     </picture>
 
   </figure>
-  {{ partial:icons/lightbox class="block absolute top-8 lg:top-16 left-8 lg:left-16 w-22 lg:w-45 h-auto z-10 rotate-90" }}
 
 </a>
