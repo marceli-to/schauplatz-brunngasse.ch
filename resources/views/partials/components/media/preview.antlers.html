@@ -9,7 +9,7 @@
   {{ /if }}
   class="flex justify-center relative">
   <figure class="{{ wrapperClass }}">
-    <picture class="block relative {{ if image:alt_de || image:alt_en }} pb-30 lg:pb-60 {{ /if }}">
+    <picture class="block relative {{ if image:alt_de || image:alt_en }} pb-30 lg:pb-50 {{ /if }}">
       {{ if (sizes | in_array('2xl')) }}
         <source media="(min-width: 1280px)" srcset="{{ glide:image preset="{{ preset ? '2xl-{{ preset }}-webp' : '2xl-webp' }}" }}" type="image/webp">
         <source media="(min-width: 1280px)" srcset="{{ glide:image preset="{{ preset ? '2xl-{{ preset }}' : '2xl' }}" }}" type="image/jpeg">
