@@ -2,7 +2,7 @@
   {{ if first }}
     <a 
       href="{{ glide:image_large preset="lightbox" }}" 
-      class="relative block"
+      class="relative hidden md:block"
       data-fancybox="{{ fancybox ? fancybox : 'gallery' }}" 
       data-bg-color="bg-{{ lightbox_background }}"
       {{ if site:short_locale == "de" }}
@@ -22,7 +22,7 @@
 
       <a 
         href="{{ glide:image_small preset="lightbox" }}" 
-        class="relative block"
+        class="relative block md:hidden"
         data-fancybox="{{ fancybox ? fancybox : 'gallery' }}" 
         data-bg-color="bg-{{ lightbox_background }}"
         {{ if site:short_locale == "de" }}
