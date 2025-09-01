@@ -10,35 +10,35 @@
       {{ elseif site:short_locale == "en" }}
         data-caption="{{ image_large:alt_en }}"
       {{ /if }}
-      >
-        {{ partial:components/media/gallery/item 
-          :image="image_large"
-          :sizes="['2xl', 'xl', 'lg']" 
-          class="!hidden md:!block w-full h-full object-cover aspect-[16/9] md:mb-30 lg:mb-60"
-          fancybox="gallery-home-desktop"
-        }}
-        {{ partial:icons/lightbox class="block absolute top-8 md:top-auto md:bottom-8 lg:bottom-16 left-8 lg:left-16 w-22 lg:w-45 h-auto z-10" }}
-      </a>
+    >
+      {{ partial:components/media/gallery/item 
+        :image="image_large"
+        :sizes="['2xl', 'xl', 'lg']" 
+        class="!hidden md:!block w-full h-full object-cover aspect-[16/9] md:mb-30 lg:mb-60"
+        fancybox="gallery-home-desktop"
+      }}
+      {{ partial:icons/lightbox class="block absolute bottom-8 lg:bottom-16 left-8 lg:left-16 w-30 lg:w-45 h-auto z-10" }}
+    </a>
 
-      <a 
-        href="{{ glide:image_small preset="lightbox" }}" 
-        class="relative block md:hidden"
-        data-fancybox="{{ fancybox ? fancybox : 'gallery-home-mobile' }}" 
-        data-bg-color="bg-{{ lightbox_background }}"
-        {{ if site:short_locale == "de" }}
-          data-caption="{{ image_small:alt_de }}"
-        {{ elseif site:short_locale == "en" }}
-          data-caption="{{ image_small:alt_en }}"
-        {{ /if }}
-        >
-        {{ partial:components/media/gallery/item 
-          :image="image_small"
-          :sizes="['2xl', 'xl', 'lg']" 
-          class="w-full h-full object-cover aspect-square md:!hidden"
-          fancybox="gallery-home-mobile"
-        }}
-        {{ partial:icons/lightbox class="block absolute top-8 md:top-auto md:bottom-8 lg:bottom-16 left-8 lg:left-16 w-22 lg:w-45 h-auto z-10" }}
-      </a>
+    <a 
+      href="{{ glide:image_small preset="lightbox" }}" 
+      class="relative block md:hidden"
+      data-fancybox="{{ fancybox ? fancybox : 'gallery-home-mobile' }}" 
+      data-bg-color="bg-{{ lightbox_background }}"
+      {{ if site:short_locale == "de" }}
+        data-caption="{{ image_small:alt_de }}"
+      {{ elseif site:short_locale == "en" }}
+        data-caption="{{ image_small:alt_en }}"
+      {{ /if }}
+      >
+      {{ partial:components/media/gallery/item 
+        :image="image_small"
+        :sizes="['2xl', 'xl', 'lg']" 
+        class="w-full h-full object-cover aspect-square md:!hidden"
+        fancybox="gallery-home-mobile"
+      }}
+      {{ partial:icons/lightbox class="block absolute bottom-8 lg:bottom-16 left-8 lg:left-16 w-30 lg:w-45 h-auto z-10" }}
+    </a>
       
   {{ else }}
     <a 
