@@ -49,8 +49,10 @@
       data-bg-color="bg-{{ lightbox_background }}"
       {{ if site:short_locale == "de" }}
         data-caption="{{ image_large:alt_de }}"
+        aria-label="{{ image_large:alt_de }}"
       {{ elseif site:short_locale == "en" }}
         data-caption="{{ image_large:alt_en }}"
+        aria-label="{{ image_large:alt_en }}"
       {{ /if }}
       class="hidden md:!block">
     </a>
@@ -60,8 +62,10 @@
       data-bg-color="bg-{{ lightbox_background }}"
       {{ if site:short_locale == "de" }}
         data-caption="{{ image_small:alt_de }}"
+        aria-label="{{ image_small:alt_de }}"
       {{ elseif site:short_locale == "en" }}
         data-caption="{{ image_small:alt_en }}"
+        aria-label="{{ image_small:alt_en }}"
       {{ /if }}
       class="block md:!hidden">
     </a>
