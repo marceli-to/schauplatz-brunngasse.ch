@@ -16,6 +16,7 @@
         :sizes="['2xl', 'xl', 'lg']" 
         class="!hidden md:!block w-full h-full object-cover aspect-[16/9] md:mb-30 lg:mb-60"
         fancybox="gallery-home-desktop"
+        eager="true"
       }}
       {{ partial:icons/lightbox class="block absolute bottom-8 md:bottom-8 lg:bottom-16 left-8 lg:left-16 w-30 lg:w-45 h-auto z-10 rotate-90 md:rotate-0" }}
     </a>
@@ -36,6 +37,7 @@
         :sizes="['2xl', 'xl', 'lg']" 
         class="w-full h-full object-cover aspect-square md:!hidden"
         fancybox="gallery-home-mobile"
+        eager="true"
       }}
       {{ partial:icons/lightbox class="block absolute top-8 md:top-auto lg:bottom-16 left-8 lg:left-16 w-30 lg:w-45 h-auto z-10 rotate-90 md:rotate-0" }}
     </a>
