@@ -23,6 +23,7 @@
       height="{{ image:height }}" 
       width="{{ image:width }}"
       class="block {{ class ?? '' }}"
-      loading="{{ eager ? 'eager' : 'lazy' }}">
+      loading="{{ eager ? 'eager' : 'lazy' }}"
+      fetchpriority="high">
   </picture>
 </figure>
