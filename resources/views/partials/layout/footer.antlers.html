@@ -45,7 +45,7 @@
 
         {{ if opening_hours:opening_hours }}
           <div>
-            <strong>{{ "Öffnungszeiten" | trans }}</strong><br>{{ opening_hours:opening_hours }}
+            <strong>{{ "Öffnungszeiten" | trans }}</strong><br>{{ opening_hours:opening_hours | nl2br }}
           </div>
         {{ /if }}
 
