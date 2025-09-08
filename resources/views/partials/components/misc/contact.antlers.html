@@ -15,7 +15,7 @@
             {{ "Öffnungszeiten" | trans }}
           {{ /partial:components/headings/h3 }}
           <div class="font-feixen-sans-medium text-lg lg:text-2xl">
-            {{ opening_hours:opening_hours }}
+            {{ opening_hours:opening_hours | nl2br }}
           </div>
           {{ if special_opening_hours:special_opening_hours }}
             <a 
