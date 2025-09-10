@@ -70,12 +70,6 @@ tabs:
                       fields:
                         -
                           import: image_gallery
-                        -
-                          handle: show_latest_event
-                          field:
-                            type: toggle
-                            display: 'Aktuelle Veranstaltung anzeigen?'
-                            localizable: false
                     agenda:
                       display: Agenda
                       instructions: 'Agenda hinzufügen'
@@ -104,13 +98,6 @@ tabs:
                       instructions: 'Suchformular und Suchresultate'
                       icon: search-magnifying-glass
                       fields: {  }
-                    latest_event:
-                      display: 'Aktuelle Veranstaltung'
-                      instructions: 'Aktuelle Veranstaltung anzeigen'
-                      icon: mail-chat-bubble-text
-                      fields:
-                        -
-                          import: latest_event
   seo:
     display: SEO
     sections:

@@ -5,26 +5,25 @@ tabs:
       -
         fields:
           -
-            handle: is_latest
-            field:
-              type: toggle
-              display: 'Störer?'
-              instructions: 'Anwählen um den Eintrag als Störer auf der Startseite zu publizieren.'
-              localizable: false
-          -
             handle: agenda_date
             field:
               type: date
               display: Datum
               localizable: false
-              width: 66
           -
             handle: agenda_time
             field:
               type: time
-              display: Zeit
+              display: 'Zeit (Start)'
               localizable: false
-              width: 33
+              width: 50
+          -
+            handle: agenda_time_end
+            field:
+              type: time
+              display: 'Zeit (Ende)'
+              localizable: false
+              width: 50
           -
             handle: title
             field:
