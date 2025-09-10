@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-71acafcc.css",
+    "file": "assets/app-b961973d.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -12,6 +12,14 @@
     "file": "assets/StudioFeixenSans-Medium-15fc8f9d.woff2",
     "src": "resources/css/fonts/StudioFeixenSans-Medium.woff2"
   },
+  "resources/css/fonts/StudioFeixenSans-MediumItalic.woff": {
+    "file": "assets/StudioFeixenSans-MediumItalic-2464aaa7.woff",
+    "src": "resources/css/fonts/StudioFeixenSans-MediumItalic.woff"
+  },
+  "resources/css/fonts/StudioFeixenSans-MediumItalic.woff2": {
+    "file": "assets/StudioFeixenSans-MediumItalic-a50ca5b8.woff2",
+    "src": "resources/css/fonts/StudioFeixenSans-MediumItalic.woff2"
+  },
   "resources/css/fonts/StudioFeixenSans-Regular.woff": {
     "file": "assets/StudioFeixenSans-Regular-b6339760.woff",
     "src": "resources/css/fonts/StudioFeixenSans-Regular.woff"
@@ -20,6 +28,14 @@
     "file": "assets/StudioFeixenSans-Regular-f656fcad.woff2",
     "src": "resources/css/fonts/StudioFeixenSans-Regular.woff2"
   },
+  "resources/css/fonts/StudioFeixenSans-RegularItalic.woff": {
+    "file": "assets/StudioFeixenSans-RegularItalic-99ac0623.woff",
+    "src": "resources/css/fonts/StudioFeixenSans-RegularItalic.woff"
+  },
+  "resources/css/fonts/StudioFeixenSans-RegularItalic.woff2": {
+    "file": "assets/StudioFeixenSans-RegularItalic-8d2f3326.woff2",
+    "src": "resources/css/fonts/StudioFeixenSans-RegularItalic.woff2"
+  },
   "resources/css/fonts/StudioFeixenSans-Semibold.woff": {
     "file": "assets/StudioFeixenSans-Semibold-d5f98fa7.woff",
     "src": "resources/css/fonts/StudioFeixenSans-Semibold.woff"
@@ -27,6 +43,14 @@
   "resources/css/fonts/StudioFeixenSans-Semibold.woff2": {
     "file": "assets/StudioFeixenSans-Semibold-81386a8a.woff2",
     "src": "resources/css/fonts/StudioFeixenSans-Semibold.woff2"
+  },
+  "resources/css/fonts/StudioFeixenSans-SemiboldItalic.woff": {
+    "file": "assets/StudioFeixenSans-SemiboldItalic-84e36d4a.woff",
+    "src": "resources/css/fonts/StudioFeixenSans-SemiboldItalic.woff"
+  },
+  "resources/css/fonts/StudioFeixenSans-SemiboldItalic.woff2": {
+    "file": "assets/StudioFeixenSans-SemiboldItalic-3e438932.woff2",
+    "src": "resources/css/fonts/StudioFeixenSans-SemiboldItalic.woff2"
   },
   "resources/img/chevron-left.svg": {
     "file": "assets/chevron-left-2d9e263f.svg",

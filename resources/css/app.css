@@ -33,6 +33,18 @@ strong {
   @apply font-feixen-sans-semibold font-normal;
 }
 
+strong em,
+strong i,
+i strong,
+em strong {
+  @apply font-feixen-sans-semibold-italic font-normal;
+}
+
+i,
+em {
+  @apply font-feixen-sans-regular-italic font-normal;
+}
+
 sup {
   @apply text-[60%] -top-[.60em]
 }

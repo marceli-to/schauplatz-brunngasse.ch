@@ -11,6 +11,13 @@
 }
 
 @font-face {
+  font-family: 'FeixenSansRegularItalic';
+  src: url('fonts/StudioFeixenSans-RegularItalic.woff2') format('woff2'), url('fonts/StudioFeixenSans-RegularItalic.woff') format('woff');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'FeixenSansMedium';
   src: url('fonts/StudioFeixenSans-Medium.woff2') format('woff2'), url('fonts/StudioFeixenSans-Medium.woff') format('woff');
   font-style: normal;
@@ -18,8 +25,22 @@
 }
 
 @font-face {
+  font-family: 'FeixenSansMediumItalic';
+  src: url('fonts/StudioFeixenSans-MediumItalic.woff2') format('woff2'), url('fonts/StudioFeixenSans-MediumItalic.woff') format('woff');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'FeixenSansSemibold';
   src: url('fonts/StudioFeixenSans-Semibold.woff2') format('woff2'), url('fonts/StudioFeixenSans-Semibold.woff') format('woff');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FeixenSansSemiboldItalic';
+  src: url('fonts/StudioFeixenSans-SemiboldItalic.woff2') format('woff2'), url('fonts/StudioFeixenSans-SemiboldItalic.woff') format('woff');
   font-style: normal;
   font-display: swap;
 }

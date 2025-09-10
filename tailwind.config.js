@@ -78,6 +78,9 @@ export default {
         'feixen-sans-regular': ['FeixenSansRegular', ...defaultTheme.fontFamily.sans],
         'feixen-sans-medium': ['FeixenSansMedium', ...defaultTheme.fontFamily.sans],
         'feixen-sans-semibold': ['FeixenSansSemibold', ...defaultTheme.fontFamily.sans],
+        'feixen-sans-regular-italic': ['FeixenSansRegularItalic', ...defaultTheme.fontFamily.sans],
+        'feixen-sans-medium-italic': ['FeixenSansMediumItalic', ...defaultTheme.fontFamily.sans],
+        'feixen-sans-semibold-italic': ['FeixenSansSemiboldItalic', ...defaultTheme.fontFamily.sans],
       },
 
       fontSize: {
