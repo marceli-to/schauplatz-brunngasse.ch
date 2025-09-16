@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,3 +13,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/run-scheduler', function () {
+  Artisan::call('schedule:run');
+  return response()->json([
+    'status' => 'success',
+    'output' => Artisan::output()
+  ]);
+});
+
