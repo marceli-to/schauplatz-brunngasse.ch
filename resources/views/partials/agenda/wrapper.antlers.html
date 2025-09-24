@@ -1,5 +1,5 @@
 {{ nocache }}
-  {{ collection:agenda as="items" sort="agenda_date:asc" agenda_date:is_after="{now modify_date='-1 day' format='Y-m-d'}" }}
+  {{ collection:agenda locale="de" as="items" sort="agenda_date:asc" agenda_date:is_after="{now modify_date='-1 day' format='Y-m-d'}" }}
     {{ if items }}
       {{ items }}
         {{ partial:agenda/item borderColor="blushra" }}
@@ -9,7 +9,7 @@
 {{ /nocache }}
 
 {{ nocache }}
-  {{ collection:agenda as="items" sort="agenda_date:desc" agenda_date:is_before="{now}" }}
+  {{ collection:agenda locale="de" as="items" sort="agenda_date:desc" agenda_date:is_before="{now}" }}
     {{ if items }}
       {{ partial:components/accordion/wrapper accordion_border_top_color="blushra" }}
         {{ partial:components/accordion/item index="0" title="{{ "Vergangene Veranstaltungen" | trans }}" accordion_border_bottom_color="blushra" }}
