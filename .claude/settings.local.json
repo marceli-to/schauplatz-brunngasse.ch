@@ -5,12 +5,22 @@
       "Bash(ls:*)",
       "Bash(php artisan:*)",
       "Bash(grep:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(composer show:*)",
+      "Bash(composer remove:*)",
+      "Bash(git checkout:*)",
+      "Bash(composer install:*)",
+      "Bash(php -r:*)",
+      "Bash(php:*)",
+      "Bash(composer update:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nRemove Livewire without upgrading other packages\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)"
     ],
     "deny": []
   },
+  "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "laravel-boost"
-  ],
-  "enableAllProjectMcpServers": true
+  ]
 }
